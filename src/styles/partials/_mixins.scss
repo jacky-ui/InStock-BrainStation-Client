@@ -1,0 +1,91 @@
+@use './variables' as *;
+
+
+// mixins mobile mode fonts
+
+@mixin page-header-mobile {
+      font-size: 1.75rem;
+      font-weight: bold;
+      line-height: 2.25rem;
+}
+
+@mixin subheader-mobile {
+      font-size: 1.25rem;
+      font-weight: bold;
+      line-height: 1.75rem;
+}
+
+  @mixin label-buttons-mobile{
+    font-size: 0.813rem;
+    font-weight: bold;
+    line-height: 1.25rem;
+}
+
+@mixin table-header-mobile {
+      font-size: 0.688rem;
+      font-weight: normal;
+      line-height: 1rem;
+}
+
+@mixin body-large-mobile{
+      font-size: 0.938rem;
+      font-weight: normal;
+      line-height: 1.625rem;
+}
+
+@mixin body-medium-mobile{
+    font-size: 0.813rem;
+    font-weight: normal;
+    line-height: 1.25rem;
+}
+
+@mixin body-small-mobile{
+    font-size: 0.688rem;
+    font-weight: normal;
+    line-height: 1rem;
+}
+
+
+  // mixins desktop & tablet mode
+
+@mixin page-header-desktop{
+      font-size: 2rem;
+      font-weight: bold;
+      line-height: 2.5rem;
+}
+
+@mixin subheader-desktop{
+      font-size: 1.5rem;
+      font-weight: bold;
+      line-height: 2rem;
+}
+
+  @mixin label-buttons-desktop{
+    font-size: 0.875rem;
+    font-weight: bold;
+    line-height: 1.375rem;
+}
+
+@mixin table-header-desktop{
+      font-size: 0.75rem;
+      font-weight: normal;
+      line-height: 1.125rem;
+}
+
+@mixin body-large-desktop{
+      font-size: 1rem;
+      font-weight: normal;
+      line-height: 1.75rem;
+}
+
+@mixin body-medium-desktop{
+    font-size: 0.875rem;
+    font-weight: normal;
+    line-height: 1.375rem;
+}
+
+@mixin body-small-desktop{
+    font-size: 0.75rem;
+    font-weight: normal;
+    line-height: 1.125rem;
+}
