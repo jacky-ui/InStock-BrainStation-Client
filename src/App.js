@@ -11,14 +11,14 @@ function App() {
           <Route path="/" exact component={HomePage} />
           <Route path="/warehouse/:warehouseId" component={Warehouse} />
           <Route
-            path="/editWarehouse/:editWarehouseId"
+            path="/warehouse/:warehouseId/edit"
             component={EditWarehouse}
           />
-          <Route path="/addWarehouse" component={AddWarehouse} />
+          <Route path="/warehouse/add" component={AddWarehouse} />
           <Route path="/inventory" component={Inventory} />
-          <Route path="/item" component={Item} />
-          <Route path="/editItem/editItemId" component={EditItem} />
-          <Route path="/addItem/addItemId" component={AddItem} />
+          <Route path="/inventory/:itemId" component={Item} />
+          <Route path="/inventory/:itemId/edit" component={EditItem} />
+          <Route path="/inventory/add" component={AddItem} />
         </Switch>
         <Footer />
       </BrowserRouter>
