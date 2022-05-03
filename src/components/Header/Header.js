@@ -4,13 +4,13 @@ import './Header.scss'
 
 const Header = () => {
     return (
-        <div className="header">
+        <header className="header">
             <img className="header__logo" src={Logo} alt="logo"></img>
             <ul className="header__list">
                 <li className="header__item-active">Warehouses</li>
                 <li className="header__item-inactive">Inventory</li>
             </ul>
-        </div>
+        </header>
     );
 };
 
