@@ -52,6 +52,7 @@
         cursor: pointer;
 
         @include tablet{
+            @include label-buttons-desktop;
             width: auto;
         }
     }
@@ -69,6 +70,11 @@
         text-align: center;
         border-radius: 20px;
         cursor: pointer;
+        
+        @include tablet{
+            @include label-buttons-desktop;
+            width: auto;
+        }
     }
 
     &__item-inactive:hover{
