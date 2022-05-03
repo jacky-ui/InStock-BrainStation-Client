@@ -12,18 +12,20 @@
     @include tablet{
         flex-direction: row;
         justify-content: space-between;
-        height: 9vh;
+        align-items: flex-start;
+        padding: 2rem;
+        height: 18vh;
     }
 
     @include desktop{
-        padding: 0 4rem;
+        padding: 2rem 4rem;
     }
 
     &__logo{
         padding: 1.5rem 0;
 
         @include tablet{
-            padding: 1rem;
+            padding: 0;
         }
     }
 
@@ -52,6 +54,7 @@
         cursor: pointer;
 
         @include tablet{
+            @include label-buttons-desktop;
             width: auto;
         }
     }
@@ -69,6 +72,11 @@
         text-align: center;
         border-radius: 20px;
         cursor: pointer;
+        
+        @include tablet{
+            @include label-buttons-desktop;
+            width: auto;
+        }
     }
 
     &__item-inactive:hover{
