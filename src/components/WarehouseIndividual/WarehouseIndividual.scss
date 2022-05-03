@@ -44,6 +44,34 @@
     }
 }
 
+// Styling for warehouse contact section
+.contact {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 2rem;
+    padding-right: 1rem;
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+
+        &--head {
+            @include mixins.table-header-mobile;
+            color: variables.$Slate;
+            font-weight: bold;
+        }
+        &--text {
+            @include mixins.body-small-mobile;
+            color: variables.$Instock-Black;
+        }
+        &--link {
+            @include mixins.body-small-mobile;
+            color: variables.$Instock-Black;
+            text-decoration: none;
+        }
+    }
+}
+
 .icon__edit {
     position: absolute;
     background: variables.$White;

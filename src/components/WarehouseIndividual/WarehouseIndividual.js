@@ -22,6 +22,19 @@ function WarehouseIndividual() {
             <section className="container__address">
                 <span className="container__address--title">WAREHOUSE ADDRESS</span><br/>
                 <span className="container__address--address">33 Pearl Street SW, Washington, USA</span>
+
+                <section className="contact">
+                    <div className="contact__container">
+                        <span className="contact__container--head">CONTACT NAME:</span>
+                        <span className="contact__container--text">Graeme Lyon</span>
+                        <span className="contact__container--text">Warehouse Manager</span>
+                    </div>
+                    <div className="contact__container">
+                        <span className="contact__container--head">CONTACT INFORMATION:</span>
+                        <a className="contact__container--link" href='tel:+1647-504-0911'>+1 (647) 504-0911</a>
+                        <a className="contact__container--link" href="mailto:glyon@instock.com">gylon@instock.com</a>
+                    </div>
+                </section>
             </section>
         </article>
     )
