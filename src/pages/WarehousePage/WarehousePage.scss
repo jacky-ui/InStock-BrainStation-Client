@@ -1,4 +1,88 @@
-@use "../../styles/partials/mixins";
-@use "../../styles/partials/typography";
-@use "../../styles/partials/variables";
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/variables" as *;
 
+.warehouses {
+    // padding: 1rem;
+
+    &__title-container-wrapper{
+        background-color: #232940;
+        display: flex;
+        justify-content: center;
+        padding: 0 1rem;
+
+        @include tablet {
+            padding: 0 1.5rem;
+            
+        }
+
+        @include desktop {
+            padding: 0 4rem;
+        }
+    }
+
+    &__title-container {
+        background-color: white;
+        padding: 0 1rem;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        @include tablet {
+            padding: 0 1.5rem 1.25rem;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        
+    }
+
+    &__title {
+        margin-top: 1rem;
+    }
+
+    &__search-btn-container {
+        // width: 100%;
+        display: flex;
+        flex-direction: row;
+
+        @include tablet {
+            width: 100%;
+        }
+    }
+
+    &__search-bar {
+        margin-top: 1rem;
+        border-radius: 1.25rem;
+        background-image: url('../../assets/images/icons/search-24px.svg');
+        background-repeat: no-repeat;
+        background-position: right 1rem center;
+        border: 0.063rem solid #BDC5D5;
+        padding: 0.75rem;
+        padding-left: 1rem;
+        width: 100%;
+
+        @include tablet {
+            width: 12rem;
+        }
+        
+    }
+
+    &__btn-add {
+        margin-top: 1rem;
+        margin-bottom: 1.5rem;
+        border-radius: 1.25rem;
+        background-color: #2E66E5;
+        padding: 0.75rem;
+        color: white;
+        border: none;
+        width: 100%;
+
+        @include tablet {
+            width: 12rem;
+            margin-bottom: 0;
+            margin-left: 1rem;
+        }
+    }
+}
