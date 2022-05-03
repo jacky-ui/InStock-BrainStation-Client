@@ -2,13 +2,14 @@ import "./App.scss";
 import React, { Component } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
     <div className="app">
       <BrowserRouter>
         <Header />
-        <Switch>
+        {/* <Switch>
           <Route path="/" exact component={HomePage} />
           <Route path="/warehouse/:warehouseId" component={Warehouse} />
           <Route
@@ -20,7 +21,7 @@ function App() {
           <Route path="/inventory/:itemId" component={Item} />
           <Route path="/inventory/:itemId/edit" component={EditItem} />
           <Route path="/inventory/add" component={AddItem} />
-        </Switch>
+        </Switch> */}
         <Footer />
       </BrowserRouter>
     </div>
