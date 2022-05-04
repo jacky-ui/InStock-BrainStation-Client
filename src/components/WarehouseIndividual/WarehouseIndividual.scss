@@ -4,8 +4,7 @@
 
 // Styling for container
 .container {
-    // background-color: variables.$White;
-    background-color: aqua;
+    background-color: variables.$White;
     margin-left: 1rem;
     margin-right: 1rem;
     border-radius: 4px;
@@ -53,6 +52,9 @@
             }
             @include variables.desktop {
                 height: 2.375rem;
+            }
+            &:hover {
+                background-color: variables.$Graphite;
             } 
         }
     }
@@ -324,7 +326,6 @@
 
 .icon__edit {
     position: absolute;
-    background: variables.$White;
     height: 1.3rem;
     width: 1.3rem;
     bottom: 1.6rem;
@@ -358,4 +359,8 @@
         left: 1.9rem;
         bottom: 1.4rem;
     }
+}
+
+a {
+    text-decoration: none;
 }

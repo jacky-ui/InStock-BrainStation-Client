@@ -3,6 +3,7 @@ import editIcon from "../../assets/images/icons/edit-24px.svg";
 import previousIcon from "../../assets/images/icons/arrow_back-24px.svg";
 import deleteIcon from "../../assets/images/icons/delete_outline-24px.svg";
 import arrowRight from "../../assets/images/icons/chevron_right-24px.svg";
+import editIconWhite from "../../assets/images/icons/edit-24px(2).svg";
 import sortIcon from "../../assets/images/icons/sort-24px.svg";
 import { Link } from "react-router-dom";
 
@@ -12,17 +13,17 @@ function WarehouseIndividual() {
         {/*Warehouse heading*/}
             <section className="container__head">
                 <Link to="/">
-                    <img
-                        className="icon__previous" 
-                        src={previousIcon}
-                    />
+                        <img
+                            className="icon__previous" 
+                            src={previousIcon}
+                        />
                 </Link>
                 <h1 className="container__head--title">Washington</h1>
                 <Link to="/warehouse/:warehouseId/edit">
                     <div className="container__head--circle">
                         <img
                             className="icon__edit" 
-                            src={editIcon}
+                            src={editIconWhite}
                         />
                         <span className="icon__edit--text">EDIT</span>
                     </div>
@@ -65,11 +66,13 @@ function WarehouseIndividual() {
             <section className="inventory">
                 <div className="inventory__container1">
                     <h4 className="inventory__header">INVENTORY ITEM</h4>
-                    <p className="inventory__details--color">Television</p>
-                    <img 
-                        src={arrowRight}
-                        className="inventory__icon--right"
-                    />
+                    <Link to="/inventory/:itemId">
+                        <p className="inventory__details--color">Television</p>
+                        <img 
+                            src={arrowRight}
+                            className="inventory__icon--right"
+                        />
+                    </Link>
                     <h4 className="inventory__header">CATERGORY</h4>
                     <p className="inventory__details">Electronics</p>
                 </div>
