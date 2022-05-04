@@ -3,5 +3,37 @@
 
 .form {
     margin: 1rem;
-    padding: 0 1rem;
+    &-left {
+        display: flex;
+        flex-direction: column;
+        padding: 0 1rem 1rem 1rem;
+        border-bottom: $border-divider;
+    }
+    &-right {
+        display: flex;
+        flex-direction: column;
+        padding: 1rem 1rem 1rem 1rem;
+        border-bottom: $border-divider;
+    }
+    &__title {
+        @include subheader-mobile;
+        padding-bottom: 1.5rem;
+    }
+    &__group {
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 1rem;
+    }
+    &__label {
+        @include label-buttons-mobile;
+        padding-bottom: 0.25rem;
+    }
+    &__input {
+        border-radius: 20px;
+        border: $border-divider;
+        padding: 0.5rem 1.25rem;
+        &::placeholder {
+            @include body-medium-mobile;
+        }
+    }
 }

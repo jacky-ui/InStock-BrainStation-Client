@@ -7,65 +7,81 @@ function WarehouseForm({ warehouse }) {
             <form>
                 <div className='form-left'>
                     <h2 className='form__title'>Warehouse Details</h2>
-                    <label>
-                        Warehouse Name
+                    <div className='form__group'>
+                        <label className='form__label'>Warehouse Name</label>
                         <input 
-                        type="text"
-                        name="name"
+                            className='form__input'
+                            type="text"
+                            name="name"
+                            placeholder="Warehouse Name"
                         ></input>
-                    </label>
-                    <label>
-                        Street Address
+                    </div>
+                    <div className='form__group'>
+                        <label className='form__label'>Street Address</label>
                         <input 
-                        type="text"
-                        name="address"
+                            className='form__input'
+                            type="text"
+                            name="address"
+                            placeholder="Street Address"
                         ></input>
-                    </label>
-                    <label>
-                        City
+                    </div>
+                    <div className='form__group'>
+                        <label className='form__label'>City</label>
                         <input 
-                        type="text"
-                        name="city"
+                            className='form__input'
+                            type="text"
+                            name="city"
+                            placeholder="City"
                         ></input>
-                    </label>
-                    <label>
-                        Country
+                    </div>
+                    <div className='form__group'>
+                        <label className='form__label'>Country</label>
                         <input 
-                        type="text"
-                        name="country"
+                            className='form__input'
+                            type="text"
+                            name="country"
+                            placeholder="Country"
                         ></input>
-                    </label>
+                    </div>
                 </div>
                 <div className='form-right'>
                     <h2 className='form__title'>Contact Details</h2>
-                    <label>
-                        Contact Name
+                    <div className='form__group'>
+                        <label className='form__label'>Contact Name</label>
                         <input 
-                        type="text"
-                        name="contactName"
+                            className='form__input'
+                            type="text"
+                            name="contactName"
+                            placeholder="Contact Name"
                         ></input>
-                    </label>
-                    <label>
-                        Position
+                    </div>
+                    <div className='form__group'>
+                        <label className='form__label'>Position</label>
                         <input 
-                        type="text"
-                        name="contactPosition"
+                            className='form__input'
+                            type="text"
+                            name="contactPosition"
+                            placeholder="Position"
                         ></input>
-                    </label>
-                    <label>
-                        Phone Number
+                    </div>
+                    <div className='form__group'>
+                        <label className='form__label'>Phone Number</label>
                         <input 
-                        type="text"
-                        name="contactPhone"
+                            className='form__input'
+                            type="text"
+                            name="contactPhone"
+                            placeholder="Phone Number"
                         ></input>
-                    </label>
-                    <label>
-                        Email
+                    </div>
+                    <div className='form__group'>
+                        <label className='form__label'>Email</label>
                         <input 
-                        type="text"
-                        name="contactEmail"
+                            className='form__input'
+                            type="text"
+                            name="contactEmail"
+                            placeholder="Email"
                         ></input>
-                    </label>
+                    </div>
                 </div>
                 <div className='form-btns'>
 
