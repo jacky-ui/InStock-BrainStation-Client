@@ -1,3 +1,4 @@
+import './WarehouseForm.scss';
 import React from 'react';
 
 function WarehouseForm({ warehouse }) {

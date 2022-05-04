@@ -1,12 +1,12 @@
-import './EditWarehousePage';
+import './EditWarehousePage.scss';
 import React, { Component } from 'react';
-import { PageSubHeader } from '../../components/PageSubHeader/PageSubHeader';
+import PageSubHeader from '../../components/PageSubHeader/PageSubHeader';
 
 class EditWarehousePage extends Component {
     state = {
-        pageTitle: "Edit Warehouse",
+        pageTitle: "Edit Warehouse"
 
-    }
+    };
 
 
     render() {

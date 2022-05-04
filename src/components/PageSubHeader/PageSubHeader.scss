@@ -3,5 +3,38 @@
 
 .subheader {
     display: flex;
-    
+    justify-content: center;
+    padding: 1.5rem 0;
+    margin: 0 1rem 0 1rem;
+    border-bottom: $border-divider;
+    background-color: $White;
+    @include tablet {
+        margin: 0 2rem;
+    }
+    @include desktop {
+        margin: 0 4rem;
+        padding: 2rem 0; 
+    }
+    &__title { 
+        @include page-header-mobile
+
+    }
+    &__arrow {
+        width: 1rem;
+        height: 1rem;
+        align-self: center;
+        margin-right: 1rem;
+        @include tablet{
+            @include page-header-desktop
+        }
+    }
+    &-style {
+        margin-top: -3.75rem;
+        @include tablet {
+            margin-top: -5.75rem;
+        }
+        @include desktop {
+            margin-top: -6.45rem;
+        }
+    }
 }

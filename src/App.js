@@ -1,9 +1,9 @@
 import "./App.scss";
-import React, { Component } from "react";
+import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
-import EditWarehousePage from "./pages/EditWarehousePage/EditWarehousePage";
+import EditWarehousePage from "./pages/EditWarehousePage/EditWarehousePage.js";
 
 function App() {
   return (
