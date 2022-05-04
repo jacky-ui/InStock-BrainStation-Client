@@ -11,7 +11,7 @@ function App() {
       <BrowserRouter>
         <Header />
         <DeleteWarehouse/>
-        {/* <Switch>
+        <Switch>
           <Route path="/" exact component={HomePage} />
           <Route path="/warehouse/:warehouseId" component={Warehouse} />
           <Route
@@ -23,7 +23,7 @@ function App() {
           <Route path="/inventory/:itemId" component={Item} />
           <Route path="/inventory/:itemId/edit" component={EditItem} />
           <Route path="/inventory/add" component={AddItem} />
-        </Switch> */}
+        </Switch>
         <Footer />
       </BrowserRouter>
     </div>
