@@ -1,41 +1,48 @@
 import './WarehouseIndividual.scss';
 import editIcon from "../../assets/images/icons/edit-24px.svg";
 import previousIcon from "../../assets/images/icons/arrow_back-24px.svg";
+import deleteIcon from "../../assets/images/icons/delete_outline-24px.svg";
+import arrowRight from "../../assets/images/icons/chevron_right-24px.svg";
+import { Link } from "react-router-dom";
 
 function WarehouseIndividual() {
     return(
         <article className="container">
         {/*Warehouse heading*/}
             <section className="container__head">
-                <img
-                    className="icon__previous" 
-                    src={previousIcon}
-                />
-                <h1 className="container__head--title">Washington</h1>
-                <div className="container__head--circle">
+                <Link to="/">
                     <img
-                        className="icon__edit" 
-                        src={editIcon}
+                        className="icon__previous" 
+                        src={previousIcon}
                     />
-                    <span className="icon__edit--text">EDIT</span>
-                </div>
+                </Link>
+                <h1 className="container__head--title">Washington</h1>
+                <Link to="/">
+                    <div className="container__head--circle">
+                        <img
+                            className="icon__edit" 
+                            src={editIcon}
+                        />
+                        <span className="icon__edit--text">EDIT</span>
+                    </div>
+                </Link>
             </section>
 
             {/*Warehouse Address */}
             <section className="container__address">
                 <div>
-                    <span className="container__address--title">WAREHOUSE ADDRESS</span><br/>
-                    <span className="container__address--address">33 Pearl Street SW, Washington, USA</span>
+                    <h4 className="container__address--title">WAREHOUSE ADDRESS</h4><br/>
+                    <p className="container__address--address">33 Pearl Street SW, Washington, USA</p>
                 </div>
 
                 <section className="contact">
                     <div className="contact__container">
-                        <span className="contact__container--head">CONTACT NAME:</span>
-                        <span className="contact__container--text">Graeme Lyon</span>
-                        <span className="contact__container--text">Warehouse Manager</span>
+                        <h4 className="contact__container--head">CONTACT NAME:</h4>
+                        <p className="contact__container--text">Graeme Lyon</p>
+                        <p className="contact__container--text">Warehouse Manager</p>
                     </div>
                     <div className="contact__container">
-                        <span className="contact__container--head">CONTACT INFORMATION:</span>
+                        <h4 className="contact__container--head">CONTACT INFORMATION:</h4>
                         <a className="contact__container--link" href='tel:+1647-504-0911'>+1 (647) 504-0911</a>
                         <a className="contact__container--link" href="mailto:glyon@instock.com">gylon@instock.com</a>
                     </div>
@@ -43,8 +50,98 @@ function WarehouseIndividual() {
             </section>
 
             {/*Warehouse Inventory*/}
-            <section>
-                
+            <div className="title__bar"></div>
+            <section className="inventory">
+                <div className="inventory__container1">
+                    <h4 className="inventory__header">INVENTORY ITEM</h4>
+                    <p className="inventory__details--color">Television</p>
+                    <img 
+                        src={arrowRight}
+                        className="inventory__icon--right"
+                    />
+                    <h4 className="inventory__header">CATERGORY</h4>
+                    <p className="inventory__details">Electronics</p>
+                </div>
+                <div className="inventory__container2">
+                    <h4 className="inventory__header">STATUS</h4>
+                    <p className="inventory__details--stock">IN STOCK</p>
+                    <h4 className="inventory__header">QTY</h4>
+                    <p className="inventory__details">500</p>
+                    <Link to="/">
+                        <img 
+                            src={editIcon}
+                            className="inventory__icon--edit"
+                        />
+                    </Link>
+                    <Link to="/">
+                        <img 
+                            src={deleteIcon}
+                            className="inventory__icon--delete"
+                        />
+                    </Link>
+                </div>
+            </section>
+
+            <section className="inventory">
+                <div className="inventory__container1">
+                    <h4 className="inventory__header">INVENTORY ITEM</h4>
+                    <p className="inventory__details--color">Television</p>
+                    <img 
+                        src={arrowRight}
+                        className="inventory__icon--right"
+                    />
+                    <h4 className="inventory__header">CATERGORY</h4>
+                    <p className="inventory__details">Electronics</p>
+                </div>
+                <div className="inventory__container2">
+                    <h4 className="inventory__header">STATUS</h4>
+                    <p className="inventory__details--stock">IN STOCK</p>
+                    <h4 className="inventory__header">QTY</h4>
+                    <p className="inventory__details">500</p>
+                    <Link to="/">
+                        <img 
+                            src={editIcon}
+                            className="inventory__icon--edit"
+                        />
+                    </Link>
+                    <Link to="/">
+                        <img 
+                            src={deleteIcon}
+                            className="inventory__icon--delete"
+                        />
+                    </Link>
+                </div>
+            </section>
+
+            <section className="inventory">
+                <div className="inventory__container1">
+                    <h4 className="inventory__header">INVENTORY ITEM</h4>
+                    <p className="inventory__details--color">Television</p>
+                    <img 
+                        src={arrowRight}
+                        className="inventory__icon--right"
+                    />
+                    <h4 className="inventory__header">CATERGORY</h4>
+                    <p className="inventory__details">Electronics</p>
+                </div>
+                <div className="inventory__container2">
+                    <h4 className="inventory__header">STATUS</h4>
+                    <p className="inventory__details--stock">IN STOCK</p>
+                    <h4 className="inventory__header">QTY</h4>
+                    <p className="inventory__details">500</p>
+                    <Link to="/">
+                        <img 
+                            src={editIcon}
+                            className="inventory__icon--edit"
+                        />
+                    </Link>
+                    <Link to="/">
+                        <img 
+                            src={deleteIcon}
+                            className="inventory__icon--delete"
+                        />
+                    </Link>
+                </div>
             </section>
         </article>
     )

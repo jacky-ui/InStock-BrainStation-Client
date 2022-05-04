@@ -65,7 +65,7 @@
             align-items: flex-end;
             justify-content: space-between;
             padding: 2rem;
-            width: 90%;
+            padding-right: 6rem;
         }
         @include variables.desktop  {
             padding: 2rem 2.5rem;
@@ -104,9 +104,6 @@
     padding-right: 1rem;
 
     @include variables.tablet {
-        // padding-top: unset;
-        // padding-left: 2rem;
-        // padding-right: 5rem;
         padding: 0rem 0rem 0rem 2rem;
         border-left: 1px solid variables.$Cloud;
         gap: 2rem;
@@ -146,6 +143,93 @@
                 text-decoration: none;
             }
         }
+    }
+}
+
+.inventory {
+    display: flex;
+    gap: 2.5rem;
+    padding: 1rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid variables.$Cloud;
+    position: relative;
+
+    @include variables.tablet {
+        padding: 2rem 1.5rem;
+        padding-bottom: 2rem;
+    }
+
+    &__container1 {
+        padding-bottom: 1rem;
+        margin-right: auto;
+    }
+    &__container2 {
+        padding-bottom: 1rem;
+        margin-right: 4rem;
+    }
+
+    &__header {
+        @include mixins.table-header-mobile;
+        color: variables.$Slate;
+        font-weight: bold;
+        padding-bottom: 0.3rem;
+
+        @include variables.tablet {
+            @include mixins.table-header-desktop;
+            color: variables.$Slate;
+            font-weight: bold;
+        }
+    }
+    &__details {
+        @include mixins.body-small-mobile;
+        color: variables.$Instock-Black;
+
+        @include variables.tablet {
+            @include mixins.body-small-desktop;
+            color: variables.$Instock-Black;
+        }
+
+        &--color {
+            @include mixins.body-small-mobile;
+            color: variables.$Instock-Indigo;
+            padding-bottom: 1rem;
+            font-weight: bold;
+        }
+        &--stock {
+            @include mixins.body-small-mobile;
+            color: variables.$Green;
+            padding: 0.1rem 0.2rem;
+            font-weight: bold;
+            background-color: variables.$Light-Grey;
+            border-radius: 2.375rem;
+            margin-bottom: 0.8rem;
+        }
+    }
+    &__icon--edit {
+        position: absolute;
+        right: 1.5rem;
+        bottom: 1rem;
+    }
+    &__icon--delete {
+        position: absolute;
+        left: 1rem;
+        bottom: 1rem;
+    }
+    &__icon--right {
+        position: absolute;
+        left: 4rem;
+        bottom: 6.2rem;
+    }
+}
+
+.title__bar {
+    display: none;
+
+    @include variables.tablet {
+        display: block;
+        background-color: variables.$Light-Grey;
+        width: 100%;
+        padding-bottom: 2rem;
     }
 }
 
