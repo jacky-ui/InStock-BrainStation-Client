@@ -1,2 +1,7 @@
 @use '../../styles/partials/mixins' as *;
 @use '../../styles/partials/variables' as *;
+
+.form {
+    margin: 1rem;
+    padding: 0 1rem;
+}

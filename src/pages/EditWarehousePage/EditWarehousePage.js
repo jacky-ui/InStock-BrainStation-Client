@@ -1,6 +1,7 @@
 import './EditWarehousePage.scss';
 import React, { Component } from 'react';
 import PageSubHeader from '../../components/PageSubHeader/PageSubHeader';
+import WarehouseForm from '../../components/WarehouseForm/WarehouseForm';
 
 class EditWarehousePage extends Component {
     state = {
@@ -13,6 +14,7 @@ class EditWarehousePage extends Component {
         return(
             <main>
                 <PageSubHeader pageTitle={this.state.pageTitle}/>
+                <WarehouseForm />
             </main>
         );
     }
