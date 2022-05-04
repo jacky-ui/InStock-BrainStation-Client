@@ -1,28 +1,18 @@
 import './EditWarehousePage';
 import React, { Component } from 'react';
-import axios from 'axios';
+import { PageSubHeader } from '../../components/PageSubHeader/PageSubHeader';
 
 class EditWarehousePage extends Component {
     state = {
-        name: null, 
-        address: null,
-        city: null, 
-        country: null,
-        contactName: null, 
-        contactPosition: null,
-        contactPhone: null,
-        contactEmail: null
-    }
+        pageTitle: "Edit Warehouse",
 
-    componentDidMount() {
-        axios.get()
     }
 
 
     render() {
         return(
             <main>
-
+                <PageSubHeader pageTitle={this.state.pageTitle}/>
             </main>
         );
     }
