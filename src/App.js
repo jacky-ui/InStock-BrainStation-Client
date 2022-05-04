@@ -3,12 +3,14 @@ import React, { Component } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
+import DeleteWarehouse from "./components/DeleteWarehouse/DeleteWarehouse";
 
 function App() {
   return (
     <div className="app">
       <BrowserRouter>
         <Header />
+        <DeleteWarehouse/>
         {/* <Switch>
           <Route path="/" exact component={HomePage} />
           <Route path="/warehouse/:warehouseId" component={Warehouse} />
