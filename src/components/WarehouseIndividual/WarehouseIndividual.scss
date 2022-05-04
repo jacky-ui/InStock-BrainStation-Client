@@ -34,6 +34,7 @@
 
         &--title {
             @include mixins.page-header-mobile;
+            margin-right: auto;
 
             @include variables.tablet {
                 @include mixins.page-header-desktop;
@@ -155,17 +156,34 @@
     position: relative;
 
     @include variables.tablet {
-        padding: 2rem 1.5rem;
-        padding-bottom: 2rem;
+        display: flex;
+        align-items: center;
+        padding: 0rem 2rem;
+        height: 3rem;
+    }
+    @include variables.desktop {
+        padding: 0rem 2.5rem;
     }
 
     &__container1 {
         padding-bottom: 1rem;
         margin-right: auto;
+
+        @include variables.tablet {
+            display: flex;
+            padding-bottom: unset;
+            margin-right: unset;
+        }
     }
     &__container2 {
         padding-bottom: 1rem;
         margin-right: 4rem;
+
+        @include variables.tablet {
+            display: flex;
+            padding-bottom: unset;
+            margin-right: auto;
+        }
     }
 
     &__header {
@@ -178,6 +196,7 @@
             @include mixins.table-header-desktop;
             color: variables.$Slate;
             font-weight: bold;
+            display: none;
         }
     }
     &__details {
@@ -187,6 +206,10 @@
         @include variables.tablet {
             @include mixins.body-small-desktop;
             color: variables.$Instock-Black;
+            margin-right: 4rem;
+        }
+        @include variables.desktop {
+            margin-right: 9rem;
         }
 
         &--color {
@@ -194,6 +217,17 @@
             color: variables.$Instock-Indigo;
             padding-bottom: 1rem;
             font-weight: bold;
+
+            @include variables.tablet {
+                padding-bottom: unset;
+                @include mixins.body-small-desktop;
+                color: variables.$Instock-Indigo;
+                font-weight: bold;
+                margin-right: 7rem;
+            }
+            @include variables.desktop {
+                margin-right: 11.7rem;
+            }
         }
         &--stock {
             @include mixins.body-small-mobile;
@@ -203,6 +237,23 @@
             background-color: variables.$Light-Grey;
             border-radius: 2.375rem;
             margin-bottom: 0.8rem;
+
+            @include variables.tablet {
+                margin-bottom: unset;
+                @include mixins.body-small-desktop;
+                color: variables.$Green;
+                font-weight: bold;
+            }
+        }
+        &--quantity {
+            @include variables.tablet {
+                position: absolute;
+                right: 8.3rem;
+            }
+            
+            @include variables.desktop {
+                margin-right: 12.5rem;
+            }
         }
     }
     &__icon--edit {
@@ -214,11 +265,24 @@
         position: absolute;
         left: 1rem;
         bottom: 1rem;
+
+        @include variables.tablet {
+            left: unset;
+            right: 3.5rem;
+        }
     }
     &__icon--right {
         position: absolute;
         left: 4rem;
         bottom: 6.2rem;
+
+        @include variables.tablet {
+            left: 5rem;
+            bottom: 0.8rem;
+        }
+        @include variables.desktop {
+            left: 5.8rem;
+        }
     }
 }
 
@@ -226,10 +290,35 @@
     display: none;
 
     @include variables.tablet {
-        display: block;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
         background-color: variables.$Light-Grey;
         width: 100%;
-        padding-bottom: 2rem;
+        height: 2rem;
+        padding: 0rem 2rem;
+    }
+    @include variables.desktop {
+        padding: 0rem 2.5rem;
+    }
+    &--heading {
+        @include mixins.table-header-desktop;
+        color: variables.$Slate;
+        font-weight: bold;
+
+        @include variables.desktop {
+            margin-right: 5rem;
+        }
+    }
+    &--container {
+        display: flex;
+        gap: 6rem;
+    }
+    &--action {
+        @include variables.desktop {
+            margin-right: unset;
+            margin-left: 3rem;
+        }
     }
 }
 

@@ -3,6 +3,7 @@ import editIcon from "../../assets/images/icons/edit-24px.svg";
 import previousIcon from "../../assets/images/icons/arrow_back-24px.svg";
 import deleteIcon from "../../assets/images/icons/delete_outline-24px.svg";
 import arrowRight from "../../assets/images/icons/chevron_right-24px.svg";
+import sortIcon from "../../assets/images/icons/sort-24px.svg";
 import { Link } from "react-router-dom";
 
 function WarehouseIndividual() {
@@ -17,7 +18,7 @@ function WarehouseIndividual() {
                     />
                 </Link>
                 <h1 className="container__head--title">Washington</h1>
-                <Link to="/">
+                <Link to="/warehouse/:warehouseId/edit">
                     <div className="container__head--circle">
                         <img
                             className="icon__edit" 
@@ -50,7 +51,17 @@ function WarehouseIndividual() {
             </section>
 
             {/*Warehouse Inventory*/}
-            <div className="title__bar"></div>
+            <div className="title__bar">
+                <div className="title__bar--container">
+                    <h4 className="title__bar--heading">INVENTORY</h4>
+                    <h4 className="title__bar--heading">CATERGORY</h4>
+                    <h4 className="title__bar--heading">STATUS</h4>
+                </div>
+                <div className="title__bar--container">
+                    <h4 className="title__bar--heading">QUANTITY</h4>
+                    <h4 className="title__bar--heading title__bar--action">ACTION</h4>
+                </div>
+            </div>
             <section className="inventory">
                 <div className="inventory__container1">
                     <h4 className="inventory__header">INVENTORY ITEM</h4>
@@ -66,7 +77,38 @@ function WarehouseIndividual() {
                     <h4 className="inventory__header">STATUS</h4>
                     <p className="inventory__details--stock">IN STOCK</p>
                     <h4 className="inventory__header">QTY</h4>
-                    <p className="inventory__details">500</p>
+                    <p className="inventory__details inventory__details--quantity">500</p>
+                    <Link to="/inventory/:itemId/edit">
+                        <img 
+                            src={editIcon}
+                            className="inventory__icon--edit"
+                        />
+                    </Link>
+                    <Link to="/">
+                        <img 
+                            src={deleteIcon}
+                            className="inventory__icon--delete"
+                        />
+                    </Link>
+                </div>
+            </section>
+
+            <section className="inventory">
+                <div className="inventory__container1">
+                    <h4 className="inventory__header">INVENTORY ITEM</h4>
+                    <p className="inventory__details--color">Television</p>
+                    <img 
+                        src={arrowRight}
+                        className="inventory__icon--right"
+                    />
+                    <h4 className="inventory__header">CATERGORY</h4>
+                    <p className="inventory__details">Electronics</p>
+                </div>
+                <div className="inventory__container2">
+                    <h4 className="inventory__header">STATUS</h4>
+                    <p className="inventory__details--stock">IN STOCK</p>
+                    <h4 className="inventory__header">QTY</h4>
+                    <p className="inventory__details inventory__details--quantity">500</p>
                     <Link to="/">
                         <img 
                             src={editIcon}
@@ -97,38 +139,7 @@ function WarehouseIndividual() {
                     <h4 className="inventory__header">STATUS</h4>
                     <p className="inventory__details--stock">IN STOCK</p>
                     <h4 className="inventory__header">QTY</h4>
-                    <p className="inventory__details">500</p>
-                    <Link to="/">
-                        <img 
-                            src={editIcon}
-                            className="inventory__icon--edit"
-                        />
-                    </Link>
-                    <Link to="/">
-                        <img 
-                            src={deleteIcon}
-                            className="inventory__icon--delete"
-                        />
-                    </Link>
-                </div>
-            </section>
-
-            <section className="inventory">
-                <div className="inventory__container1">
-                    <h4 className="inventory__header">INVENTORY ITEM</h4>
-                    <p className="inventory__details--color">Television</p>
-                    <img 
-                        src={arrowRight}
-                        className="inventory__icon--right"
-                    />
-                    <h4 className="inventory__header">CATERGORY</h4>
-                    <p className="inventory__details">Electronics</p>
-                </div>
-                <div className="inventory__container2">
-                    <h4 className="inventory__header">STATUS</h4>
-                    <p className="inventory__details--stock">IN STOCK</p>
-                    <h4 className="inventory__header">QTY</h4>
-                    <p className="inventory__details">500</p>
+                    <p className="inventory__details inventory__details--quantity">500</p>
                     <Link to="/">
                         <img 
                             src={editIcon}
