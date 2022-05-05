@@ -8,7 +8,7 @@ class EditWarehousePage extends Component {
         pageTitle: "Edit Warehouse"
 
     };
-
+    
 
     render() {
         return(
