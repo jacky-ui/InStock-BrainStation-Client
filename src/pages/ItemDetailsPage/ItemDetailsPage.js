@@ -6,7 +6,7 @@ import previousIcon from "../../assets/images/icons/arrow_back-24px.svg";
 
 const ItemDetailsPage = () => {
     return (
-        <div>
+        <div className="main-container">
             <article className="subheader">
             {/*Warehouse heading*/}
                 <section className="subheader__head">

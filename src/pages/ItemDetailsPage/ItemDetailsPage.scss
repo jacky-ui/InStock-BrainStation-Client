@@ -1,6 +1,10 @@
 @use '../../styles/partials/mixins' as *;
 @use '../../styles/partials/variables' as *;
 
+.main-container{
+    background-color: $Light-Grey;
+}
+
 .subheader {
     background-color: $White;
     margin-left: 1rem;
@@ -9,7 +13,8 @@
     margin-top: -4.8rem;
     margin: -3.5rem 1rem 0rem 1rem;
     box-shadow: 0px 2px 2px 0px $Cloud;
-    position: absolute;
+    position: relative;
+    z-index: 2;
 
 
     @include tablet {
