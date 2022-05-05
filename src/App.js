@@ -5,6 +5,7 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import DeleteWarehouse from "./components/DeleteWarehouse/DeleteWarehouse";
 
+
 function App() {
   return (
     <div className="app">
