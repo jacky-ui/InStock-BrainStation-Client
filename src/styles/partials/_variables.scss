@@ -8,8 +8,14 @@ $Light-Grey: #F7F8F9;
 $Red: #C94515;
 $White: #FFFFFF;
 
-// variables for breakpoints
+// Border Shorthands
+$border-divider: $Cloud solid 1px;
+$border-focus: $Instock-Indigo solid 1px;
+$border-error: $Red solid 1px;
 
+
+
+// variables for breakpoints
 $tablet-breakpoint: 768px;
 $desktop-breakpoint: 1280px;
 
