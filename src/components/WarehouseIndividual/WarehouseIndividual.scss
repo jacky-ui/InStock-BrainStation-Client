@@ -1,0 +1,368 @@
+@use "../../styles/partials/mixins";
+@use "../../styles/partials/typography";
+@use "../../styles/partials/variables";
+
+// Styling for container
+.container {
+    background-color: variables.$White;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    border-radius: 4px;
+    margin-top: -4.8rem;
+    margin: -3.5rem 1rem 0rem 1rem;
+    box-shadow: 0px 2px 5px 0px variables.$Instock-Black;
+
+
+    @include variables.tablet {
+        margin: -5rem 2rem 0rem 2rem;
+    }
+
+    @include variables.desktop {
+        margin-right: 5rem;
+        margin-left: 5rem;
+    }
+
+    // Styling for warehouse 
+    &__head {
+        display: flex;
+        justify-content: space-between;
+        padding: 1.5rem 1.5rem 1rem 2.5rem;
+        position: relative;
+        border-bottom: 1px solid variables.$Cloud;
+
+        @include variables.tablet {
+            padding: 1.5rem 2rem 1rem 4rem;
+        }
+
+        &--title {
+            @include mixins.page-header-mobile;
+            margin-right: auto;
+
+            @include variables.tablet {
+                @include mixins.page-header-desktop;
+            }
+        }
+        &--circle {
+            background-color: variables.$Instock-Indigo;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+
+            @include variables.tablet {
+                border-radius: 1.25rem;
+                height: 2.25rem;
+                width: 5rem;
+            }
+            @include variables.desktop {
+                height: 2.375rem;
+            }
+            &:hover {
+                background-color: variables.$Graphite;
+            } 
+        }
+    }
+    // Styling for address section
+    &__address {
+        padding: 1rem;
+
+        @include variables.tablet {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            padding: 2rem;
+            padding-right: 6rem;
+        }
+        @include variables.desktop  {
+            padding: 2rem 2.5rem;
+            width: 85%;
+        }
+
+        &--title {
+            @include mixins.table-header-mobile;
+            color: variables.$Slate;
+            font-weight: bold;
+
+            @include variables.tablet {
+                @include mixins.table-header-desktop;
+                color: variables.$Slate;
+                font-weight: bold;
+            }
+        }
+        &--address {
+            @include mixins.body-small-mobile;
+            color: variables.$Instock-Black;
+
+            @include variables.tablet {
+                display: block;
+                width: 9rem;
+                @include mixins.body-small-desktop;
+            }
+        }
+    }
+}
+
+// Styling for warehouse contact section
+.contact {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 2rem;
+    padding-right: 1rem;
+
+    @include variables.tablet {
+        padding: 0rem 0rem 0rem 2rem;
+        border-left: 1px solid variables.$Cloud;
+        gap: 2rem;
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+
+        &--head {
+            @include mixins.table-header-mobile;
+            color: variables.$Slate;
+            font-weight: bold;
+
+            @include variables.tablet {
+                @include mixins.table-header-desktop;
+                color: variables.$Slate;
+                font-weight: bold;
+            }
+        }
+        &--text {
+            @include mixins.body-small-mobile;
+            color: variables.$Instock-Black;
+
+            @include variables.tablet {
+                @include mixins.body-small-desktop;
+            }
+        }
+        &--link {
+            @include mixins.body-small-mobile;
+            color: variables.$Instock-Black;
+            text-decoration: none;
+
+            @include variables.tablet {
+                @include mixins.body-small-desktop;
+                color: variables.$Instock-Black;
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+.inventory {
+    display: flex;
+    gap: 2.5rem;
+    padding: 1rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid variables.$Cloud;
+    position: relative;
+
+    @include variables.tablet {
+        display: flex;
+        align-items: center;
+        padding: 0rem 2rem;
+        height: 3rem;
+    }
+    @include variables.desktop {
+        padding: 0rem 2.5rem;
+    }
+
+    &__container1 {
+        padding-bottom: 1rem;
+        margin-right: auto;
+
+        @include variables.tablet {
+            display: flex;
+            padding-bottom: unset;
+            margin-right: unset;
+        }
+    }
+    &__container2 {
+        padding-bottom: 1rem;
+        margin-right: 4rem;
+
+        @include variables.tablet {
+            display: flex;
+            padding-bottom: unset;
+            margin-right: auto;
+        }
+    }
+
+    &__header {
+        @include mixins.table-header-mobile;
+        color: variables.$Slate;
+        font-weight: bold;
+        padding-bottom: 0.3rem;
+
+        @include variables.tablet {
+            @include mixins.table-header-desktop;
+            color: variables.$Slate;
+            font-weight: bold;
+            display: none;
+        }
+    }
+    &__details {
+        @include mixins.body-small-mobile;
+        color: variables.$Instock-Black;
+
+        @include variables.tablet {
+            @include mixins.body-small-desktop;
+            color: variables.$Instock-Black;
+            margin-right: 4rem;
+        }
+        @include variables.desktop {
+            margin-right: 9rem;
+        }
+
+        &--color {
+            @include mixins.body-small-mobile;
+            color: variables.$Instock-Indigo;
+            padding-bottom: 1rem;
+            font-weight: bold;
+
+            @include variables.tablet {
+                padding-bottom: unset;
+                @include mixins.body-small-desktop;
+                color: variables.$Instock-Indigo;
+                font-weight: bold;
+                margin-right: 7rem;
+            }
+            @include variables.desktop {
+                margin-right: 11.7rem;
+            }
+        }
+        &--stock {
+            @include mixins.body-small-mobile;
+            color: variables.$Green;
+            padding: 0.1rem 0.2rem;
+            font-weight: bold;
+            background-color: variables.$Light-Grey;
+            border-radius: 2.375rem;
+            margin-bottom: 0.8rem;
+
+            @include variables.tablet {
+                margin-bottom: unset;
+                @include mixins.body-small-desktop;
+                color: variables.$Green;
+                font-weight: bold;
+            }
+        }
+        &--quantity {
+            @include variables.tablet {
+                position: absolute;
+                right: 8.3rem;
+            }
+            
+            @include variables.desktop {
+                margin-right: 12.5rem;
+            }
+        }
+    }
+    &__icon--edit {
+        position: absolute;
+        right: 1.5rem;
+        bottom: 1rem;
+    }
+    &__icon--delete {
+        position: absolute;
+        left: 1rem;
+        bottom: 1rem;
+
+        @include variables.tablet {
+            left: unset;
+            right: 3.5rem;
+        }
+    }
+    &__icon--right {
+        position: absolute;
+        left: 4rem;
+        bottom: 6.2rem;
+
+        @include variables.tablet {
+            left: 5rem;
+            bottom: 0.8rem;
+        }
+        @include variables.desktop {
+            left: 5.8rem;
+        }
+    }
+}
+
+.title__bar {
+    display: none;
+
+    @include variables.tablet {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: variables.$Light-Grey;
+        width: 100%;
+        height: 2rem;
+        padding: 0rem 2rem;
+    }
+    @include variables.desktop {
+        padding: 0rem 2.5rem;
+    }
+    &--heading {
+        @include mixins.table-header-desktop;
+        color: variables.$Slate;
+        font-weight: bold;
+
+        @include variables.desktop {
+            margin-right: 5rem;
+        }
+    }
+    &--container {
+        display: flex;
+        gap: 6rem;
+    }
+    &--action {
+        @include variables.desktop {
+            margin-right: unset;
+            margin-left: 3rem;
+        }
+    }
+}
+
+.icon__edit {
+    position: absolute;
+    height: 1.3rem;
+    width: 1.3rem;
+    bottom: 1.6rem;
+    right: 1.8rem;
+    
+    @include variables.tablet {
+        bottom: 1.8rem;
+        right: 4.6rem;
+        height: 1.1rem;
+        width: 1.1rem;
+    }
+    &--text {
+        display: none;
+
+        @include variables.tablet {
+            display: block;
+            @include mixins.body-small-desktop;
+            color: variables.$White;
+            padding-left: 2.5rem;
+            padding-top: 0.6rem;
+        }
+    }
+}
+
+.icon__previous {
+    position: absolute;
+    left: 0.7rem;
+    bottom: 1.3rem;
+
+    @include variables.tablet {
+        left: 1.9rem;
+        bottom: 1.4rem;
+    }
+}
+
+a {
+    text-decoration: none;
+}
