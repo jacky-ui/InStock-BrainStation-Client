@@ -28,6 +28,10 @@ class WarehouseForm extends Component {
         })
     }
 
+    ifStateValid = () => {
+        
+    }
+
 
     handleChange = (event) => {
         this.setState({

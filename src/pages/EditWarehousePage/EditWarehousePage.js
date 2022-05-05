@@ -25,7 +25,6 @@ class EditWarehousePage extends Component {
             })
     }
 
-
     render() {
         if (!this.state.contactDetails) {
             return(
