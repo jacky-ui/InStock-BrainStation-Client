@@ -4,7 +4,7 @@ import React from 'react';
 function WarehouseForm({ warehouse }) {
     return (
         <section className='form'>
-            <form>
+            <form className='form-field'>
                 <div className='form-left'>
                     <h2 className='form__title'>Warehouse Details</h2>
                     <div className='form__group'>
@@ -84,7 +84,8 @@ function WarehouseForm({ warehouse }) {
                     </div>
                 </div>
                 <div className='form-btns'>
-
+                    <button className='form__cancel'>Cancel</button>
+                    <button className='form__save'>Save</button>
                 </div>
             </form>
         </section>
