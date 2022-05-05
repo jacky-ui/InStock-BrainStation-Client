@@ -22,27 +22,31 @@ const ItemDetailsPage = () => {
                     </Link>
                 </section>
                 <section className="details">
-                    <div className="details__tab">
-                        <h3 className="details__title">ITEM DESCRIPTION:</h3>
-                        <p className="details__text">This 50", 4K LED TV provides a crystal-clear picture and vivid colors.</p>
-                    </div>
-                    <div className="details__tab">
-                        <h3 className="details__title">CATEGORY:</h3>
-                        <p className="details__text">Electronics</p>
-                    </div>
-                    <div className="details__flex">
-                        <div className="details__tab--space">
-                            <h3 className="details__title">STATUS:</h3>
-                            <p className="details__status">IN STOCK</p>
+                    <div className="details__box-1">
+                        <div className="details__tab">
+                            <h3 className="details__title">ITEM DESCRIPTION:</h3>
+                            <p className="details__text">This 50", 4K LED TV provides a crystal-clear picture and vivid colors.</p>
                         </div>
                         <div className="details__tab">
-                            <h3 className="details__title">QUANTITY:</h3>
-                            <p className="details__text">500</p>
+                            <h3 className="details__title">CATEGORY:</h3>
+                            <p className="details__text">Electronics</p>
                         </div>
                     </div>
-                    <div className="details__tab">
-                        <h3 className="details__title">WAREHOUSE:</h3>
-                        <p className="details__text">Manhattan</p>
+                    <div className="details__box-2">
+                        <div className="details__flex">
+                            <div className="details__tab--space">
+                                <h3 className="details__title">STATUS:</h3>
+                                <p className="details__status">IN STOCK</p>
+                            </div>
+                            <div className="details__tab">
+                                <h3 className="details__title">QUANTITY:</h3>
+                                <p className="details__text">500</p>
+                            </div>
+                        </div>
+                        <div className="details__tab">
+                            <h3 className="details__title">WAREHOUSE:</h3>
+                            <p className="details__text">Manhattan</p>
+                        </div>
                     </div>
                 </section>
             </article>

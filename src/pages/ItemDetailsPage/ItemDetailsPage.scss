@@ -109,18 +109,31 @@
 .details{
     padding: 1rem 1.5rem;
 
+    @include tablet{
+        display: flex;
+    }
+
     &__tab{
         margin-bottom: 1rem;
     }
 
     &__tab--space{
         margin-right: 4rem;
+
+        @include desktop{
+            margin-right: 10rem;
+        }
     }
 
     &__title{
         @include body-small-mobile;
         font-weight: bold;
         color: $Slate;
+
+        @include tablet {
+            @include body-small-desktop;
+            font-weight: bold;
+        }
     }
 
     &__text{
@@ -128,6 +141,11 @@
         @include body-small-mobile;
         font-weight: bold;
         color: $Instock-Black;
+
+        @include tablet{
+            @include body-medium-desktop;
+            font-weight: bold;
+        }
     }
 
     &__flex{
@@ -141,7 +159,20 @@
         font-weight: bold;
         border-radius: 20px;
         padding: 0.2rem 0.5rem;
+    }
 
+    &__box-1{
+        @include tablet{
+            padding-right: 2.5rem;
+            border-right: 1px solid $Cloud;
+            width: 50%;
+        }
+    }
 
+    &__box-2{
+        @include tablet{
+            width: 50%;
+            padding-left: 2.5rem;
+        }        
     }
 }
