@@ -75,6 +75,12 @@
         border-radius: 20px;
         border: $border-divider;
         padding: 0.5rem 1.25rem;
+        :focus {
+            border: $border-focus;
+        }
+        :invalid {
+            border: $border-error;
+        }
         &::placeholder {
             @include body-medium-mobile;
             @include tablet {
@@ -92,6 +98,10 @@
         margin-right: 1rem;
         width: 45%;
         @include label-buttons-mobile;
+        &:hover {
+            color: $Instock-Indigo;
+            border-color: $Instock-Indigo;
+        }
         @include tablet {
             @include label-buttons-desktop;
             height: 2.375rem;
@@ -107,6 +117,9 @@
         height: 2.25rem;
         width: 45%;
         @include label-buttons-mobile;
+        &:hover {
+            background-color: $Instock-Black;
+        }
         @include tablet {
             @include label-buttons-desktop;
             height: 2.375rem;

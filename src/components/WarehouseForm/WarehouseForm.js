@@ -13,6 +13,22 @@ class WarehouseForm extends Component {
         contactEmail: ''
     }
 
+    componentDidMount() {
+        const warehouse = this.props.warehouseDetails;
+        const contact = this.props.contactDetails;
+        this.setState({
+            name: warehouse.name,
+            address: warehouse.address,
+            city: warehouse.city,
+            country: warehouse.country,
+            contactName: contact.name,
+            contactPosition: contact.position,
+            contactPhone: contact.phone,
+            contactEmail: contact.email
+        })
+    }
+
+
     handleChange = (event) => {
         this.setState({
             [event.target.name]: event.target.value,
@@ -21,7 +37,7 @@ class WarehouseForm extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-        // axios call goes here either PUT/POST 
+        // Axios Call Below [POST] - Add new Warehouse or [PUT] - Edit Warehouse 
     }    
     
     render() {
@@ -37,6 +53,8 @@ class WarehouseForm extends Component {
                                 type="text"
                                 name="name"
                                 placeholder="Warehouse Name"
+                                value={this.state.name}
+                                onChange={this.handleChange}
                             ></input>
                         </div>
                         <div className='form__group'>
@@ -46,6 +64,8 @@ class WarehouseForm extends Component {
                                 type="text"
                                 name="address"
                                 placeholder="Street Address"
+                                value={this.state.address}
+                                onChange={this.handleChange}
                             ></input>
                         </div>
                         <div className='form__group'>
@@ -55,6 +75,8 @@ class WarehouseForm extends Component {
                                 type="text"
                                 name="city"
                                 placeholder="City"
+                                value={this.state.city}
+                                onChange={this.handleChange}
                             ></input>
                         </div>
                         <div className='form__group'>
@@ -64,6 +86,8 @@ class WarehouseForm extends Component {
                                 type="text"
                                 name="country"
                                 placeholder="Country"
+                                value={this.state.country}
+                                onChange={this.handleChange}
                             ></input>
                         </div>
                     </div>
@@ -76,6 +100,8 @@ class WarehouseForm extends Component {
                                 type="text"
                                 name="contactName"
                                 placeholder="Contact Name"
+                                value={this.state.contactName}
+                                onChange={this.handleChange}
                             ></input>
                         </div>
                         <div className='form__group'>
@@ -85,6 +111,8 @@ class WarehouseForm extends Component {
                                 type="text"
                                 name="contactPosition"
                                 placeholder="Position"
+                                value={this.state.contactPosition}
+                                onChange={this.handleChange}
                             ></input>
                         </div>
                         <div className='form__group'>
@@ -94,6 +122,8 @@ class WarehouseForm extends Component {
                                 type="text"
                                 name="contactPhone"
                                 placeholder="Phone Number"
+                                value={this.state.contactPhone}
+                                onChange={this.handleChange}
                             ></input>
                         </div>
                         <div className='form__group'>
@@ -103,12 +133,14 @@ class WarehouseForm extends Component {
                                 type="text"
                                 name="contactEmail"
                                 placeholder="Email"
+                                value={this.state.contactEmail}
+                                onChange={this.handleChange}
                             ></input>
                         </div>
                     </div>
                     <div className='form-btns'>
                         <button className='form__cancel'>Cancel</button>
-                        <button className='form__save'>Save</button>
+                        <button className='form__save'>{this.props.button}</button>
                     </div>
                 </form>
             </section>
