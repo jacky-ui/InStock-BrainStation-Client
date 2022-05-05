@@ -5,16 +5,19 @@ import WarehouseForm from '../../components/WarehouseForm/WarehouseForm';
 
 class EditWarehousePage extends Component {
     state = {
-        pageTitle: "Edit Warehouse"
+        pageTitle: "Edit Warehouse",
+        button: "Save"
 
     };
-    
+
 
     render() {
         return(
             <main>
-                <PageSubHeader pageTitle={this.state.pageTitle}/>
-                <WarehouseForm />
+                <PageSubHeader 
+                    pageTitle={this.state.pageTitle}/>
+                <WarehouseForm 
+                    button={this.state.button}/>
             </main>
         );
     }

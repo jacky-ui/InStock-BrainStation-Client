@@ -13,7 +13,16 @@ class WarehouseForm extends Component {
         contactEmail: ''
     }
 
-    
+    handleChange = (event) => {
+        this.setState({
+            [event.target.name]: event.target.value,
+        });
+    };
+
+    handleSubmit = (event) => {
+        event.preventDefault();
+        // axios call goes here either PUT/POST 
+    }    
     
     render() {
         return (
