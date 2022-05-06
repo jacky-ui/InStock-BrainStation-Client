@@ -2,7 +2,6 @@ import "./App.scss";
 import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Header from "./components/Header/Header";
-import WarehousePage from "./pages/WarehousePage/WarehousePage";
 import Footer from "./components/Footer/Footer";
 import DeleteWarehouse from "./components/DeleteWarehouse/DeleteWarehouse";
 import ItemDetailsPage from "./pages/ItemDetailsPage/ItemDetailsPage";
