@@ -5,8 +5,9 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import DeleteWarehouse from "./components/DeleteWarehouse/DeleteWarehouse";
 import ItemDetailsPage from "./pages/ItemDetailsPage/ItemDetailsPage";
+import WarehousePage from "./pages/WarehousePage/WarehousePage";
 import WarehouseIndividual from "./components/WarehouseIndividual/WarehouseIndividual";
-import InventoryPage from './pages/InventoryPage/InventoryPage';
+import EditWarehousePage from "./pages/EditWarehousePage/EditWarehousePage";
 
 function App() {
   return (
@@ -15,17 +16,19 @@ function App() {
         <Header />
          <Switch>
 
-          {/*<Route path="/" exact component={HomePage} />*/}
+          <Route path="/" exact component={WarehousePage} />
           <Route path="/warehouse/:warehouseId" component={WarehouseIndividual} />
-          {/*<Route
+          <Route
+
             path="/warehouse/:warehouseId/edit"
             component={EditWarehousePage}
           />
-          <Route path="/warehouse/add" component={AddWarehouse} />*/}
-          <Route path="/inventory" component={InventoryPage} />
-          {/*<Route path="/inventory/:itemId" component={ItemDetailsPage} />
-          <Route path="/inventory/:itemId/edit" component={EditItem} />
-  <Route path="/inventory/add" component={AddItem} />*/}
+          <Route path="/warehouse/:warehouseId/delete" component={DeleteWarehouse} />
+          {/* <Route path="/warehouse/add" component={AddWarehouse} /> */}
+          {/* <Route path="/inventory" component={Inventory} /> */}
+          {/* <Route path="/inventory/:itemId" component={ItemDetailsPage} /> */}
+          {/* <Route path="/inventory/:itemId/edit" component={EditItem} /> */}
+  {/* <Route path="/inventory/add" component={AddItem} /> */}
         </Switch>
         <Footer />
       </BrowserRouter>

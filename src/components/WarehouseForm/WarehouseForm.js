@@ -1,47 +1,75 @@
-import './WarehouseForm.scss';
-import React, { Component } from 'react';
+import "./WarehouseForm.scss";
+import React, { Component } from "react";
+import axios from "axios";
+
+const putApi = 'http://localhost:8080/warehouses'
 
 class WarehouseForm extends Component {
-    state = {
-        name: '',
-        address: '',
-        city: '',
-        country: '',
-        contactName: '',
-        contactPosition: '',
-        contactPhone: '',
-        contactEmail: ''
-    }
+  state = {
+    name: "",
+    address: "",
+    city: "",
+    country: "",
+    contactName: "",
+    contactPosition: "",
+    contactPhone: "",
+    contactEmail: "",
+  };
 
-    componentDidMount() {
-        const warehouse = this.props.warehouseDetails;
-        const contact = this.props.contactDetails;
-        this.setState({
-            name: warehouse.name,
-            address: warehouse.address,
-            city: warehouse.city,
-            country: warehouse.country,
-            contactName: contact.name,
-            contactPosition: contact.position,
-            contactPhone: contact.phone,
-            contactEmail: contact.email
-        })
-    }
+  componentDidMount() {
+    const warehouse = this.props.warehouseDetails;
+    const contact = this.props.contactDetails;
+    this.setState({
+      name: warehouse.name,
+      address: warehouse.address,
+      city: warehouse.city,
+      country: warehouse.country,
+      contactName: contact.name,
+      contactPosition: contact.position,
+      contactPhone: contact.phone,
+      contactEmail: contact.email,
+    });
+  }
 
-    ifStateValid = () => {
-        
-    }
+  ifStateValid = () => {};
 
+  handleChange = (event) => {
+    this.setState({
+      [event.target.name]: event.target.value,
+    });
+  };
 
-    handleChange = (event) => {
-        this.setState({
-            [event.target.name]: event.target.value,
-        });
-    };
+  handleSubmit = (event) => {
+    event.preventDefault();
+    // Axios Call Below [POST] - Add new Warehouse or [PUT] - Edit Warehouse
+    axios
+      .post(putApi, {
+        title: event.target.title.value.value,
+        description: event.target.comment.value.value,
+        name: event.target.name.value, 
+        address: event.target.address.value,
+        city: event.target.city.value,
+        country: event.target.country.value,
+        contact: {
+            name: event.target.contactName.value,
+            position: event.target.contactPosition.value, 
+            phone: event.target.contactPhone.value,
+            email: event.target.contactEmail.value
+        }
+      })
+      .then((response) => {
+        console.log(response);
+        console.log("yay");
+      });
+
+    event.target.reset();
+  };
 
     handleSubmit = (event) => {
         event.preventDefault();
-        // Axios Call Below [POST] - Add new Warehouse or [PUT] - Edit Warehouse 
+        // Axios Call Below [POST] - Add new Warehouse or [PUT] - Edit Warehouse
+         
+
     }    
     
     render() {

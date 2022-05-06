@@ -143,7 +143,7 @@ function WarehouseIndividual() {
                     <p className="inventory__details--stock">IN STOCK</p>
                     <h4 className="inventory__header">QTY</h4>
                     <p className="inventory__details inventory__details--quantity">500</p>
-                    <Link to="/">
+                    <Link to={`/warehouse/:warehouseId/edit`}>
                         <img 
                             src={editIcon}
                             className="inventory__icon--edit"
