@@ -1,3 +1,118 @@
-@use "../../styles/partials/mixins";
-@use "../../styles/partials/typography";
-@use "../../styles/partials/variables"; 
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/variables" as *; 
+
+.main__container {
+    background-color: $Light-Grey;
+}
+
+.inventories {
+    margin: 0rem 1rem;
+    position: relative;
+    z-index: 2;
+    margin-top: -3rem;
+    border: 1px solid $Cloud;
+    display: flex;
+    flex-direction: column;
+    border-radius: 4px;
+    box-shadow: 0px 2px 2px 0px;
+
+    @include tablet {
+        margin-top: -6.4rem;
+    }
+
+    &__head {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        width: 100%;
+        padding: 1rem;
+        background-color: $White;
+
+        @include tablet {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-end;
+            padding: 2rem;
+        }
+
+        @include desktop {
+            padding: 2rem 5rem;
+        }
+
+        &--header {
+            @include page-header-mobile;
+        }
+    }
+    &__inputs {
+        @include tablet {
+            display: flex;
+            gap: 1rem;
+        }
+        &--search {
+            border-radius: 1.25rem;
+            background-image: url("../../assets/images/icons/search-24px.svg");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            border: 0.063rem solid $Cloud;
+            padding: 0.3rem;
+            padding-left: 1rem;
+            width: 100%;
+            @include body-medium-mobile;
+            margin: 1rem 2rem 0rem 0rem;
+
+            @include tablet {
+                margin: unset;
+                height: 2.375rem;
+                @include body-medium-desktop;
+            }
+        }
+        &--add {
+            margin: 1rem 2rem 0rem 0rem;
+            border-radius: 1.25rem;
+            background-color: $Instock-Indigo;
+            padding: 0.5rem;
+            color: white;
+            border: none;
+            width: 100%;
+            @include label-buttons-mobile;
+
+            @include tablet {
+                margin: unset;
+                height: 2.375rem;
+                @include label-buttons-desktop;
+            }
+            @include desktop {
+                width: 20rem;
+            }
+            
+            &:hover {
+                background-color: $Graphite;
+            }
+        }
+    }
+}
+
+// Styling for title bar
+.title__container {
+    display: none;
+
+    @include tablet {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: $Light-Grey;
+        width: 100%;
+        height: 2rem;
+        padding: 0rem 2rem;
+    }
+    @include desktop {
+        padding: 1.3rem 5rem;
+    }
+    &--title {
+        @include table-header-desktop;
+        color: $Slate;
+        font-weight: bold;
+    }
+}
