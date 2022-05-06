@@ -8,6 +8,8 @@
     margin: 0 1rem;
     border-bottom: $border-divider;
     background-color: $White;
+    position: relative;
+    z-index: 2;
     @include tablet {
         margin: 0 2rem;
     }
@@ -33,6 +35,7 @@
     }
     &-style {
         margin-top: -3.75rem;
+        background-color: $Light-Grey;
         @include tablet {
             margin-top: -5.5rem;
         }
