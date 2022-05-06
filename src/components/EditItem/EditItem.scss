@@ -122,4 +122,12 @@
       color: $Instock-Black;
     }
   }
+
+  &__hide{
+    display: none;
+  }
+
+  &__display{
+    display: contents;
+  }
 }

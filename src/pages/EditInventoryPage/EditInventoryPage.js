@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PageSubHeader from '../../components/PageSubHeader/PageSubHeader';
-import AddItem from '../../components/AddItem/AddItem';
+import EditItem from '../../components/EditItem/EditItem';
 import './EditInventoryPage.scss'
 import axios from 'axios';
 import { api_url } from '../../utils/apiVariables';
@@ -24,6 +24,7 @@ class EditInventoryPage extends Component {
         })
     }
 
+
     render() {
         if (!this.state.itemDetails) {
             return(
@@ -37,7 +38,7 @@ class EditInventoryPage extends Component {
                 <PageSubHeader
                     pageTitleInventory={this.state.title}
                     />
-                <AddItem 
+                <EditItem 
                     pageButtonInventory={this.state.button}
                     itemDetails={this.state.itemDetails}
                     />

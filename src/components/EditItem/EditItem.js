@@ -1,9 +1,13 @@
 import React, { Component } from "react";
-import "./AddItem.scss";
+import "./EditItem.scss";
+import axios from "axios";
+import { api_url } from '../../utils/apiVariables';
 
-class AddItem extends Component {
+
+class EditItem extends Component {
   
   state = {
+    update: '',
     warehouse: '', 
     name: '',
     description: '',
@@ -23,6 +27,13 @@ class AddItem extends Component {
       quantity: item.quantity
     })
   }
+
+  isOutofStock = () => {
+    if(this.state.status === "Out of Stock") {
+      return false;
+    }
+    return true;
+  }
     
   handleChange = (event) => {
     this.setState({
@@ -30,16 +41,37 @@ class AddItem extends Component {
     });
   };
   
+  isQuantityZ = () => {
+    if(this.state.status === "Out of Stock"){
+      this.setState({
+        quantity: 0
+      })
+    }
+  }
+        
   handleSubmit = (event) => {
     event.preventDefault();
-    // Axios Call Below [POST] - Add new Warehouse or [PUT] - Edit Warehouse 
-  }    
+    const itemId = this.props.itemDetails.id;
+    const { warehouse, name, description, category, status, quantity } = this.state;
+    axios.put(`${api_url}/inventories/${itemId}`, {
+        warehouse: warehouse,
+        name: name,
+        description: description,
+        category: category,
+        status: status,
+        quantity: quantity
+    })
+    .then(response => {
+      this.setState({ update: response.status });
+  })
+}    
+
 
   render() {
     return (
       <div className="add-item">
         <main className="add-item__main">           
-          <form action="" className="add-item__card-wrapper">         
+          <form onSubmit={this.handleSubmit} type="submit" className="add-item__card-wrapper">         
             <article className="add-item__card">
               <h2 className="add-item__section-title">Item Details</h2>
               <div className="add-item__form">
@@ -96,7 +128,7 @@ class AddItem extends Component {
                     <input
                       type="radio"
                       name="status"
-                      id="in-stock"
+                      value="In Stock"
                       checked={this.state.status === "In Stock"}
                       onChange={this.handleChange}
                     />
@@ -108,7 +140,7 @@ class AddItem extends Component {
                     <input
                       type="radio"
                       name="status"
-                      id="out-of-stock"
+                      value="Out of Stock"
                       checked={this.state.status === "Out of Stock"}
                       onChange={this.handleChange}
                     />
@@ -117,13 +149,13 @@ class AddItem extends Component {
                     </label>
                   </div>
                 </div>
-                <div>
+                <div className={`${this.isOutofStock() ? "" : "add-item__hide"}`}>
                   <label htmlFor="name" className="add-item__form-title">
                     Quantity
                   </label>
                   <input
                     type="text"
-                    name="name"
+                    name="quantity"
                     placeholder="0"
                     className="add-item__input"
                     onChange={this.handleChange}
@@ -139,9 +171,8 @@ class AddItem extends Component {
                   placeholder="Please select"
                   className="add-item__input add-item__select"
                   onChange={this.handleChange}
-                  value={this.state.warehouse}
-                >
-                    <option value="Manhattan">Manhattan</option>
+                  value={this.state.warehouse}>  
+                   <option value="Manhattan">Manhattan</option>
                    <option value="Washington">Washington</option>
                    <option value="Jersey">Jersey</option>
                    <option value="San Fran">San Fran</option>
@@ -165,4 +196,4 @@ class AddItem extends Component {
   }
 }
 
-export default AddItem;
+export default EditItem;
