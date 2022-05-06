@@ -15,7 +15,7 @@
         height: unset;
     }
     @include desktop {
-        padding: 1rem 5rem;
+        padding: 1rem 2rem;
     }
 
     &__item {
@@ -45,6 +45,12 @@
 
             @include tablet {
                 margin-right: unset;
+                width: 15%;
+            }
+        }
+        &--tablet {
+            @include tablet {
+                width: 15%;
             }
         }
         &--color {
@@ -58,7 +64,7 @@
                 color: $Instock-Indigo;
                 font-weight: bold;
                 padding-bottom: unset;
-                margin-right: 2rem;
+                // margin-right: 2rem;
             }
         }
         &--details {
@@ -87,6 +93,22 @@
                 background-color: $Light-Grey;
                 color: $Green;
                 margin-bottom: unset;
+                width: 4rem;
+            }
+        }
+        &--link {
+            @include tablet {
+                width: 50%;
+            }
+        }
+        &--firstcolumn {
+            @include tablet {
+                width: 100%;
+            }
+        }
+        &--wrapper {
+            @include tablet {
+                width: 100%;
             }
         }
         &--container {
@@ -103,11 +125,8 @@
     @include tablet {
         display: flex;
         align-items: flex-end;
-        width: 8%;
-    }
-    @include desktop {
-        margin-left: unset;
-        width: unset;
+        width: 15%;
+        text-align: end;
     }
 }
 
@@ -119,9 +138,13 @@
         left: 4.2rem;
 
         @include tablet {
-            bottom: 1.3rem;
-            left: 8.2rem;
+            bottom: 1.25rem;
+            left: 5.2rem;
         }
+        // @include desktop {
+        //     bottom: 1.25rem;
+        //     left: 5.2rem;
+        // }
     }
     &__delete {
         bottom: 1rem;
