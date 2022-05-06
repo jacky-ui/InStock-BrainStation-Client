@@ -3,32 +3,32 @@ import './DeleteInventory.scss'
 import Popup from 'reactjs-popup';
 import TrashIcon from '../../assets/images/icons/delete_outline-24px.svg'
 import axios from 'axios';
+import { api_url } from '../../utils/apiVariables';
 
 class DeleteInventory extends Component {
 
     // state = {
-    //     warehouse: [],
+    //     inventory: [],
     // }
 
     // componentDidMount() {
     //     axios
-    //       .get(`http://localhost:8080/warehouses`)
+    //       .get(`${api_url}/inventories`)
     //       .then((response)=>{
     
     //         this.setState({
-    //             warehouse: response.data
+    //             inventory: response.data
     //         })
     //       })
     //   }
     
-    deleteWarehouse = (event) => {
+    deleteInventory = (event) => {
         const warehouseId = event.target.getAttribute('data')
         axios
-          .delete(`http://localhost:8080/warehouses/${warehouseId}` )
+          .delete(`${api_url}/inventories/${warehouseId}` )
           .then((response)=>{
-    
             this.setState({
-                warehouse: response.data
+                inventory: response.data
             })
           })
     }
@@ -44,12 +44,12 @@ class DeleteInventory extends Component {
             <div className="popup">
                 <button className="popup__close" onClick={close}>&times;</button>
                 <div className="popup__text">
-                    <h1 className="popup__title"> Delete Washington warehouse? </h1>
-                    <p className="popup__content">Please confirm that you’d like to delete the Washington from the list of warehouses. You won’t be able to undo this action.</p>
+                    <h1 className="popup__title"> Delete Television inventory item? </h1>
+                    <p className="popup__content">Please confirm that you’d like to delete Television from the inventory list. You won’t be able to undo this action.</p>
                 </div>
                 <div className="popup__actions">
                 <button className="popup__button-cancel" onClick={() => {close()}}>Cancel</button>
-                <button className="popup__button-delete" onClick={this.deleteWarehouse}>Delete</button>
+                <button className="popup__button-delete" onClick={this.deleteInventory}>Delete</button>
                 </div>
             </div>
             )}
