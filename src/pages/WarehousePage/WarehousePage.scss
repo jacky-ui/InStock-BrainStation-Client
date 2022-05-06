@@ -1,4 +1,284 @@
-@use "../../styles/partials/mixins";
-@use "../../styles/partials/typography";
-@use "../../styles/partials/variables";
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/variables" as *;
 
+.warehouses {
+  color: $Instock-Black;
+
+  &__title-container-wrapper {
+    background: linear-gradient(
+      to bottom,
+      $Graphite 0%,
+      $Graphite 25%,
+      $Light-Grey 25%,
+      $Light-Grey 100%
+    );
+    display: flex;
+    justify-content: center;
+    padding: 0 1rem;
+
+    @include tablet {
+      padding: 0 1.5rem;
+      background: $Graphite;
+    }
+
+    @include desktop {
+      padding: 0 4rem;
+    }
+  }
+
+  &__title-container {
+    background-color: white;
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-bottom: 1px solid $Cloud;
+
+    @include tablet {
+      padding: 0 1.5rem 1.25rem;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      border: none;
+    }
+
+    @include desktop {
+        padding: 1rem 2rem 1.5rem;
+    }
+  }
+
+  &__title {
+    margin-top: 1rem;
+    @include page-header-mobile;
+
+    @include tablet {
+      @include page-header-desktop;
+    }
+  }
+
+  &__search-btn-container {
+    display: flex;
+    flex-direction: row;
+
+    @include tablet {
+      width: 100%;
+    }
+  }
+
+  &__search-bar {
+    margin-top: 1rem;
+    border-radius: 1.25rem;
+    background-image: url("../../assets/images/icons/search-24px.svg");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    border: 0.063rem solid $Cloud;
+    padding: 0.5rem;
+    padding-left: 1rem;
+    width: 100%;
+    @include body-medium-mobile;
+
+    @include tablet {
+      width: 12rem;
+      @include body-medium-desktop;
+    }
+
+    @include desktop {
+        width: 20rem;
+      }
+  }
+
+  &__btn-add {
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    border-radius: 1.25rem;
+    background-color: $Instock-Indigo;
+    padding: 0.5rem;
+    color: white;
+    border: none;
+    width: 100%;
+    @include body-medium-mobile;
+
+    @include tablet {
+      width: 12rem;
+      margin-bottom: 0;
+      margin-left: 1rem;
+      @include body-medium-desktop;
+    }
+  }
+
+  &__card-wrapper {
+    padding: 0 1rem;
+    background-color: $Light-Grey;
+
+    @include tablet {
+      padding: 0 1.5rem;
+    }
+
+    @include desktop {
+      padding: 0 4rem;
+    }
+  }
+
+  &__card {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: white;
+    padding: 1rem;
+    border-bottom: 1px solid $Cloud;
+    box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
+
+    @include tablet {
+      flex-wrap: nowrap;
+      align-items: center;
+      padding: 1rem 2rem;
+    }
+  }
+
+  &__sort-bar {
+    display: none;
+
+    @include tablet {
+      display: flex;
+      background-color: $Light-Grey;
+      border-bottom: none;
+    }
+  }
+
+  &__sort-icon {
+    height: 1.25rem;
+  }
+
+  //   &__mobile-helper {
+  //     // display: flex;
+  //     // flex-wrap: wrap;
+  //   }
+
+  &__city-container {
+    width: 50%;
+    order: 1;
+    margin-bottom: 1rem;
+
+    @include tablet {
+      margin-bottom: 0;
+      display: flex;
+      align-items: center;
+    }
+
+    @include desktop {
+      width: 25%;
+    }
+  }
+
+  &__address-container {
+    width: 50%;
+    order: 3;
+    margin-bottom: 1rem;
+
+    @include tablet {
+      margin-bottom: 0;
+      margin-right: 2rem;
+      order: 2;
+      display: flex;
+      align-items: center;
+    }
+
+    @include desktop {
+      width: 25%;
+    }
+  }
+
+  &__name-container {
+    width: 50%;
+    order: 2;
+
+    @include tablet {
+      margin-bottom: 0;
+      order: 3;
+      display: flex;
+      align-items: center;
+    }
+
+    @include desktop {
+        width: 15%;
+      }
+  }
+
+  &__info-container {
+    width: 50%;
+    order: 4;
+
+    @include tablet {
+      display: flex;
+      align-items: center;
+    }
+    @include desktop {
+      width: 15%;
+    }
+  }
+
+  &__btn-container {
+    order: 5;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    height: 1.5;
+
+    @include tablet {
+      width: 50%;
+      justify-content: flex-end;
+    }
+
+    @include desktop {
+      width: 15%;
+    }
+  }
+
+  &__alt-text {
+    @include label-buttons-mobile;
+    color: $Slate;
+    font-weight: 600;
+
+    &--mobile {
+      @include label-buttons-mobile;
+      color: $Slate;
+      font-weight: 600;
+
+      @include tablet {
+        display: none;
+      }
+    }
+  }
+
+  &__copy {
+    @include body-medium-mobile;
+
+    @include tablet {
+      @include body-medium-desktop;
+    }
+  }
+
+  &__icon {
+    height: 1.5rem;
+
+    @include tablet {
+      margin-left: 1rem;
+    }
+  }
+
+  &__chevron-container {
+    display: flex;
+    align-items: center;
+  }
+
+  &__break {
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__link {
+    color: $Instock-Indigo;
+    font-weight: 700;
+  }
+}
