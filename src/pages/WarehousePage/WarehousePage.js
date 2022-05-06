@@ -1,5 +1,6 @@
 import "./WarehousePage.scss";
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import Trash from "../../assets/images/icons/delete_outline-24px.svg";
 import Pen from "../../assets/images/icons/edit-24px.svg";
@@ -16,6 +17,7 @@ class WarehousePage extends Component {
   componentDidMount() {
     axios.get(getApi)
     .then((result) => {
+      console.log(result.data)
       this.setState({
         warehousesData: result.data
       })
@@ -76,38 +78,42 @@ class WarehousePage extends Component {
         <div className="warehouses__card-wrapper">
           {this.state.warehousesData.map((warehouse) => {
             return (<article className="warehouses__card">
-            {/* <div className="warehouses__mobile-helper"> */}
             <div className="warehouses__city-container">
+              <Link to={`/warehouse/${warehouse.id}`} className="warehouses__link">
               <p className="warehouses__alt-text--mobile">WAREHOUSE</p>
               <div className="warehouses__chevron-container">
-                <p className="warehouses__link warehouses__copy">{warehouse.city}</p>
+                <p className="warehouses__link warehouses__copy">{warehouse.name}</p>
                 <img src={Chevron} alt="" />
               </div>
+              </Link>
             </div>
             <div className="warehouses__address-container">
               <p className="warehouses__alt-text--mobile">ADDRESS</p>
               <p className="warehouses__copy">
-                503 Broadway,
-                <br className="warehouses__break"/> NewYork, USA
+                {warehouse.address}
+                <br className="warehouses__break"/> {warehouse.city}, {warehouse.country}
               </p>
             </div>
             <div className="warehouses__name-container">
               <p className="warehouses__alt-text--mobile">CONTACT NAME</p>
-              <p className="warehouses__copy">Parmin Aujla</p>
+              <p className="warehouses__copy">{warehouse.contact.name}</p>
             </div>
             <div className="warehouses__info-container">
               <p className="warehouses__alt-text--mobile">
                 CONTACT INFORMATION
               </p>
               <p className="warehouses__copy">
-                666 666 66 66 <br className="warehouses__break"/>
-                asdf@gmail.com
+              {warehouse.contact.phone} <br className="warehouses__break"/>
+              {warehouse.contact.email}
               </p>
             </div>
-            {/* </div> */}
             <div className="warehouses__btn-container">
+              <Link to={`/warehouse/${warehouse.id}/delete`}>
               <img src={Trash} alt="" className="warehouses__icon" />
+              </Link>
+              <Link to={`/warehouse/${warehouse.id}/edit`}>
               <img src={Pen} alt="" className="warehouses__icon" />
+              </Link>
             </div>
           </article>)
           })}
