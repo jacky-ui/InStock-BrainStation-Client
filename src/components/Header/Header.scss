@@ -12,7 +12,7 @@
     height: 12.25rem;
     position: relative;
     z-index: 1;
-
+    
 
     @include tablet{
         flex-direction: row;
@@ -24,7 +24,7 @@
 
     @include desktop{
         padding: 2rem 4rem;
-        height: 11.86rem;
+        height: 11.85rem;
     }
 
     &__logo{
