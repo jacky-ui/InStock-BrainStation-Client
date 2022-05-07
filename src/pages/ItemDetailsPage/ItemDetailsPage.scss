@@ -5,7 +5,7 @@
     background-color: $Light-Grey;
 }
 
-.subheader {
+.item {
     background-color: $White;
     margin-left: 1rem;
     margin-right: 1rem;
@@ -152,13 +152,24 @@
         display: flex;
     }
 
-    &__status{
+    &__in{
         background-color: rgba($color: $Green, $alpha: 0.07);
         color: $Green;
         @include body-small-mobile;
         font-weight: bold;
         border-radius: 20px;
         padding: 0.2rem 0.5rem;
+        text-transform: uppercase;
+    }
+
+    &__out{
+        background-color: rgba($color: $Red, $alpha: 0.07);
+        color: $Red;
+        @include body-small-mobile;
+        font-weight: bold;
+        border-radius: 20px;
+        padding: 0.2rem 0.5rem;
+        text-transform: uppercase;
     }
 
     &__box-1{
