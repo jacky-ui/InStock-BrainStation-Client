@@ -163,18 +163,26 @@
 
     @include tablet {
         display: flex;
-        align-items: center;
+        align-items: baseline;
         justify-content: space-between;
         background-color: $Light-Grey;
         // width: 100%;
         height: 2rem;
         padding: 0rem 2rem;
+        padding-top: 0.5rem;
     }
     @include desktop {
-        padding: 0rem 2.5rem;
+        padding: 0rem 2rem;
+        padding-top: 0.7rem;
+        height: 2.5rem;
     }
     &--grouping {
-        width: 10%;
+        width: 15%;
+        display: flex;
+
+        @include desktop {
+            width: 10%; 
+        }
     }
     &--heading {
         @include table-header-desktop;
@@ -190,10 +198,10 @@
         gap: 6rem;
     }
     &--action {
-        text-align: end;
+        justify-content: flex-end;
 
         @include desktop {
-            text-align: end;
+            justify-content: flex-end;
         }
     }
 }
@@ -235,6 +243,10 @@
         left: 1.9rem;
         bottom: 1.4rem;
     }
+}
+
+.icon__sorting {
+    height: 1.1rem;
 }
 
 a {

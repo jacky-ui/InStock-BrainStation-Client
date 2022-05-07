@@ -3,7 +3,6 @@ import deleteIcon from "../../assets/images/icons/delete_outline-24px.svg";
 import arrowRight from "../../assets/images/icons/chevron_right-24px.svg";
 import editIcon from "../../assets/images/icons/edit-24px.svg";
 import { Link } from "react-router-dom";
-import DeleteInventory from "../DeleteInventory/DeleteInventory";
 
 function WarehouseInventory(props) {
     const instock = () => {
@@ -16,14 +15,16 @@ function WarehouseInventory(props) {
         <section className="inventory">
             <div className="inventory__group">
                 <h4 className="inventory__header">INVENTORY ITEM</h4>
-                <p className="inventory__details--color">{props.itemName}</p>
-                <Link to="">
-                    <img 
-                        src={arrowRight}
-                        className="inventory__icon--right"
-                        alt=""
-                    />
-                </Link>
+                <div className="inventory__group--arrow">
+                    <p className="inventory__details--color">{props.itemName}</p>
+                    <Link to="">
+                        <img 
+                            src={arrowRight}
+                            className="inventory__icon--right"
+                            alt=""
+                        />
+                    </Link>
+                </div>
             </div>
             <div className="inventory__group">
                 <h4 className="inventory__header">CATERGORY</h4>
@@ -57,6 +58,6 @@ function WarehouseInventory(props) {
             </div>
         </section>
     )
-};
+}
 
 export default WarehouseInventory;

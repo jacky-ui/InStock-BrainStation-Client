@@ -17,8 +17,7 @@
         display: flex;
         flex-direction: unset;
         justify-content: space-between;
-        // flex-wrap: unset;
-        align-content: center;
+        align-items: center;
         padding: 0rem 2rem;
         padding-top: 0.5rem;
         height: 3rem;
@@ -29,11 +28,20 @@
 
     &__group {
         @include tablet {
+            width: 15%;
+        }
+        @include desktop {
             width: 10%;
         }
         &--icons {
             @include tablet {
                 text-align: end;
+            }
+        }
+        &--arrow {
+            display: flex;
+            @include tablet {
+                align-items: center;
             }
         }
     }
@@ -75,9 +83,9 @@
                 color: $Instock-Indigo;
                 font-weight: bold;
             }
-            @include desktop {
-                margin-right: 11.7rem;
-            }
+            // @include desktop {
+            //     margin-right: 11.7rem;
+            // }
         }
         &--instock {
             @include body-small-mobile;
@@ -87,8 +95,9 @@
             background-color: rgba($color: $Green, $alpha: 0.07);
             border-radius: 2.375rem;
             margin-bottom: 0.8rem;
-            margin-right: 4.3rem;
             width: 4rem;
+            margin-right: 4.2rem;
+            text-transform: capitalize;
 
             @include tablet {
                 margin-bottom: unset;
@@ -106,15 +115,16 @@
             background-color: rgba($color: $Red, $alpha: 0.07);
             border-radius: 2.375rem;
             margin-bottom: 0.8rem;
-            margin-right: 4.3rem;
-            width: 4rem;
+            margin-right: 2rem;
+            width: 6rem;
+            text-transform: uppercase;
 
             @include tablet {
                 margin-bottom: unset;
                 margin-right: unset;
                 @include body-small-desktop;
                 font-weight: bold;
-                width: 5rem;
+                width: 6rem;
             }
         }
     }
@@ -134,9 +144,9 @@
         }
     }
     &__icon--right {
-        position: absolute;
-        left: 5rem;
-        bottom: 6.45rem;
+        position: static;
+        // left: 5rem;
+        // bottom: 6.45rem;
 
         @include tablet {
             left: 5rem;
@@ -151,9 +161,11 @@
         position: absolute;
         right: 1.5rem;
         bottom: 1rem;
+        padding-left: 0.5rem;
 
         @include tablet {
             position: static;
+            height: 1.2rem;
         }
     }
     &__icon--delete {
@@ -163,6 +175,7 @@
 
         @include tablet {
             position: static;
+            height: 1.2rem;
         }
     }
 }

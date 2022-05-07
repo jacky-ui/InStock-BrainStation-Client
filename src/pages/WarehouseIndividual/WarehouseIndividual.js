@@ -95,18 +95,38 @@ class WarehouseIndividual extends Component {
                     <div className="title__bar">
                         <div className="title__bar--grouping">
                             <h4 className="title__bar--heading">INVENTORY</h4>
+                            <img 
+                                src={sortIcon}
+                                className="icon__sorting"
+                                alt=""
+                            />
                         </div>
                         <div className="title__bar--grouping">
                             <h4 className="title__bar--heading">CATERGORY</h4>
+                            <img 
+                                src={sortIcon}
+                                className="icon__sorting"
+                                alt=""
+                            />
                         </div>
                         <div className="title__bar--grouping">
                             <h4 className="title__bar--heading">STATUS</h4>
+                            <img 
+                                src={sortIcon}
+                                className="icon__sorting"
+                                alt=""
+                            />
                         </div>
                         <div className="title__bar--grouping">
                             <h4 className="title__bar--heading">QTY</h4>
+                            <img 
+                                src={sortIcon}
+                                className="icon__sorting"
+                                alt=""
+                            />
                         </div>
-                        <div className="title__bar--grouping">
-                            <h4 className="title__bar--heading title__bar--action">ACTION</h4>
+                        <div className="title__bar--grouping title__bar--action">
+                            <h4 className="title__bar--heading">ACTION</h4>
                         </div>
                     </div>
                     {/*Warehouse Inventory*/}
@@ -121,11 +141,11 @@ class WarehouseIndividual extends Component {
                                 quantity={inventory.quantity}
                             />
                         )
-                    })};
+                    })}
                 </article>
             </div>
         )
     }
-};
+}
 
 export default WarehouseIndividual;
