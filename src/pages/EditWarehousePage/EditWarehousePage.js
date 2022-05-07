@@ -10,7 +10,8 @@ class EditWarehousePage extends Component {
         pageTitle: "Edit Warehouse",
         button: "Save",
         warehouseDetails: null,
-        contactDetails: null
+        contactDetails: null,
+        update: ''
     };
 
     componentDidMount() {
@@ -24,6 +25,25 @@ class EditWarehousePage extends Component {
                 });
             })
     }
+
+    handleSubmit = (event) => {
+        event.preventDefault();
+        const warehouseId = this.props.match.params.warehouseId;
+        const { name, address, city, country, contactName, contactPosition, contactPhone, contactEmail } = this.state;
+        axios.put(`${api_url}/warehouses/${warehouseId}`, {
+            name,
+            address,
+            city,
+            country,
+            contactName, 
+            contactPosition,
+            contactPhone,
+            contactEmail
+        })
+    //     .then(response => {
+    //       this.setState({ update: response.status });
+    //   })
+    } 
 
     render() {
         if (!this.state.contactDetails) {
@@ -41,7 +61,8 @@ class EditWarehousePage extends Component {
                     <WarehouseForm 
                         warehouseDetails={this.state.warehouseDetails}
                         contactDetails={this.state.contactDetails}
-                        button={this.state.button}/>
+                        button={this.state.button}
+                        handleSubmit={this.handleSubmit}/>
                 </div>
             </main>
         );

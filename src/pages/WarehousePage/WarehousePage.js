@@ -111,8 +111,8 @@ class WarehousePage extends Component {
                     key={warehouse.id}
                     name={warehouse.name}
                     warehouseId={warehouse.id}/>
-              <Link to={`/warehouse/${warehouse.id}/edit`}>
-              <img src={Pen} alt="" className="warehouses__icon-right" />
+              <Link to={`/warehouse/${warehouse.id}/edit`} >
+                <img src={Pen} alt="" className="warehouses__icon-right" />
               </Link>
             </div>
           </article>)

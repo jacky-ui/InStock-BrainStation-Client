@@ -31,7 +31,7 @@ class WarehouseForm extends Component {
     });
   }
 
-  ifStateValid = () => {};
+//   ifStateValid = () => {};
 
   handleChange = (event) => {
     this.setState({
@@ -39,8 +39,8 @@ class WarehouseForm extends Component {
     });
   };
 
-  handleSubmit = (event) => {
-    event.preventDefault();
+//   handleSubmit = (event) => {
+//     event.preventDefault();
     // Axios Call Below [POST] - Add new Warehouse or [PUT] - Edit Warehouse
     // axios
     //   .post(putApi, {
@@ -63,19 +63,19 @@ class WarehouseForm extends Component {
     //   });
 
     // event.target.reset();
-  };
+//   };
 
-    handleSubmit = (event) => {
-        event.preventDefault();
-        // Axios Call Below [POST] - Add new Warehouse or [PUT] - Edit Warehouse
+    // handleSubmit = (event) => {
+    //     event.preventDefault();
+    //     // Axios Call Below [POST] - Add new Warehouse or [PUT] - Edit Warehouse
          
 
-    }    
+    // }    
     
     render() {
         return (
             <section className='form'>
-                <form className='form-field'>
+                <form className='form-field' onSubmit={this.props.handleSubmit}>
                     <div className='form-left'>
                         <h2 className='form__title'>Warehouse Details</h2>
                         <div className='form__group'>
@@ -175,7 +175,7 @@ class WarehouseForm extends Component {
                             <button className='form__cancel'>Cancel</button>
                         </div>
                         <div className="form-btns__right">
-                            <button className='form__save'>{this.props.button}</button>
+                            <button className='form__save' type='submit'>{this.props.button}</button>
                         </div>
                     </div>
                 </form>
