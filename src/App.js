@@ -8,8 +8,8 @@ import WarehousePage from "./pages/WarehousePage/WarehousePage";
 import WarehouseIndividual from "./components/WarehouseIndividual/WarehouseIndividual";
 import EditWarehousePage from "./pages/EditWarehousePage/EditWarehousePage";
 import AddWarehousePage from "./pages/AddWarehousePage/AddWarehousePage";
-import AddInventoryPage from "./pages/AddInventoryPage/AddInventoryPage";
 import EditInventoryPage from "./pages/EditInventoryPage/EditInventoryPage";
+import InventoryPage from "./pages/InventoryPage/InventoryPage";
 
 function App() {
   return (
@@ -22,10 +22,10 @@ function App() {
           <Route path="/warehouse/:warehouseId" exact component={WarehouseIndividual} />
           <Route path="/warehouse/:warehouseId/edit" exact component={EditWarehousePage} />
           {/* <Route path="/warehouse/:warehouseId/delete" exact component={DeleteWarehouse} /> */}
-          {/* <Route path="/inventory" component={Inventory} /> */}
-          {/* <Route path="/inventory/:itemId" component={ItemDetailsPage} /> */}
+          <Route path="/inventory" exact component={InventoryPage} />
+          <Route path="/inventory/:itemId" exact component={ItemDetailsPage} />
           <Route path="/inventory/:itemId/edit" component={EditInventoryPage} />
-          <Route path="/inventory/add" component={AddInventoryPage} />
+          {/* <Route path="/inventory/add" component={AddItem} /> */}
         </Switch>
         <Footer />
       </BrowserRouter>
