@@ -5,11 +5,14 @@
     background-color: $Light-Grey;
     &-wrapper {
         border-radius: 3px;
-        padding: 0 1rem;
+        margin: 0 1rem;
         background-color: $White;
         box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
         @include tablet {
-            padding: 0 2rem;
+            margin: 0 2rem;
+        }
+        @include desktop {
+            margin: 0 4rem;
         }
     }
 }
