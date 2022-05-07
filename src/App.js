@@ -15,15 +15,10 @@ function App() {
       <BrowserRouter>
         <Header />
          <Switch>
-
           <Route path="/" exact component={WarehousePage} />
-          <Route path="/warehouse/:warehouseId" component={WarehouseIndividual} />
-          <Route
-
-            path="/warehouse/:warehouseId/edit"
-            component={EditWarehousePage}
-          />
-          <Route path="/warehouse/:warehouseId/delete" component={DeleteWarehouse} />
+          <Route path="/warehouse/:warehouseId" exact component={WarehouseIndividual} />
+          <Route path="/warehouse/:warehouseId/edit" exact component={EditWarehousePage} />
+          <Route path="/warehouse/:warehouseId/delete" exact component={DeleteWarehouse} />
           {/* <Route path="/warehouse/add" component={AddWarehouse} /> */}
           {/* <Route path="/inventory" component={Inventory} /> */}
           {/* <Route path="/inventory/:itemId" component={ItemDetailsPage} /> */}

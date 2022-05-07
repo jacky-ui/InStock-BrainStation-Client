@@ -42,27 +42,27 @@ class WarehouseForm extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
     // Axios Call Below [POST] - Add new Warehouse or [PUT] - Edit Warehouse
-    axios
-      .post(putApi, {
-        title: event.target.title.value.value,
-        description: event.target.comment.value.value,
-        name: event.target.name.value, 
-        address: event.target.address.value,
-        city: event.target.city.value,
-        country: event.target.country.value,
-        contact: {
-            name: event.target.contactName.value,
-            position: event.target.contactPosition.value, 
-            phone: event.target.contactPhone.value,
-            email: event.target.contactEmail.value
-        }
-      })
-      .then((response) => {
-        console.log(response);
-        console.log("yay");
-      });
+    // axios
+    //   .post(putApi, {
+    //     title: event.target.title.value.value,
+    //     description: event.target.comment.value.value,
+    //     name: event.target.name.value, 
+    //     address: event.target.address.value,
+    //     city: event.target.city.value,
+    //     country: event.target.country.value,
+    //     contact: {
+    //         name: event.target.contactName.value,
+    //         position: event.target.contactPosition.value, 
+    //         phone: event.target.contactPhone.value,
+    //         email: event.target.contactEmail.value
+    //     }
+    //   })
+    //   .then((response) => {
+    //     console.log(response);
+    //     console.log("yay");
+    //   });
 
-    event.target.reset();
+    // event.target.reset();
   };
 
     handleSubmit = (event) => {
