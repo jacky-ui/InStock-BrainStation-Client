@@ -4,37 +4,28 @@
 
 .warehouses {
   color: $Instock-Black;
-
   &__title-container-wrapper {
-    background: linear-gradient(
-      to bottom,
-      $Graphite 0%,
-      $Graphite 25%,
-      $Light-Grey 25%,
-      $Light-Grey 100%
-    );
     display: flex;
     justify-content: center;
     padding: 0 1rem;
-
     @include tablet {
       padding: 0 1.5rem;
       background: $Graphite;
     }
-
     @include desktop {
       padding: 0 4rem;
     }
   }
-
   &__title-container {
-    background-color: white;
-    padding: 0 1rem;
+    background-color: $White;
+    padding: 0 1.5rem;
     display: flex;
     flex-direction: column;
     width: 100%;
     border-bottom: 1px solid $Cloud;
-
+    margin-top: -3.75rem;
+    z-index: 2;
+    border-radius: 3px 3px 0 0;
     @include tablet {
       padding: 0 1.5rem 1.25rem;
       flex-direction: row;
@@ -49,7 +40,7 @@
   }
 
   &__title {
-    margin-top: 1rem;
+    margin-top: 2rem;
     @include page-header-mobile;
 
     @include tablet {
@@ -77,7 +68,10 @@
     padding-left: 1rem;
     width: 100%;
     @include body-medium-mobile;
-
+    &:focus {
+      outline: none;
+      border: $border-focus;
+    }
     @include tablet {
       width: 12rem;
       @include body-medium-desktop;
@@ -98,6 +92,9 @@
     border: none;
     width: 100%;
     @include body-medium-mobile;
+    &:hover {
+      background-color: $Instock-Black;
+    }
 
     @include tablet {
       width: 12rem;
@@ -110,11 +107,9 @@
   &__card-wrapper {
     padding: 0 1rem;
     background-color: $Light-Grey;
-
     @include tablet {
       padding: 0 1.5rem;
     }
-
     @include desktop {
       padding: 0 4rem;
     }
@@ -124,7 +119,7 @@
     display: flex;
     flex-wrap: wrap;
     background-color: white;
-    padding: 1rem;
+    padding: 1rem 2rem 2rem 2rem;
     border-bottom: 1px solid $Cloud;
     box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
 
@@ -223,62 +218,51 @@
     display: flex;
     justify-content: space-between;
     height: 1.5;
-
     @include tablet {
       width: 50%;
       justify-content: flex-end;
     }
-
     @include desktop {
       width: 15%;
     }
   }
-
   &__alt-text {
-    @include label-buttons-mobile;
+    @include table-header-mobile;
     color: $Slate;
-    font-weight: 600;
-
     &--mobile {
-      @include label-buttons-mobile;
+      @include table-header-mobile;
       color: $Slate;
-      font-weight: 600;
-
       @include tablet {
         display: none;
       }
     }
   }
-
   &__copy {
     @include body-medium-mobile;
-
     @include tablet {
       @include body-medium-desktop;
     }
   }
-
   &__icon {
     height: 1.5rem;
-
     @include tablet {
       margin-left: 1rem;
     }
   }
-
   &__chevron-container {
     display: flex;
     align-items: center;
   }
-
   &__break {
     @include tablet {
       display: none;
     }
   }
-
   &__link {
     color: $Instock-Indigo;
-    font-weight: 700;
+    @include label-buttons-mobile;
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }

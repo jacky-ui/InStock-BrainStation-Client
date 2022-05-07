@@ -55,23 +55,23 @@ class WarehousePage extends Component {
         <div className="warehouses__card-wrapper">
           <article className="warehouses__sort-bar warehouses__card">
             <div className="warehouses__city-container">
-              <p className="warehouses__alt-text"> WAREHOUSE</p>
+              <h4 className="warehouses__alt-text"> WAREHOUSE</h4>
               <img src={Sort} alt="" className="warehouses__sort-icon" />
             </div>
             <div className="warehouses__address-container">
-              <p className="warehouses__alt-text">ADDRESS</p>
+              <h4 className="warehouses__alt-text">ADDRESS</h4>
               <img src={Sort} alt="" className="warehouses__sort-icon" />
             </div>
             <div className="warehouses__name-container">
-              <p className="warehouses__alt-text">CONTACT NAME</p>
+              <h4 className="warehouses__alt-text">CONTACT NAME</h4>
               <img src={Sort} alt="" className="warehouses__sort-icon" />
             </div>
             <div className="warehouses__info-container">
-              <p className="warehouses__alt-text">CONTACT INFORMATION</p>
+              <h4 className="warehouses__alt-text">CONTACT INFORMATION</h4>
               <img src={Sort} alt="" className="warehouses__sort-icon" />
             </div>
             <div className="warehouses__btn-container">
-              <p className="warehouses__alt-text">ACTIONS</p>
+              <h4 className="warehouses__alt-text">ACTIONS</h4>
             </div>
           </article>
         </div>
@@ -79,29 +79,29 @@ class WarehousePage extends Component {
           {this.state.warehousesData.map((warehouse) => {
             return (<article className="warehouses__card">
             <div className="warehouses__city-container">
+              <h4 className="warehouses__alt-text--mobile">WAREHOUSE</h4>
               <Link to={`/warehouse/${warehouse.id}`} className="warehouses__link">
-              <p className="warehouses__alt-text--mobile">WAREHOUSE</p>
               <div className="warehouses__chevron-container">
-                <p className="warehouses__link warehouses__copy">{warehouse.name}</p>
+                <h3 className="warehouses__link">{warehouse.name}</h3>
                 <img src={Chevron} alt="" />
               </div>
               </Link>
             </div>
             <div className="warehouses__address-container">
-              <p className="warehouses__alt-text--mobile">ADDRESS</p>
+              <h4 className="warehouses__alt-text--mobile">ADDRESS</h4>
               <p className="warehouses__copy">
                 {warehouse.address}
                 <br className="warehouses__break"/> {warehouse.city}, {warehouse.country}
               </p>
             </div>
             <div className="warehouses__name-container">
-              <p className="warehouses__alt-text--mobile">CONTACT NAME</p>
+              <h4 className="warehouses__alt-text--mobile">CONTACT NAME</h4>
               <p className="warehouses__copy">{warehouse.contact.name}</p>
             </div>
             <div className="warehouses__info-container">
-              <p className="warehouses__alt-text--mobile">
+              <h4 className="warehouses__alt-text--mobile">
                 CONTACT INFORMATION
-              </p>
+              </h4>
               <p className="warehouses__copy">
               {warehouse.contact.phone} <br className="warehouses__break"/>
               {warehouse.contact.email}
