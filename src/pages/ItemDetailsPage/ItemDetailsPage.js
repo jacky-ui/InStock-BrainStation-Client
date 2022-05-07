@@ -11,6 +11,13 @@ state = {
     item: {},
 }
 
+isOutofStock = () => {
+    if(this.state.item.status === "Out of Stock") {
+      return false;
+    }
+    return true;
+  }
+
 componentDidMount(){
     const singleItem = this.props.match.params.itemId
     axios
@@ -23,20 +30,21 @@ componentDidMount(){
         })
 }
 
+
 render() {
     return (
         <div className="main-container">
-            <article className="subheader">
+            <article className="item">
             {/*Warehouse heading*/}
-                <section className="subheader__head">
-                    <Link className="subheader__link" to="/inventory">
-                        <img alt="previous" className="subheader__previous" src={previousIcon}/>
+                <section className="item__head">
+                    <Link className="item__link" to="/inventory">
+                        <img alt="previous" className="item__previous" src={previousIcon}/>
                     </Link>
-                    <h1 className="subheader__head--title">{this.state.item.itemName}</h1>
-                    <Link className="subheader__link" to="/inventory/:itemId/edit">
-                        <div className="subheader__head--circle">
-                            <img alt="edit" className="subheader__edit" src={editIconWhite}/>
-                            <span className="subheader__edit--text">EDIT</span>
+                    <h1 className="item__head--title">{this.state.item.itemName}</h1>
+                    <Link className="item__link" to={`/inventory/${this.state.item.id}/edit`}>
+                        <div className="item__head--circle">
+                            <img alt="edit" className="item__edit" src={editIconWhite}/>
+                            <span className="item__edit--text">EDIT</span>
                         </div>
                     </Link>
                 </section>
@@ -55,7 +63,7 @@ render() {
                         <div className="details__flex">
                             <div className="details__tab--space">
                                 <h3 className="details__title">STATUS:</h3>
-                                <p className='details__status'>{this.state.item.status}</p>
+                                <p className={`${this.isOutofStock() ? "details__in" : "details__out"}`}>{this.state.item.status}</p>
                             </div>
                             <div className="details__tab">
                                 <h3 className="details__title">QUANTITY:</h3>
