@@ -25,25 +25,14 @@ class EditWarehousePage extends Component {
                 });
             })
     }
-
-    handleSubmit = (event) => {
-        event.preventDefault();
-        const warehouseId = this.props.match.params.warehouseId;
-        const { name, address, city, country, contactName, contactPosition, contactPhone, contactEmail } = this.state;
-        axios.put(`${api_url}/warehouses/${warehouseId}`, {
-            name,
-            address,
-            city,
-            country,
-            contactName, 
-            contactPosition,
-            contactPhone,
-            contactEmail
-        })
+    //  async onSubmit() {
+    //     const warehouseId = this.state.warehouseDetails.id
+    //     let data = await axios.put(`${api_url}/warehouses/${warehouseId}`)
     //     .then(response => {
-    //       this.setState({ update: response.status });
-    //   })
-    } 
+    //         this.setState({ update: response.status });
+    //     })  
+    //     return data;
+    // }
 
     render() {
         if (!this.state.contactDetails) {
@@ -62,7 +51,7 @@ class EditWarehousePage extends Component {
                         warehouseDetails={this.state.warehouseDetails}
                         contactDetails={this.state.contactDetails}
                         button={this.state.button}
-                        handleSubmit={this.handleSubmit}/>
+                        submit={this.onSubmit}/>
                 </div>
             </main>
         );

@@ -1,11 +1,11 @@
 import "./WarehouseForm.scss";
 import React, { Component } from "react";
 import axios from "axios";
-
-const putApi = 'http://localhost:8080/warehouses'
+import { api_url } from '../../utils/apiVariables';
 
 class WarehouseForm extends Component {
   state = {
+    update: "",
     name: "",
     address: "",
     city: "",
@@ -69,13 +69,26 @@ class WarehouseForm extends Component {
     //     event.preventDefault();
     //     // Axios Call Below [POST] - Add new Warehouse or [PUT] - Edit Warehouse
          
-
-    // }    
+    // handleSubmit = (event) => {
+    //     event.preventDefault();
+    //     const { name, address, city, country, contactName, contactPosition, contactPhone, contactEmail } = this.state;
+    //     this.props.submit(), {
+    //         name,
+    //         address,
+    //         city,
+    //         country,
+    //         contactName, 
+    //         contactPosition,
+    //         contactPhone,
+    //         contactEmail
+    //     }      
+    // } 
+  
     
     render() {
         return (
             <section className='form'>
-                <form className='form-field' onSubmit={this.props.handleSubmit}>
+                <form className='form-field' onSubmit={this.handleSubmit}>
                     <div className='form-left'>
                         <h2 className='form__title'>Warehouse Details</h2>
                         <div className='form__group'>
