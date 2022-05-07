@@ -29,6 +29,7 @@ class WarehouseIndividual extends Component {
             .get(`${API_URL}/warehouse/inventory/${id}`)
             .then((response) => {
                 const inventoryData = response.data
+
                 this.setState({
                     selectedWarehouse: inventoryData
                 });
@@ -60,11 +61,11 @@ class WarehouseIndividual extends Component {
                         <Link to="/warehouse/:warehouseId/edit">
                             <div className="container__head--circle">
                                 <img
-                                    className="icon__edit" 
+                                    className="icon__edit--white" 
                                     src={editIconWhite}
                                     alt=""
                                 />
-                                <span className="icon__edit--text">EDIT</span>
+                                <h4 className="edit__text">EDIT</h4>
                             </div>
                         </Link>
                     </section>

@@ -79,12 +79,12 @@
                 margin-right: 11.7rem;
             }
         }
-        &--stock {
+        &--instock {
             @include body-small-mobile;
             color: $Green;
             padding: 0.1rem 0.5rem;
             font-weight: bold;
-            background-color: $Light-Grey;
+            background-color: rgba($color: $Green, $alpha: 0.07);
             border-radius: 2.375rem;
             margin-bottom: 0.8rem;
             margin-right: 4.3rem;
@@ -94,7 +94,25 @@
                 margin-bottom: unset;
                 margin-right: unset;
                 @include body-small-desktop;
-                color: $Green;
+                font-weight: bold;
+                width: 5rem;
+            }
+        }
+        &--outstock {
+            @include body-small-mobile;
+            color: $Red;
+            padding: 0.1rem 0.5rem;
+            font-weight: bold;
+            background-color: rgba($color: $Red, $alpha: 0.07);
+            border-radius: 2.375rem;
+            margin-bottom: 0.8rem;
+            margin-right: 4.3rem;
+            width: 4rem;
+
+            @include tablet {
+                margin-bottom: unset;
+                margin-right: unset;
+                @include body-small-desktop;
                 font-weight: bold;
                 width: 5rem;
             }
@@ -147,18 +165,6 @@
             position: static;
         }
     }
-}
-
-.inventory2 {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-content: space-between;
-    height: 10rem;
-    padding: 1rem;
-    padding-bottom: 2rem;
-    border-top: 1px solid $Cloud;
-    position: relative;
 }
 
 a {

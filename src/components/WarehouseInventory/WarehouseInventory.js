@@ -6,6 +6,12 @@ import { Link } from "react-router-dom";
 import DeleteInventory from "../DeleteInventory/DeleteInventory";
 
 function WarehouseInventory(props) {
+    const instock = () => {
+        if (props.status === "In Stock") {
+            return true;
+        } return false;
+    };
+    
     return(
         <section className="inventory">
             <div className="inventory__group">
@@ -13,10 +19,10 @@ function WarehouseInventory(props) {
                 <p className="inventory__details--color">{props.itemName}</p>
                 <Link to="">
                     <img 
-                            src={arrowRight}
-                            className="inventory__icon--right"
-                            alt=""
-                        />
+                        src={arrowRight}
+                        className="inventory__icon--right"
+                        alt=""
+                    />
                 </Link>
             </div>
             <div className="inventory__group">
@@ -25,7 +31,8 @@ function WarehouseInventory(props) {
             </div>
             <div className="inventory__group">
                 <h4 className="inventory__header">STATUS</h4>
-                <p className="inventory__details--stock">{props.status}</p>
+                <p className={`${instock() ? 'inventory__details--instock' : 'inventory__details--outstock'}`}>{props.status}</p>
+                {/*"inventory__details--instock" */}
             </div>
             <div className="inventory__group">
                 <h4 className="inventory__header">QTY</h4>

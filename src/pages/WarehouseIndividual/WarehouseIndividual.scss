@@ -198,7 +198,7 @@
     }
 }
 
-.icon__edit {
+.icon__edit--white {
     position: absolute;
     height: 1.3rem;
     width: 1.3rem;
@@ -206,21 +206,23 @@
     bottom: 1.6rem;
     
     @include tablet {
+        position: absolute;
         bottom: 1.8rem;
         right: 4.6rem;
         height: 1.1rem;
         width: 1.1rem;
     }
-    &--text {
-        display: none;
+}
 
-        @include tablet {
-            display: block;
-            @include body-small-desktop;
-            color: $White;
-            padding-left: 2.5rem;
-            padding-top: 0.6rem;
-        }
+.edit__text {
+    display: none;
+
+    @include tablet {
+        display: block;
+        @include body-small-desktop;
+        color: $White;
+        padding-left: 2.5rem;
+        padding-top: 0.6rem;
     }
 }
 
