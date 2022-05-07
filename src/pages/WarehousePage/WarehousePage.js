@@ -83,7 +83,7 @@ class WarehousePage extends Component {
               <Link to={`/warehouse/${warehouse.id}`} className="warehouses__link">
               <div className="warehouses__chevron-container">
                 <h3 className="warehouses__link">{warehouse.name}</h3>
-                <img src={Chevron} alt="" />
+                <img className="warehouses__link-chevron" src={Chevron} alt="" />
               </div>
               </Link>
             </div>

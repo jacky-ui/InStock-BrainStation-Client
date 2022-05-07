@@ -27,7 +27,7 @@
     z-index: 2;
     border-radius: 3px 3px 0 0;
     @include tablet {
-      padding: 0 1.5rem 1.25rem;
+      padding: 0 2rem 1.25rem;
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
@@ -42,7 +42,6 @@
   &__title {
     margin-top: 2rem;
     @include page-header-mobile;
-
     @include tablet {
       @include page-header-desktop;
     }
@@ -51,7 +50,6 @@
   &__search-btn-container {
     display: flex;
     flex-direction: row;
-
     @include tablet {
       width: 100%;
     }
@@ -73,7 +71,9 @@
       border: $border-focus;
     }
     @include tablet {
+      margin-top: 1.75rem;
       width: 12rem;
+      height: 2.375rem;
       @include body-medium-desktop;
     }
 
@@ -122,62 +122,56 @@
     padding: 1rem 2rem 2rem 2rem;
     border-bottom: 1px solid $Cloud;
     box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
-
+    &:hover {
+      background: rgba(46, 102, 229, 0.07)
+    }
     @include tablet {
       flex-wrap: nowrap;
       align-items: center;
       padding: 1rem 2rem;
     }
   }
-
   &__sort-bar {
     display: none;
-
     @include tablet {
       display: flex;
-      background-color: $Light-Grey;
+      background: rgba(247, 248, 249, 0.7);
       border-bottom: none;
     }
   }
-
   &__sort-icon {
     height: 1.25rem;
   }
-
   //   &__mobile-helper {
   //     // display: flex;
   //     // flex-wrap: wrap;
   //   }
-
   &__city-container {
     width: 50%;
     order: 1;
     margin-bottom: 1rem;
-
     @include tablet {
       margin-bottom: 0;
       display: flex;
       align-items: center;
+      width: 40%;
     }
-
     @include desktop {
       width: 25%;
     }
   }
-
   &__address-container {
     width: 50%;
     order: 3;
     margin-bottom: 1rem;
-
     @include tablet {
       margin-bottom: 0;
       margin-right: 2rem;
       order: 2;
       display: flex;
       align-items: center;
+      width: 36%;
     }
-
     @include desktop {
       width: 25%;
     }
@@ -192,6 +186,7 @@
       order: 3;
       display: flex;
       align-items: center;
+      width: 35%;
     }
 
     @include desktop {
@@ -206,6 +201,7 @@
     @include tablet {
       display: flex;
       align-items: center;
+      width: 49%;
     }
     @include desktop {
       width: 15%;
@@ -219,7 +215,7 @@
     justify-content: space-between;
     height: 1.5;
     @include tablet {
-      width: 50%;
+      width: 21%;
       justify-content: flex-end;
     }
     @include desktop {
@@ -229,6 +225,9 @@
   &__alt-text {
     @include table-header-mobile;
     color: $Slate;
+    @include tablet {
+      @include table-header-desktop;
+    }
     &--mobile {
       @include table-header-mobile;
       color: $Slate;
@@ -246,7 +245,7 @@
   &__icon {
     height: 1.5rem;
     @include tablet {
-      margin-left: 1rem;
+      margin-left: 0.5rem;
     }
   }
   &__chevron-container {
@@ -261,6 +260,9 @@
   &__link {
     color: $Instock-Indigo;
     @include label-buttons-mobile;
+    &-chevron {
+      height: 0.625rem;
+    }
     &:hover {
       text-decoration: underline;
     }
