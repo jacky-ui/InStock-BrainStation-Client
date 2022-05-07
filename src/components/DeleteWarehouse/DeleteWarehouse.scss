@@ -2,7 +2,7 @@
 @use '../../styles/partials/variables' as *;
 
 .popup-overlay{
-    background-color: rgba($color: $Instock-Black, $alpha: 0.7)
+    background-color: rgba($color: $Instock-Black, $alpha: 0.7);
 }
 .popup {
     padding: 1.5rem 1rem;
