@@ -33,12 +33,10 @@
       align-items: center;
       border: none;
     }
-
     @include desktop {
-        padding: 1rem 2rem 1.5rem;
+        padding: 0rem 2.5rem 1.5rem;
     }
   }
-
   &__title {
     margin-top: 2rem;
     @include page-header-mobile;
@@ -46,7 +44,6 @@
       @include page-header-desktop;
     }
   }
-
   &__search-btn-container {
     display: flex;
     flex-direction: row;
@@ -130,6 +127,9 @@
       align-items: center;
       padding: 1rem 2rem;
     }
+    @include desktop {
+      padding: 1.5rem 2.5rem;
+    }
   }
   &__sort-bar {
     display: none;
@@ -157,7 +157,7 @@
       width: 40%;
     }
     @include desktop {
-      width: 25%;
+      width: 18%;
     }
   }
   &__address-container {
@@ -173,14 +173,12 @@
       width: 36%;
     }
     @include desktop {
-      width: 25%;
+      width: 26%;
     }
   }
-
   &__name-container {
     width: 50%;
     order: 2;
-
     @include tablet {
       margin-bottom: 0;
       order: 3;
@@ -188,12 +186,10 @@
       align-items: center;
       width: 35%;
     }
-
     @include desktop {
-        width: 15%;
+        width: 18%;
       }
   }
-
   &__info-container {
     width: 50%;
     order: 4;
@@ -204,10 +200,9 @@
       width: 49%;
     }
     @include desktop {
-      width: 15%;
+      width: 18%;
     }
   }
-
   &__btn-container {
     order: 5;
     width: 100%;
@@ -219,7 +214,7 @@
       justify-content: flex-end;
     }
     @include desktop {
-      width: 15%;
+      width: 16%;
     }
   }
   &__alt-text {
@@ -260,6 +255,9 @@
   &__link {
     color: $Instock-Indigo;
     @include label-buttons-mobile;
+    @include tablet {
+      @include label-buttons-desktop;
+    }
     &-chevron {
       height: 0.625rem;
     }
