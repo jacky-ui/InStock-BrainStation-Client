@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Redirect } from 'react-router-dom';
 import './DeleteWarehouse.scss'
 import Popup from 'reactjs-popup';
 import Trash from '../../assets/images/icons/delete_outline-24px.svg'
@@ -7,24 +6,19 @@ import axios from 'axios';
 import { api_url } from '../../utils/apiVariables';
 
 class DeleteWarehouse extends Component {
-    state = {
-        redirect: false
+    refreshPage = () => {
+        window.location.reload();
     }
-    
+
     deleteWarehouse = () => {
         axios
           .delete(`${api_url}/warehouses/${this.props.warehouseId}` )
           .then((response)=>{
-            this.setState({
-                redirect: true
-            })
+            this.refreshPage();
           })
     }
 
     render() {
-        if (this.state.redirect === true) {
-        return <Redirect to="/" />
-        }
         return (
             <Popup trigger={<input type="image" name="trashBin" src={Trash} alt="text"></input>} modal nested>
             {close => (

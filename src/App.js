@@ -3,7 +3,6 @@ import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
-import DeleteWarehouse from "./components/DeleteWarehouse/DeleteWarehouse";
 import ItemDetailsPage from "./pages/ItemDetailsPage/ItemDetailsPage";
 import WarehousePage from "./pages/WarehousePage/WarehousePage";
 import WarehouseIndividual from "./components/WarehouseIndividual/WarehouseIndividual";
@@ -20,7 +19,7 @@ function App() {
           <Route path="/warehouse/add" exact component={AddWarehousePage} />
           <Route path="/warehouse/:warehouseId" exact component={WarehouseIndividual} />
           <Route path="/warehouse/:warehouseId/edit" exact component={EditWarehousePage} />
-          <Route path="/warehouse/:warehouseId/delete" exact component={DeleteWarehouse} />
+          {/* <Route path="/warehouse/:warehouseId/delete" exact component={DeleteWarehouse} /> */}
           {/* <Route path="/inventory" component={Inventory} /> */}
           {/* <Route path="/inventory/:itemId" component={ItemDetailsPage} /> */}
           {/* <Route path="/inventory/:itemId/edit" component={EditItem} /> */}
