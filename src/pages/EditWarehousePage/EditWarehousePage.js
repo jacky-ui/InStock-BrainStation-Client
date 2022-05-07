@@ -34,13 +34,15 @@ class EditWarehousePage extends Component {
             )
         }
         return(
-            <main>
-                <PageSubHeader 
-                    pageTitle={this.state.pageTitle}/>
-                <WarehouseForm 
-                    warehouseDetails={this.state.warehouseDetails}
-                    contactDetails={this.state.contactDetails}
-                    button={this.state.button}/>
+            <main className='editWarehouse'>
+                <section className='editWarehouse-wrapper'>
+                    <PageSubHeader 
+                        pageTitle={this.state.pageTitle}/>
+                    <WarehouseForm 
+                        warehouseDetails={this.state.warehouseDetails}
+                        contactDetails={this.state.contactDetails}
+                        button={this.state.button}/>
+                </section>
             </main>
         );
     }
