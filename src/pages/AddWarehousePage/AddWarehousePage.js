@@ -23,36 +23,19 @@ class AddWarehousePage extends Component {
         }
     };
 
-    // componentDidMount() {
-    //     const warehouseId = this.props.match.params.warehouseId;
-    //     axios
-    //         .get(`${api_url}/warehouses/${warehouseId}`)
-    //         .then(res => {
-    //             this.setState({
-    //                 warehouseDetails: res.data,
-    //                 contactDetails: res.data.contact
-    //             });
-    //         })
-    // }
-
     render() {
-        // if (!this.state.contactDetails) {
-        //     return(
-        //         <div>
-        //             <h1>Page is loading...</h1>
-        //         </div>
-        //     )
-        // }
         return(
-            <main>
-                <PageSubHeader 
-                    pageTitle={this.state.pageTitle}
-                    />
-                <WarehouseForm 
-                    warehouseDetails={this.state.warehouseDetails}
-                    contactDetails={this.state.contactDetails}
-                    button={this.state.button}
-                    />
+            <main className='editWarehouse'>
+                <div className='editWarehouse-wrapper'>
+                    <PageSubHeader 
+                        pageTitle={this.state.pageTitle}
+                        />
+                    <WarehouseForm 
+                        warehouseDetails={this.state.warehouseDetails}
+                        contactDetails={this.state.contactDetails}
+                        button={this.state.button}
+                        />
+                </div>
             </main>
         );
     }

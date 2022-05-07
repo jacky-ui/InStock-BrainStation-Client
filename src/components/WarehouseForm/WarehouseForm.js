@@ -171,8 +171,12 @@ class WarehouseForm extends Component {
                         </div>
                     </div>
                     <div className='form-btns'>
-                        <button className='form__cancel'>Cancel</button>
-                        <button className='form__save'>{this.props.button}</button>
+                        <div className="form-btns__left">
+                            <button className='form__cancel'>Cancel</button>
+                        </div>
+                        <div className="form-btns__right">
+                            <button className='form__save'>{this.props.button}</button>
+                        </div>
                     </div>
                 </form>
             </section>

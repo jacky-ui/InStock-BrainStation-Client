@@ -46,9 +46,9 @@ class WarehousePage extends Component {
                 className="warehouses__search-bar"
                 placeholder="Search..."
               />
-              <button className="warehouses__btn-add">
-                + Add New Warehouse
-              </button>
+              <Link to="/warehouse/add">
+                <button className="warehouses__btn-add">+ Add New Warehouse</button>
+              </Link>
             </div>
           </div>
         </div>

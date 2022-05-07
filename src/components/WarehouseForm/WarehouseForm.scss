@@ -40,12 +40,12 @@
         }
     }
     &-btns {
-        padding: 1.5rem 2.5rem;
+        padding: 1.5rem;
         background: rgba(247, 248, 249, 0.7);
         border-radius: 0 0 3px 3px;
+        display: flex;
         @include tablet {
             width: 120%;        
-            display: flex;
             justify-content: flex-end;
             padding: 1rem 2rem;
             margin-top: 1.5rem;
@@ -94,15 +94,24 @@
             }
         }
     }
+    &-btns__left {
+        width: 50%;
+        margin-right: .5rem;
+        @include tablet {
+            margin-right: 1rem;
+        }
+    }
+    &-btns__right {
+        width: 50%;
+    }
     &__cancel {
         background-color: $White;
         color: $Slate;
         border-radius: 20px;
         border: $border-divider;
-        padding: 0 1rem;
+        padding: 0;
         height: 2.25rem;
-        margin-right: 1rem;
-        width: 45%;
+        width: 100%;
         @include label-buttons-mobile;
         &:hover {
             color: $Instock-Indigo;
@@ -111,6 +120,7 @@
         @include tablet {
             @include label-buttons-desktop;
             height: 2.375rem;
+            padding: 0 1rem;
             width: fit-content;
         }
     }
@@ -119,15 +129,16 @@
         color: $White;
         border-radius: 20px;
         border: none;
-        padding: 0 1rem;
+        padding: 0 .5rem;
         height: 2.25rem;
-        width: 45%;
+        width: 100%;
         @include label-buttons-mobile;
         &:hover {
             background-color: $Instock-Black;
         }
         @include tablet {
             @include label-buttons-desktop;
+            padding: 0 1rem;
             height: 2.375rem;
             width: fit-content;
         }
