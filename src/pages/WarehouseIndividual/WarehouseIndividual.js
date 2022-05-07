@@ -16,6 +16,7 @@ function WarehouseIndividual() {
                         <img
                             className="icon__previous" 
                             src={previousIcon}
+                            alt=""
                         />
                 </Link>
                 <h1 className="container__head--title">Washington</h1>
@@ -24,6 +25,7 @@ function WarehouseIndividual() {
                         <img
                             className="icon__edit" 
                             src={editIconWhite}
+                            alt=""
                         />
                         <span className="icon__edit--text">EDIT</span>
                     </div>
@@ -71,6 +73,7 @@ function WarehouseIndividual() {
                         <img 
                             src={arrowRight}
                             className="inventory__icon--right"
+                            alt=""
                         />
                     </Link>
                     <h4 className="inventory__header">CATERGORY</h4>
@@ -85,12 +88,14 @@ function WarehouseIndividual() {
                         <img 
                             src={editIcon}
                             className="inventory__icon--edit"
+                            alt=""
                         />
                     </Link>
                     <Link to="/">
                         <img 
                             src={deleteIcon}
                             className="inventory__icon--delete"
+                            alt=""
                         />
                     </Link>
                 </div>
@@ -103,6 +108,7 @@ function WarehouseIndividual() {
                     <img 
                         src={arrowRight}
                         className="inventory__icon--right"
+                        alt=""
                     />
                     <h4 className="inventory__header">CATERGORY</h4>
                     <p className="inventory__details">Electronics</p>
@@ -116,12 +122,14 @@ function WarehouseIndividual() {
                         <img 
                             src={editIcon}
                             className="inventory__icon--edit"
+                            alt=""
                         />
                     </Link>
                     <Link to="/">
                         <img 
                             src={deleteIcon}
                             className="inventory__icon--delete"
+                            alt=""
                         />
                     </Link>
                 </div>
@@ -134,6 +142,7 @@ function WarehouseIndividual() {
                     <img 
                         src={arrowRight}
                         className="inventory__icon--right"
+                        alt=""
                     />
                     <h4 className="inventory__header">CATERGORY</h4>
                     <p className="inventory__details">Electronics</p>
@@ -147,12 +156,14 @@ function WarehouseIndividual() {
                         <img 
                             src={editIcon}
                             className="inventory__icon--edit"
+                            alt=""
                         />
                     </Link>
                     <Link to="/">
                         <img 
                             src={deleteIcon}
                             className="inventory__icon--delete"
+                            alt=""
                         />
                     </Link>
                 </div>

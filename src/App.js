@@ -6,7 +6,7 @@ import Footer from "./components/Footer/Footer";
 import DeleteWarehouse from "./components/DeleteWarehouse/DeleteWarehouse";
 import ItemDetailsPage from "./pages/ItemDetailsPage/ItemDetailsPage";
 import WarehousePage from "./pages/WarehousePage/WarehousePage";
-import WarehouseIndividual from "./components/WarehouseIndividual/WarehouseIndividual";
+import WarehouseIndividual from "./pages/WarehouseIndividual/WarehouseIndividual";
 import EditWarehousePage from "./pages/EditWarehousePage/EditWarehousePage";
 
 function App() {
