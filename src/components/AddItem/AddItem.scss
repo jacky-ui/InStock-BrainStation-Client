@@ -14,12 +14,15 @@
     @include tablet {
       padding: 0 2rem;
       display: flex;
+      flex-wrap: wrap;
     }
 
     @include desktop {
       padding: 0 4rem;
     }
   }
+
+
 
   &__card {
     display: flex;
@@ -38,6 +41,7 @@
       background-color: $Light-Grey;
       flex-direction: row;
       justify-content: space-between;
+      width: 100%;
 
       @include tablet {
           width: 100%;
