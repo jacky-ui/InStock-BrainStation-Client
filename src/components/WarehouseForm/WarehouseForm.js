@@ -1,11 +1,11 @@
 import "./WarehouseForm.scss";
 import React, { Component } from "react";
 import axios from "axios";
-
-const putApi = 'http://localhost:8080/warehouses'
+import { api_url } from '../../utils/apiVariables';
 
 class WarehouseForm extends Component {
   state = {
+    update: "",
     name: "",
     address: "",
     city: "",
@@ -31,7 +31,7 @@ class WarehouseForm extends Component {
     });
   }
 
-  ifStateValid = () => {};
+//   ifStateValid = () => {};
 
   handleChange = (event) => {
     this.setState({
@@ -39,43 +39,56 @@ class WarehouseForm extends Component {
     });
   };
 
-  handleSubmit = (event) => {
-    event.preventDefault();
+//   handleSubmit = (event) => {
+//     event.preventDefault();
     // Axios Call Below [POST] - Add new Warehouse or [PUT] - Edit Warehouse
-    axios
-      .post(putApi, {
-        title: event.target.title.value.value,
-        description: event.target.comment.value.value,
-        name: event.target.name.value, 
-        address: event.target.address.value,
-        city: event.target.city.value,
-        country: event.target.country.value,
-        contact: {
-            name: event.target.contactName.value,
-            position: event.target.contactPosition.value, 
-            phone: event.target.contactPhone.value,
-            email: event.target.contactEmail.value
-        }
-      })
-      .then((response) => {
-        console.log(response);
-        console.log("yay");
-      });
+    // axios
+    //   .post(putApi, {
+    //     title: event.target.title.value.value,
+    //     description: event.target.comment.value.value,
+    //     name: event.target.name.value, 
+    //     address: event.target.address.value,
+    //     city: event.target.city.value,
+    //     country: event.target.country.value,
+    //     contact: {
+    //         name: event.target.contactName.value,
+    //         position: event.target.contactPosition.value, 
+    //         phone: event.target.contactPhone.value,
+    //         email: event.target.contactEmail.value
+    //     }
+    //   })
+    //   .then((response) => {
+    //     console.log(response);
+    //     console.log("yay");
+    //   });
 
-    event.target.reset();
-  };
+    // event.target.reset();
+//   };
 
-    handleSubmit = (event) => {
-        event.preventDefault();
-        // Axios Call Below [POST] - Add new Warehouse or [PUT] - Edit Warehouse
+    // handleSubmit = (event) => {
+    //     event.preventDefault();
+    //     // Axios Call Below [POST] - Add new Warehouse or [PUT] - Edit Warehouse
          
-
-    }    
+    // handleSubmit = (event) => {
+    //     event.preventDefault();
+    //     const { name, address, city, country, contactName, contactPosition, contactPhone, contactEmail } = this.state;
+    //     this.props.submit(), {
+    //         name,
+    //         address,
+    //         city,
+    //         country,
+    //         contactName, 
+    //         contactPosition,
+    //         contactPhone,
+    //         contactEmail
+    //     }      
+    // } 
+  
     
     render() {
         return (
             <section className='form'>
-                <form className='form-field'>
+                <form className='form-field' onSubmit={this.handleSubmit}>
                     <div className='form-left'>
                         <h2 className='form__title'>Warehouse Details</h2>
                         <div className='form__group'>
@@ -171,8 +184,12 @@ class WarehouseForm extends Component {
                         </div>
                     </div>
                     <div className='form-btns'>
-                        <button className='form__cancel'>Cancel</button>
-                        <button className='form__save'>{this.props.button}</button>
+                        <div className="form-btns__left">
+                            <button className='form__cancel'>Cancel</button>
+                        </div>
+                        <div className="form-btns__right">
+                            <button className='form__save' type='submit'>{this.props.button}</button>
+                        </div>
                     </div>
                 </form>
             </section>

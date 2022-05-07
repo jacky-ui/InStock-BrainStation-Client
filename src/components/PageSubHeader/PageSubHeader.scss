@@ -4,34 +4,36 @@
 .subheader {
     display: flex;
     justify-content: flex-start;
-    padding: 1.5rem 0;
-    margin: 0 1rem;
+    padding: 2rem 0;
+    margin: 0;
+    border-radius: 3px 3px 0 0 ;
     border-bottom: $border-divider;
     background-color: $White;
     position: relative;
     z-index: 2;
     @include tablet {
-        margin: 0 2rem;
+        padding: 2rem 0 1rem 0; 
     }
     @include desktop {
-        margin: 0 4rem;
-        padding: 2rem 0; 
+        padding: 2rem 0 1.25rem;
     }
     &__title { 
         @include page-header-mobile;
         @include tablet {
             @include page-header-desktop;
         }
-
     }
     &__arrow {
         width: 1rem;
         height: 1rem;
         align-self: center;
-        margin: 0 1rem;
+        margin: 0 0.75rem 0 1.75rem;
         @include tablet{
             margin: 0 1rem 0 2rem;
         }   
+        @include desktop {
+            margin: 0 .75rem 0 2.75rem;
+        }
     }
     &-style {
         margin-top: -3.75rem;
@@ -40,7 +42,7 @@
             margin-top: -5.5rem;
         }
         @include desktop {
-            margin-top: -6.45rem;
+            margin-top: -5.8125rem;
         }
     }
 }

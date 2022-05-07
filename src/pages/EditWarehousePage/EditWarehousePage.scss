@@ -1,3 +1,18 @@
 @use '../../styles/partials/mixins' as *;
 @use '../../styles/partials/variables' as *;
 
+.editWarehouse {
+    background-color: $Light-Grey;
+    &-wrapper {
+        border-radius: 3px;
+        margin: 0 1rem;
+        background-color: $White;
+        box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
+        @include tablet {
+            margin: 0 2rem;
+        }
+        @include desktop {
+            margin: 0 4rem;
+        }
+    }
+}

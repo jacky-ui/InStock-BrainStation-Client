@@ -10,7 +10,8 @@ class EditWarehousePage extends Component {
         pageTitle: "Edit Warehouse",
         button: "Save",
         warehouseDetails: null,
-        contactDetails: null
+        contactDetails: null,
+        update: ''
     };
 
     componentDidMount() {
@@ -24,6 +25,14 @@ class EditWarehousePage extends Component {
                 });
             })
     }
+    //  async onSubmit() {
+    //     const warehouseId = this.state.warehouseDetails.id
+    //     let data = await axios.put(`${api_url}/warehouses/${warehouseId}`)
+    //     .then(response => {
+    //         this.setState({ update: response.status });
+    //     })  
+    //     return data;
+    // }
 
     render() {
         if (!this.state.contactDetails) {
@@ -34,13 +43,16 @@ class EditWarehousePage extends Component {
             )
         }
         return(
-            <main>
-                <PageSubHeader 
-                    pageTitle={this.state.pageTitle}/>
-                <WarehouseForm 
-                    warehouseDetails={this.state.warehouseDetails}
-                    contactDetails={this.state.contactDetails}
-                    button={this.state.button}/>
+            <main className='editWarehouse'>
+                <div className='editWarehouse-wrapper'>
+                    <PageSubHeader 
+                        pageTitle={this.state.pageTitle}/>
+                    <WarehouseForm 
+                        warehouseDetails={this.state.warehouseDetails}
+                        contactDetails={this.state.contactDetails}
+                        button={this.state.button}
+                        submit={this.onSubmit}/>
+                </div>
             </main>
         );
     }

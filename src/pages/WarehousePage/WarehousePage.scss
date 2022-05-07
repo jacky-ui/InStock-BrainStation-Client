@@ -4,63 +4,49 @@
 
 .warehouses {
   color: $Instock-Black;
-
   &__title-container-wrapper {
-    background: linear-gradient(
-      to bottom,
-      $Graphite 0%,
-      $Graphite 25%,
-      $Light-Grey 25%,
-      $Light-Grey 100%
-    );
     display: flex;
     justify-content: center;
     padding: 0 1rem;
-
     @include tablet {
       padding: 0 1.5rem;
       background: $Graphite;
     }
-
     @include desktop {
       padding: 0 4rem;
     }
   }
-
   &__title-container {
-    background-color: white;
-    padding: 0 1rem;
+    background-color: $White;
+    padding: 0 1.5rem;
     display: flex;
     flex-direction: column;
     width: 100%;
     border-bottom: 1px solid $Cloud;
-
+    margin-top: -3.75rem;
+    z-index: 2;
+    border-radius: 3px 3px 0 0;
     @include tablet {
-      padding: 0 1.5rem 1.25rem;
+      padding: 0 2rem 1.25rem;
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
       border: none;
     }
-
     @include desktop {
-        padding: 1rem 2rem 1.5rem;
+        padding: 0rem 2.5rem 1.5rem;
     }
   }
-
   &__title {
-    margin-top: 1rem;
+    margin-top: 2rem;
     @include page-header-mobile;
-
     @include tablet {
       @include page-header-desktop;
     }
   }
-
   &__search-btn-container {
     display: flex;
     flex-direction: row;
-
     @include tablet {
       width: 100%;
     }
@@ -77,9 +63,14 @@
     padding-left: 1rem;
     width: 100%;
     @include body-medium-mobile;
-
+    &:focus {
+      outline: none;
+      border: $border-focus;
+    }
     @include tablet {
+      margin-top: 1.75rem;
       width: 12rem;
+      height: 2.375rem;
       @include body-medium-desktop;
     }
 
@@ -98,6 +89,9 @@
     border: none;
     width: 100%;
     @include body-medium-mobile;
+    &:hover {
+      background-color: $Instock-Black;
+    }
 
     @include tablet {
       width: 12rem;
@@ -110,11 +104,9 @@
   &__card-wrapper {
     padding: 0 1rem;
     background-color: $Light-Grey;
-
     @include tablet {
       padding: 0 1.5rem;
     }
-
     @include desktop {
       padding: 0 4rem;
     }
@@ -124,86 +116,80 @@
     display: flex;
     flex-wrap: wrap;
     background-color: white;
-    padding: 1rem;
+    padding: 1rem 2rem 2rem 2rem;
     border-bottom: 1px solid $Cloud;
     box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
-
+    &:hover {
+      background: rgba(46, 102, 229, 0.07)
+    }
     @include tablet {
       flex-wrap: nowrap;
       align-items: center;
       padding: 1rem 2rem;
     }
+    @include desktop {
+      padding: 1.5rem 2.5rem;
+    }
   }
-
   &__sort-bar {
     display: none;
-
     @include tablet {
       display: flex;
-      background-color: $Light-Grey;
+      background: rgba(247, 248, 249, 0.7);
       border-bottom: none;
     }
   }
-
   &__sort-icon {
     height: 1.25rem;
   }
-
   //   &__mobile-helper {
   //     // display: flex;
   //     // flex-wrap: wrap;
   //   }
-
   &__city-container {
     width: 50%;
     order: 1;
     margin-bottom: 1rem;
-
     @include tablet {
       margin-bottom: 0;
       display: flex;
       align-items: center;
+      width: 40%;
     }
-
     @include desktop {
-      width: 25%;
+      width: 18%;
     }
   }
-
   &__address-container {
     width: 50%;
     order: 3;
     margin-bottom: 1rem;
-
     @include tablet {
       margin-bottom: 0;
       margin-right: 2rem;
       order: 2;
       display: flex;
       align-items: center;
+      width: 36%;
     }
-
     @include desktop {
-      width: 25%;
+      width: 26%;
     }
   }
-
   &__name-container {
     width: 50%;
     order: 2;
-
     @include tablet {
       margin-bottom: 0;
       order: 3;
       display: flex;
       align-items: center;
+      width: 35%;
     }
-
     @include desktop {
-        width: 15%;
+        width: 18%;
       }
   }
-
   &__info-container {
     width: 50%;
     order: 4;
@@ -211,74 +197,75 @@
     @include tablet {
       display: flex;
       align-items: center;
+      width: 49%;
     }
     @include desktop {
-      width: 15%;
+      width: 18%;
     }
   }
-
   &__btn-container {
     order: 5;
     width: 100%;
     display: flex;
     justify-content: space-between;
     height: 1.5;
-
     @include tablet {
-      width: 50%;
+      width: 21%;
       justify-content: flex-end;
     }
-
     @include desktop {
-      width: 15%;
+      width: 17%;
     }
   }
-
   &__alt-text {
-    @include label-buttons-mobile;
+    @include table-header-mobile;
     color: $Slate;
-    font-weight: 600;
-
+    @include tablet {
+      @include table-header-desktop;
+    }
     &--mobile {
-      @include label-buttons-mobile;
+      @include table-header-mobile;
       color: $Slate;
-      font-weight: 600;
-
       @include tablet {
         display: none;
       }
     }
   }
-
   &__copy {
     @include body-medium-mobile;
-
     @include tablet {
       @include body-medium-desktop;
     }
   }
-
   &__icon {
     height: 1.5rem;
-
-    @include tablet {
-      margin-left: 1rem;
+    &-right {
+      height: 1.5rem;
+      @include tablet {
+        margin-left: 1.5rem;
+      }
     }
   }
-
   &__chevron-container {
     display: flex;
     align-items: center;
   }
-
   &__break {
     @include tablet {
       display: none;
     }
   }
-
   &__link {
     color: $Instock-Indigo;
-    font-weight: 700;
+    @include label-buttons-mobile;
+    @include tablet {
+      @include label-buttons-desktop;
+    }
+    &-chevron {
+      height: 0.625rem;
+    }
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }
