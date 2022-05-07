@@ -3,13 +3,14 @@ import deleteIcon from "../../assets/images/icons/delete_outline-24px.svg";
 import arrowRight from "../../assets/images/icons/chevron_right-24px.svg";
 import editIcon from "../../assets/images/icons/edit-24px.svg";
 import { Link } from "react-router-dom";
+import DeleteInventory from "../DeleteInventory/DeleteInventory";
 
-function WarehouseInventory() {
+function WarehouseInventory(props) {
     return(
         <section className="inventory">
             <div className="inventory__group">
                 <h4 className="inventory__header">INVENTORY ITEM</h4>
-                <p className="inventory__details--color">Television</p>
+                <p className="inventory__details--color">{props.itemName}</p>
                 <Link to="">
                     <img 
                             src={arrowRight}
@@ -20,17 +21,18 @@ function WarehouseInventory() {
             </div>
             <div className="inventory__group">
                 <h4 className="inventory__header">CATERGORY</h4>
-                <p className="inventory__details">Electronics</p>
+                <p className="inventory__details">{props.category}</p>
             </div>
             <div className="inventory__group">
                 <h4 className="inventory__header">STATUS</h4>
-                <p className="inventory__details--stock">IN STOCK</p>
+                <p className="inventory__details--stock">{props.status}</p>
             </div>
             <div className="inventory__group">
                 <h4 className="inventory__header">QTY</h4>
-                <p className="inventory__details">500</p>
+                <p className="inventory__details">{props.quantity}</p>
             </div>
             <div className="inventory__group inventory__group--icons">
+            {/*<DeleteInventory />*/}
                 <Link to="">
                     <img 
                         src={deleteIcon}
