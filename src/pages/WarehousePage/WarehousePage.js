@@ -2,12 +2,12 @@ import "./WarehousePage.scss";
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import Trash from "../../assets/images/icons/delete_outline-24px.svg";
+import { api_url } from "../../utils/apiVariables";
 import Pen from "../../assets/images/icons/edit-24px.svg";
 import Sort from "../../assets/images/icons/sort-24px.svg";
 import Chevron from "../../assets/images/icons/chevron_right-24px.svg";
+import DeleteWarehouse from "../../components/DeleteWarehouse/DeleteWarehouse";
 
-const getApi = 'http://localhost:8080/warehouses'
 
 class WarehousePage extends Component {
   state = {
@@ -15,9 +15,8 @@ class WarehousePage extends Component {
   };
   
   componentDidMount() {
-    axios.get(getApi)
+    axios.get(`${api_url}/warehouses`)
     .then((result) => {
-      console.log(result.data)
       this.setState({
         warehousesData: result.data
       })
@@ -30,7 +29,7 @@ class WarehousePage extends Component {
       <section>
             <p>Loading...</p>
           </section>
-          )
+      )
     }
 
     return (
@@ -77,7 +76,7 @@ class WarehousePage extends Component {
         </div>
         <div className="warehouses__card-wrapper">
           {this.state.warehousesData.map((warehouse) => {
-            return (<article className="warehouses__card">
+            return (<article className="warehouses__card" key={warehouse.id}>
             <div className="warehouses__city-container">
               <h4 className="warehouses__alt-text--mobile">WAREHOUSE</h4>
               <Link to={`/warehouse/${warehouse.id}`} className="warehouses__link">
@@ -108,9 +107,10 @@ class WarehousePage extends Component {
               </p>
             </div>
             <div className="warehouses__btn-container">
-              <Link to={`/warehouse/${warehouse.id}/delete`}>
-              <img src={Trash} alt="" className="warehouses__icon" />
-              </Link>
+                  <DeleteWarehouse 
+                    key={warehouse.id}
+                    name={warehouse.name}
+                    warehouseId={warehouse.id}/>
               <Link to={`/warehouse/${warehouse.id}/edit`}>
               <img src={Pen} alt="" className="warehouses__icon-right" />
               </Link>
