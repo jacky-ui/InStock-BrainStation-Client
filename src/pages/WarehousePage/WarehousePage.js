@@ -112,7 +112,7 @@ class WarehousePage extends Component {
               <img src={Trash} alt="" className="warehouses__icon" />
               </Link>
               <Link to={`/warehouse/${warehouse.id}/edit`}>
-              <img src={Pen} alt="" className="warehouses__icon" />
+              <img src={Pen} alt="" className="warehouses__icon-right" />
               </Link>
             </div>
           </article>)

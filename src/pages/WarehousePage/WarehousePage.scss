@@ -214,7 +214,7 @@
       justify-content: flex-end;
     }
     @include desktop {
-      width: 16%;
+      width: 17%;
     }
   }
   &__alt-text {
@@ -239,8 +239,11 @@
   }
   &__icon {
     height: 1.5rem;
-    @include tablet {
-      margin-left: 0.5rem;
+    &-right {
+      height: 1.5rem;
+      @include tablet {
+        margin-left: 1.5rem;
+      }
     }
   }
   &__chevron-container {
