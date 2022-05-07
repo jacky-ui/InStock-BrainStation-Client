@@ -17,7 +17,7 @@ function WarehouseInventory(props) {
                 <h4 className="inventory__header">INVENTORY ITEM</h4>
                 <div className="inventory__group--arrow">
                     <p className="inventory__details--color">{props.itemName}</p>
-                    <Link to="">
+                    <Link to="/inventory/:itemId">
                         <img 
                             src={arrowRight}
                             className="inventory__icon--right"
@@ -41,18 +41,18 @@ function WarehouseInventory(props) {
             </div>
             <div className="inventory__group inventory__group--icons">
             {/*<DeleteInventory />*/}
-                <Link to="">
+                <Link to="/warehouse/:warehouseId/delete">
                     <img 
                         src={deleteIcon}
                         className="inventory__icon--delete"
                         alt=""
                     />
                 </Link>
-                <Link to="">
+                <Link to="/warehouse/:warehouseId/delete">
                     <img 
                         src={editIcon}
                         className="inventory__icon--edit"
-                        alt=""
+                        alt="/inventory/:itemId/edit"
                     />
                 </Link>
             </div>
