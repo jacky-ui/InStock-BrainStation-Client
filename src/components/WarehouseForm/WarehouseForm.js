@@ -4,87 +4,101 @@ import axios from "axios";
 import { api_url } from '../../utils/apiVariables';
 
 class WarehouseForm extends Component {
-  state = {
-    update: "",
-    name: "",
-    address: "",
-    city: "",
-    country: "",
-    contactName: "",
-    contactPosition: "",
-    contactPhone: "",
-    contactEmail: "",
-  };
+    state = {
+        update: "",
+        name: "",
+        address: "",
+        city: "",
+        country: "",
+        contactName: "",
+        contactPosition: "",
+        contactPhone: "",
+        contactEmail: "",
+        put: null,
+        post: null
+    };
 
-  componentDidMount() {
-    const warehouse = this.props.warehouseDetails;
-    const contact = this.props.contactDetails;
-    this.setState({
-      name: warehouse.name,
-      address: warehouse.address,
-      city: warehouse.city,
-      country: warehouse.country,
-      contactName: contact.name,
-      contactPosition: contact.position,
-      contactPhone: contact.phone,
-      contactEmail: contact.email,
-    });
-  }
+    componentDidMount() {
+        const warehouse = this.props.warehouseDetails;
+        const contact = this.props.contactDetails;
+        const { put, post } = this.props;
+        this.setState({
+            name: warehouse.name,
+            address: warehouse.address,
+            city: warehouse.city,
+            country: warehouse.country,
+            contactName: contact.name,
+            contactPosition: contact.position,
+            contactPhone: contact.phone,
+            contactEmail: contact.email,
+            put,
+            post
+        });
+    }
 
-//   ifStateValid = () => {};
+    // Phone Number Validation
+    isPhonevalid() {
+        const phoneValidation = /^\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}$/;
+        if (phoneValidation.test(this.state.contactName)) {
+            return true;
+        }
+        return false;
+    }
 
-  handleChange = (event) => {
-    this.setState({
-      [event.target.name]: event.target.value,
-    });
-  };
+    handleChange = (event) => {
+        this.setState({
+            [event.target.name]: event.target.value,
+        });
+    };
 
-//   handleSubmit = (event) => {
-//     event.preventDefault();
-    // Axios Call Below [POST] - Add new Warehouse or [PUT] - Edit Warehouse
-    // axios
-    //   .post(putApi, {
-    //     title: event.target.title.value.value,
-    //     description: event.target.comment.value.value,
-    //     name: event.target.name.value, 
-    //     address: event.target.address.value,
-    //     city: event.target.city.value,
-    //     country: event.target.country.value,
-    //     contact: {
-    //         name: event.target.contactName.value,
-    //         position: event.target.contactPosition.value, 
-    //         phone: event.target.contactPhone.value,
-    //         email: event.target.contactEmail.value
-    //     }
-    //   })
-    //   .then((response) => {
-    //     console.log(response);
-    //     console.log("yay");
-    //   });
+    // Handles [POST] Axios Requests
+    handlePost = (event) => {
+        event.preventDefault();
+        const { name, address, city, country, contactName, contactPosition, contactPhone, contactEmail } = this.state;
+        axios.post(`${api_url}/warehouses`, {
+            name,
+            address,
+            city,
+            country,
+            contactName,
+            contactPosition,
+            contactPhone,
+            contactEmail
+        })
+        .then((response) => {
+            console.log(response);
+            console.log("yay");
+        });
+        // event.target.reset();
+    };
 
-    // event.target.reset();
-//   };
+    // Handles [PUT] Axios Requests
+    handlePut = (event) => {
+        event.preventDefault();
+        const warehouseId = this.props.warehouseDetails.id;
+        const { name, address, city, country, contactName, contactPosition, contactPhone, contactEmail } = this.state;
+        axios.put(`${api_url}/warehouses/${warehouseId}`, {
+            name,
+            address,
+            city,
+            country,
+            contactName,
+            contactPosition,
+            contactPhone,
+            contactEmail
+        })
+        .then(response => {
+            console.log(response);
+            this.setState({ update: response.status });
+        })
+    }
 
-    // handleSubmit = (event) => {
-    //     event.preventDefault();
-    //     // Axios Call Below [POST] - Add new Warehouse or [PUT] - Edit Warehouse
-         
-    // handleSubmit = (event) => {
-    //     event.preventDefault();
-    //     const { name, address, city, country, contactName, contactPosition, contactPhone, contactEmail } = this.state;
-    //     this.props.submit(), {
-    //         name,
-    //         address,
-    //         city,
-    //         country,
-    //         contactName, 
-    //         contactPosition,
-    //         contactPhone,
-    //         contactEmail
-    //     }      
-    // } 
-  
-    
+    // Determines which axios request is being made
+    handleSubmit = (event) => {
+        if (this.state.put === true) {this.handlePut(event)} 
+        else {this.handlePost(event)}
+    }
+
     render() {
         return (
             <section className='form'>
@@ -93,7 +107,7 @@ class WarehouseForm extends Component {
                         <h2 className='form__title'>Warehouse Details</h2>
                         <div className='form__group'>
                             <label className='form__label'>Warehouse Name</label>
-                            <input 
+                            <input
                                 className='form__input'
                                 type="text"
                                 name="name"
@@ -104,7 +118,7 @@ class WarehouseForm extends Component {
                         </div>
                         <div className='form__group'>
                             <label className='form__label'>Street Address</label>
-                            <input 
+                            <input
                                 className='form__input'
                                 type="text"
                                 name="address"
@@ -115,7 +129,7 @@ class WarehouseForm extends Component {
                         </div>
                         <div className='form__group'>
                             <label className='form__label'>City</label>
-                            <input 
+                            <input
                                 className='form__input'
                                 type="text"
                                 name="city"
@@ -126,7 +140,7 @@ class WarehouseForm extends Component {
                         </div>
                         <div className='form__group'>
                             <label className='form__label'>Country</label>
-                            <input 
+                            <input
                                 className='form__input'
                                 type="text"
                                 name="country"
@@ -140,7 +154,7 @@ class WarehouseForm extends Component {
                         <h2 className='form__title'>Contact Details</h2>
                         <div className='form__group'>
                             <label className='form__label'>Contact Name</label>
-                            <input 
+                            <input
                                 className='form__input'
                                 type="text"
                                 name="contactName"
@@ -151,7 +165,7 @@ class WarehouseForm extends Component {
                         </div>
                         <div className='form__group'>
                             <label className='form__label'>Position</label>
-                            <input 
+                            <input
                                 className='form__input'
                                 type="text"
                                 name="contactPosition"
@@ -162,7 +176,7 @@ class WarehouseForm extends Component {
                         </div>
                         <div className='form__group'>
                             <label className='form__label'>Phone Number</label>
-                            <input 
+                            <input
                                 className='form__input'
                                 type="text"
                                 name="contactPhone"
@@ -173,7 +187,7 @@ class WarehouseForm extends Component {
                         </div>
                         <div className='form__group'>
                             <label className='form__label'>Email</label>
-                            <input 
+                            <input
                                 className='form__input'
                                 type="text"
                                 name="contactEmail"
@@ -188,7 +202,7 @@ class WarehouseForm extends Component {
                             <button className='form__cancel'>Cancel</button>
                         </div>
                         <div className="form-btns__right">
-                            <button className='form__save' type='submit'>{this.props.button}</button>
+                            <button className='form__save' type="submit">{this.props.button}</button>
                         </div>
                     </div>
                 </form>
