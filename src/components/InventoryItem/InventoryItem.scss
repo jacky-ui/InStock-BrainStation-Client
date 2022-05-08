@@ -37,7 +37,6 @@
         &--header {
             @include table-header-mobile;
             color: $Slate;
-            font-weight: bold;
             margin-bottom: 0.2rem;
 
             @include tablet {
@@ -57,7 +56,7 @@
             }
         }
         &--color {
-            @include body-small-mobile;
+            @include body-medium-mobile;
             color: $Instock-Indigo;
             padding-bottom: 1rem;
             font-weight: bold;
@@ -67,25 +66,25 @@
             }
 
             @include tablet {
-                @include body-small-desktop;
+                @include body-medium-desktop;
                 color: $Instock-Indigo;
                 font-weight: bold;
                 padding-bottom: unset;
             }
         }
         &--details {
-            @include body-small-mobile;
+            @include body-medium-mobile;
             color: $Instock-Black;
             margin-bottom: 0.2rem;
 
             @include tablet {
-                @include body-small-desktop;
+                @include body-medium-desktop;
                 color: $Instock-Black;
                 margin-bottom: unset;
             }
         }
         &--stock {
-            @include body-small-mobile;
+            @include body-medium-mobile;
             color: $Green;
             padding: 0.1rem 0.2rem;
             font-weight: bold;
@@ -97,7 +96,7 @@
             text-transform: uppercase;
 
             @include tablet {
-                @include body-small-desktop;
+                @include body-medium-desktop;
                 font-weight: bold;
                 background-color: $Light-Grey;
                 color: $Green;
@@ -106,20 +105,20 @@
             }
         }
         &--outstock {
-            @include body-small-mobile;
+            @include body-medium-mobile;
             color: $Red;
             padding: 0.1rem 0.2rem;
             font-weight: bold;
             background-color: rgba($color: $Red, $alpha: 0.07);
             border-radius: 2.375rem;
             margin-bottom: 0.8rem;
-            width: 5rem;
+            width: 6rem;
             text-align: center;
             text-transform: uppercase;
             white-space: nowrap;
 
             @include tablet {
-                @include body-small-desktop;
+                @include body-medium-desktop;
                 font-weight: bold;
                 margin-bottom: unset;
                 width: 6rem;
@@ -246,7 +245,11 @@
     &__right {
         position: unset;
         width: 25%;
-        height: 1rem;
+        height: 1.2rem;
+
+        @include tablet {
+            height: 1.5rem;
+        }
     }
     &__delete {
 
