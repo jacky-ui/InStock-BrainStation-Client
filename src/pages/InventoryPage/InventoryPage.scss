@@ -42,10 +42,6 @@
             padding: 2rem;
         }
 
-        // @include desktop {
-        //     padding: 2rem 5rem;
-        // }
-
         &--header {
             @include page-header-mobile;
         }
@@ -86,10 +82,12 @@
             @include tablet {
                 margin: unset;
                 height: 2.375rem;
+                white-space: nowrap;
                 @include label-buttons-desktop;
+                width: 10rem;
             }
             @include desktop {
-                width: 20rem;
+                width: 10rem;
             }
             
             &:hover {
@@ -121,10 +119,6 @@
         color: $Slate;
         font-weight: bold;
         white-space: nowrap;
-
-        // @include tablet {
-        //     width: 100%;
-        // }
     }
     &--action {
         @include tablet {

@@ -25,7 +25,6 @@
 
     &__item {
         display: flex;
-        // flex-direction: column;
         flex-wrap: wrap;
 
         @include tablet {
@@ -72,7 +71,6 @@
                 color: $Instock-Indigo;
                 font-weight: bold;
                 padding-bottom: unset;
-                // margin-right: 2rem;
             }
         }
         &--details {
@@ -244,13 +242,6 @@
         position: unset;
         width: 25%;
         height: 1rem;
-
-    //     @include tablet {
-    //     }
-    //     // @include desktop {
-    //     //     bottom: 1.25rem;
-    //     //     left: 5.2rem;
-    //     // }
     }
     &__delete {
 

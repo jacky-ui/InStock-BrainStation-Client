@@ -10,10 +10,7 @@ class InventoryPage extends Component {
     state = {
         inventoriesData: []
     };
-    // A function to fetch Inventories Data from Inventories API Route (/inventories)
-
-    // Below use Component Lifecycle Methods such as componentDidMount to grab data
-
+    
     componentDidMount() {
             axios
                 .get(`${api_url}/inventories`)
@@ -45,7 +42,7 @@ class InventoryPage extends Component {
                                 className="inventories__inputs--search"
                                 placeholder="Search..."
                             />
-                            <Link to="/inventory/addItem">
+                            <Link to="/inventory/addItem ">
                                 <button className="inventories__inputs--add">
                                     + Add New Item
                                 </button>
