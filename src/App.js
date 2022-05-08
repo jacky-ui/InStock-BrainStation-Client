@@ -5,11 +5,10 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import ItemDetailsPage from "./pages/ItemDetailsPage/ItemDetailsPage";
 import WarehousePage from "./pages/WarehousePage/WarehousePage";
-import WarehouseIndividual from "./components/WarehouseIndividual/WarehouseIndividual";
+import WarehouseIndividual from "./pages/WarehouseIndividual/WarehouseIndividual";
 import EditWarehousePage from "./pages/EditWarehousePage/EditWarehousePage";
-import AddWarehousePage from "./pages/AddWarehousePage/AddWarehousePage";
-import EditInventoryPage from "./pages/EditInventoryPage/EditInventoryPage";
 import InventoryPage from "./pages/InventoryPage/InventoryPage";
+import DeleteWarehouse from "./components/DeleteWarehouse/DeleteWarehouse";
 
 function App() {
   return (
@@ -18,14 +17,18 @@ function App() {
         <Header />
          <Switch>
           <Route path="/" exact component={WarehousePage} />
-          <Route path="/warehouse/add" exact component={AddWarehousePage} />
-          <Route path="/warehouse/:warehouseId" exact component={WarehouseIndividual} />
-          <Route path="/warehouse/:warehouseId/edit" exact component={EditWarehousePage} />
-          {/* <Route path="/warehouse/:warehouseId/delete" exact component={DeleteWarehouse} /> */}
-          <Route path="/inventory" exact component={InventoryPage} />
-          <Route path="/inventory/:itemId" exact component={ItemDetailsPage} />
-          <Route path="/inventory/:itemId/edit" component={EditInventoryPage} />
-          {/* <Route path="/inventory/add" component={AddItem} /> */}
+          <Route path="/warehouse/:warehouseId" component={WarehouseIndividual} />
+          <Route
+
+            path="/warehouse/:warehouseId/edit"
+            component={EditWarehousePage}
+          />
+          <Route path="/warehouse/:warehouseId/delete" component={DeleteWarehouse} />
+          {/* <Route path="/warehouse/add" component={AddWarehouse} /> */}
+          <Route path="/inventory" component={InventoryPage} />
+          <Route path="/inventory/:itemId" component={ItemDetailsPage} />
+          {/* <Route path="/inventory/:itemId/edit" component={EditItem} />
+  {/* <Route path="/inventory/add" component={AddItem} /> */}
         </Switch>
         <Footer />
       </BrowserRouter>

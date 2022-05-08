@@ -1,0 +1,245 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/variables" as *;
+
+.inventory {
+    display: flex;
+    // flex-direction: column;
+    flex-wrap: wrap;
+    // align-content: space-between;
+    // height: 10rem;
+    padding: 1rem;
+    padding-bottom: 2rem;
+    border-top: 1px solid $Cloud;
+    position: relative;
+
+    &:hover {
+        background-color: $Cloud;
+    }
+
+    @include tablet {
+        display: flex;
+        flex-direction: unset;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0rem 2rem;
+        padding-top: 0.5rem;
+        height: 3rem;
+    }
+    @include desktop {
+        padding: 0rem 2.5rem;
+    }
+
+    &__group {
+        @include tablet {
+            width: 16%;
+        }
+        &--icons {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            order: 5;
+            height: 1.5rem;
+            margin-top: 3rem;
+
+            @include tablet {
+                order: unset;
+                width: 16%;
+                margin-top: unset;
+                text-align: end;
+                justify-content: flex-end;
+            }
+            @include desktop {
+                width: 10%;
+            }
+        }
+        &--arrow {
+            display: flex;
+            @include tablet {
+                align-items: center;
+            }
+            @include desktop {
+                width: 10%;
+            }
+        }
+        &--inventory {
+            width: 50%;
+            order: 1;
+
+            @include tablet {
+                width: 16%;
+                order: unset;
+            }
+            @include desktop {
+                width: 10%;
+                white-space: nowrap;
+            }
+        }
+        &--category {
+            width: 50%;
+            order: 3;
+
+            @include tablet {
+                width: 16%;
+                order: unset;
+            }
+            @include desktop {
+                width: 10%;
+            }
+        }
+        &--status {
+            width: 50%;
+            order: 2;
+
+            @include tablet {
+                width: 16%;
+                order: unset;
+            }
+            @include desktop {
+                width: 10%;
+            }
+        }
+        &--quantity {
+            width: 50%;
+            order: 4;
+
+            @include tablet {
+                width: 16%;
+                order: unset;
+            }
+            @include desktop {
+                width: 10%;
+            }
+        }
+    }
+
+    &__header {
+        @include table-header-mobile;
+        color: $Slate;
+        font-weight: bold;
+        padding-bottom: 0.3rem;
+
+        @include tablet {
+            @include table-header-desktop;
+            color: $Slate;
+            font-weight: bold;
+            display: none;
+        }
+    }
+    &__details {
+        @include body-small-mobile;
+        color: $Instock-Black;
+
+        @include tablet {
+            @include body-small-desktop;
+            color: $Instock-Black;
+        }
+        @include desktop {
+            margin-right: 9rem;
+        }
+
+        &--color {
+            @include body-small-mobile;
+            color: $Instock-Indigo;
+            padding-bottom: 1rem;
+            font-weight: bold;
+
+            @include tablet {
+                padding-bottom: unset;
+                @include body-small-desktop;
+                color: $Instock-Indigo;
+                font-weight: bold;
+            }
+            // @include desktop {
+            //     margin-right: 11.7rem;
+            // }
+        }
+        &--instock {
+            @include body-small-mobile;
+            color: $Green;
+            padding: 0.1rem 0.5rem;
+            font-weight: bold;
+            background-color: rgba($color: $Green, $alpha: 0.07);
+            border-radius: 2.375rem;
+            margin-bottom: 0.8rem;
+            width: 4rem;
+            margin-right: 4.2rem;
+            text-transform: capitalize;
+
+            @include tablet {
+                margin-bottom: unset;
+                margin-right: unset;
+                @include body-small-desktop;
+                font-weight: bold;
+                width: 5rem;
+            }
+        }
+        &--outstock {
+            @include body-small-mobile;
+            color: $Red;
+            padding: 0.1rem 0.5rem;
+            font-weight: bold;
+            background-color: rgba($color: $Red, $alpha: 0.07);
+            border-radius: 2.375rem;
+            margin-bottom: 0.8rem;
+            margin-right: 2rem;
+            width: 6rem;
+            text-transform: uppercase;
+
+            @include tablet {
+                margin-bottom: unset;
+                margin-right: unset;
+                @include body-small-desktop;
+                font-weight: bold;
+                width: 6rem;
+            }
+        }
+    }
+    &__icon--delete {
+        // position: absolute;
+        // left: 1rem;
+        // bottom: 1rem;
+
+        @include tablet {
+            left: unset;
+            right: 3.5rem;
+        }
+    }
+    &__icon--right {
+        position: static;
+
+        @include tablet {
+            left: 5rem;
+            bottom: 0.95rem;
+        }
+        @include desktop {
+            left: 5.8rem;
+            bottom: 1.6rem;
+        }
+    }
+    &__icon--edit {
+        // position: absolute;
+        // right: 1.5rem;
+        // bottom: 1rem;
+        // padding-left: 0.5rem;
+
+        @include tablet {
+            position: static;
+            height: 1.2rem;
+        }
+    }
+    &__icon--delete {
+        position: absolute;
+        left: 1rem;
+        bottom: 1rem;
+
+        @include tablet {
+            position: static;
+            height: 1.2rem;
+        }
+    }
+}
+
+a {
+    text-decoration: none;
+}
