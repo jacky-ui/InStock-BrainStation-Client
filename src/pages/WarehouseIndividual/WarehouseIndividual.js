@@ -18,7 +18,7 @@ class WarehouseIndividual extends Component {
     componentDidMount() {
         const id = this.props.match.params.warehouseId;
         axios
-            .get(`${API_URL}/warehouse/${id}`)
+            .get(`${API_URL}/warehouses/${id}`)
             .then((response) => {
                 const warehouse = response.data;
                 this.setState({
@@ -26,7 +26,7 @@ class WarehouseIndividual extends Component {
                 });
             });
         axios   
-            .get(`${API_URL}/warehouse/inventory/${id}`)
+            .get(`${API_URL}/inventories/inventory/${id}`)
             .then((response) => {
                 const inventoryData = response.data
 
