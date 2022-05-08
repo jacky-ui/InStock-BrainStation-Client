@@ -79,11 +79,14 @@
         border: $border-divider;
         padding: 0.5rem 1.25rem;
         color: $Instock-Black;
+        &:user-invalid {
+            border: $border-error;
+        }
         &:focus {
             outline: none;
             border: $border-focus;
         }
-        &--invalid {
+        &:-moz-submit-invalid {
             border: $border-error;
         }
         &::placeholder {
