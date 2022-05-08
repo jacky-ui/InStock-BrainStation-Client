@@ -11,7 +11,8 @@ class EditWarehousePage extends Component {
         button: "Save",
         warehouseDetails: null,
         contactDetails: null,
-        update: ''
+        put: true,
+        post: false
     };
 
     componentDidMount() {
@@ -25,14 +26,6 @@ class EditWarehousePage extends Component {
                 });
             })
     }
-    //  async onSubmit() {
-    //     const warehouseId = this.state.warehouseDetails.id
-    //     let data = await axios.put(`${api_url}/warehouses/${warehouseId}`)
-    //     .then(response => {
-    //         this.setState({ update: response.status });
-    //     })  
-    //     return data;
-    // }
 
     render() {
         if (!this.state.contactDetails) {
@@ -51,7 +44,8 @@ class EditWarehousePage extends Component {
                         warehouseDetails={this.state.warehouseDetails}
                         contactDetails={this.state.contactDetails}
                         button={this.state.button}
-                        submit={this.onSubmit}/>
+                        put={this.state.put}
+                        post={this.state.post}/>
                 </div>
             </main>
         );

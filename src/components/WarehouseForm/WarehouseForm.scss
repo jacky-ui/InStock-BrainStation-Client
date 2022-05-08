@@ -66,6 +66,32 @@
         display: flex;
         flex-direction: column;
         padding-bottom: 1rem;
+        &--hide {
+            display: none;
+        }
+        &--error {
+            display:contents;
+            height: 0.833rem;
+            display: flex;
+            justify-content: flex-start;
+            margin-top: 0.25rem;
+            align-items: center;
+            &__icon {
+                scale: 0.55;
+                margin-left: -0.25rem;
+                @include tablet {
+                    scale: 0.7;
+                }
+            }
+            &__message {
+                @include body-small-mobile;
+                color: $Red;
+                margin-left: 0.25rem;
+                @include tablet {
+                    @include body-small-desktop;
+                }
+            }
+        }
     }
     &__label {
         @include label-buttons-mobile;
@@ -79,11 +105,14 @@
         border: $border-divider;
         padding: 0.5rem 1.25rem;
         color: $Instock-Black;
-        :focus {
+        &:user-invalid {
+            border: $border-error;
+        }
+        &:focus {
             outline: none;
             border: $border-focus;
         }
-        :invalid {
+        &--invalid {
             border: $border-error;
         }
         &::placeholder {
@@ -136,6 +165,12 @@
         padding: 0 .5rem;
         height: 2.25rem;
         width: 100%;
+        &:disabled {
+            background-color: $Cloud;
+            &:hover {
+                background-color: $Cloud;
+            }
+        }
         @include label-buttons-mobile;
         &:hover {
             background-color: $Instock-Black;

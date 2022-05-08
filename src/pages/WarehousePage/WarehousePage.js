@@ -28,7 +28,7 @@ class WarehousePage extends Component {
       return (
       <section>
             <p>Loading...</p>
-          </section>
+      </section>
       )
     }
 
