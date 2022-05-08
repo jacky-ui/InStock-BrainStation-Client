@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { api_url } from '../../utils/apiVariables';
+import error from '../../assets/images/icons/error-24px.svg';
 
 class WarehouseForm extends Component {
     state = {
@@ -38,15 +39,16 @@ class WarehouseForm extends Component {
     }
 
     // Empty String Validation 
-    isNotEmpty(event) {
-        if (event.target.value === "" ) {
-            return false;
+    isEmpty = () => {
+        const { name, address, city, country, contactName, contactPosition } = this.state;
+        if ( name || address || city || country || contactName || contactPosition === "" ) {
+            return true;
         }
-        return true;
+        return false;
     }
 
     // Phone Number Validation
-    isPhoneValid() {
+    isPhoneValid = () => {
         const phoneValidation = /^\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}$/;
         if (!phoneValidation.test(this.state.contactPhone)) {
             return false;
@@ -55,7 +57,7 @@ class WarehouseForm extends Component {
     }
 
     // Email Validation 
-    isEmailValid() {
+    isEmailValid = () => {
         const emailValidation = /^\S+@\S+\.\S+$/;
         if (!emailValidation.test(this.state.contactEmail)){
             return false;
@@ -64,7 +66,7 @@ class WarehouseForm extends Component {
     }
 
     // Form Valid for Disabled Button Submit
-    isFormValid() {
+    isFormValid = () => {
         if (!this.state.name || !this.state.address || !this.state.city || !this.state.country || !this.state.contactName || !this.state.contactEmail || !this.state.contactPhone || !this.state.contactPosition) {
             return false;
         }
@@ -140,50 +142,54 @@ class WarehouseForm extends Component {
                         <div className='form__group'>
                             <label className='form__label'>Warehouse Name</label>
                             <input
-                                className={`form__input ${this.isNotEmpty ? '' : "form__input--invalid"}`}
+                                className={`form__input ${this.isEmpty ? '' : "form__input--invalid"}`}
                                 type="text"
                                 name="name"
                                 placeholder="Warehouse Name"
                                 value={this.state.name}
                                 onChange={this.handleChange}
-                                required
+                                // required
                             />
                         </div>
                         <div className='form__group'>
                             <label className='form__label'>Street Address</label>
                             <input
-                                className={`form__input ${this.isNotEmpty ? '' : "form__input--invalid"}`}
+                                className={`form__input ${this.isEmpty ? '' : "form__input--invalid"}`}
                                 type="text"
                                 name="address"
                                 placeholder="Street Address"
                                 value={this.state.address}
                                 onChange={this.handleChange}
-                                required
+                                // required
                             />
                         </div>
                         <div className='form__group'>
                             <label className='form__label'>City</label>
                             <input
-                                className={`form__input ${this.isNotEmpty ? '' : "form__input--invalid"}`}
+                                className={`form__input ${this.isEmpty ? '' : "form__input--invalid"}`}
                                 type="text"
                                 name="city"
                                 placeholder="City"
                                 value={this.state.city}
                                 onChange={this.handleChange}
-                                required
+                                // required
                             />
                         </div>
                         <div className='form__group'>
                             <label className='form__label'>Country</label>
                             <input
-                                className={`form__input ${this.isNotEmpty ? '' : "form__input--invalid"}`}
+                                className={`form__input ${this.isEmpty ? '' : "form__input--invalid"}`}
                                 type="text"
                                 name="country"
                                 placeholder="Country"
                                 value={this.state.country}
                                 onChange={this.handleChange}
-                                required
+                                // required
                             />
+                            <div className={`form__group--hide ${this.isEmpty ? '' : "form__group--error"}`}>
+                                <img className="form__group--error__icon" src={error} alt=""/>
+                                <p className="form__group--error__message">This field is required</p>
+                            </div>
                         </div>
                     </div>
                     <div className='form-right'>
@@ -191,50 +197,63 @@ class WarehouseForm extends Component {
                         <div className='form__group'>
                             <label className='form__label'>Contact Name</label>
                             <input
-                                className={`form__input ${this.isNotEmpty ? '' : "form__input--invalid"}`}
+                                className={`form__input ${this.isEmpty ? '' : "form__input--invalid"}`}
                                 type="text"
                                 name="contactName"
                                 placeholder="Contact Name"
                                 value={this.state.contactName}
                                 onChange={this.handleChange}
-                                required
+                                // required
                             />
+                            <div className={`form__group--hide form__input--invalid`}>
+                                <img className="form__group--error__icon" src={error} alt=""/>
+                                <p className="form__group--error__message">This field is required</p>
+                            </div>
                         </div>
                         <div className='form__group'>
                             <label className='form__label'>Position</label>
                             <input
-                                className={`form__input ${this.isNotEmpty ? '' : "form__input--invalid"}`}
+                                className={`form__input ${this.isEmpty ? '' : "form__input--invalid"}`}
                                 type="text"
                                 name="contactPosition"
                                 placeholder="Position"
                                 value={this.state.contactPosition}
                                 onChange={this.handleChange}
-                                required
+                                // required
                             />
                         </div>
                         <div className='form__group'>
                             <label className='form__label'>Phone Number</label>
                             <input
-                                className={`form__input ${this.isPhoneValid() ? '' : "form__input--invalid"}`}
+                                className={`form__input ${!this.isPhoneValid() ? '' : "form__input--invalid"}`}
                                 type="text"
                                 name="contactPhone"
                                 placeholder="Phone Number"
                                 value={this.state.contactPhone}
                                 onChange={this.handleChange}
-                                required
+                                // required
                             />
+                            <div className={`form__group--hide ${!this.isPhoneValid() ? '' : "form__group--error"}`}>
+                                <img className="form__group--error__icon" src={error} alt=""/>
+                                <p className="form__group--error__message">This field is required</p>
+                            </div>
                         </div>
                         <div className='form__group'>
                             <label className='form__label'>Email</label>
                             <input
-                                className={`form__input ${this.isEmailValid() ? '' : "form__input--invalid"}`}
+                                className={`form__input ${!this.isEmailValid() ? '' : "form__input--invalid"}`}
                                 type="text"
                                 name="contactEmail"
                                 placeholder="Email"
                                 value={this.state.contactEmail}
                                 onChange={this.handleChange}
-                                required
+                                // required
                             />
+                            <div className={`form__group--hide 
+                            ${!this.isEmailValid() ? '' : "form__group--error"}`}>
+                                <img className="form__group--error__icon" src={error} alt=""/>
+                                <p className="form__group--error__message">This field is required</p>
+                            </div>
                         </div>
                     </div>
                     <div className='form-btns'>
@@ -242,7 +261,7 @@ class WarehouseForm extends Component {
                             <button className='form__cancel'>Cancel</button>
                         </Link>
                         <div className="form-btns__right">
-                            <button disabled={!this.isFormValid()} className='form__save' type="submit">{this.props.button}</button>
+                            <button disabled={this.isFormValid()} className='form__save' type="submit">{this.props.button}</button>
                         </div>
                     </div>
                 </form>
