@@ -90,23 +90,21 @@
         &--title {
             @include table-header-mobile;
             color: $Slate;
-            font-weight: bold;
 
             @include tablet {
                 @include table-header-desktop;
                 color: $Slate;
-                font-weight: bold;
             }
         }
         &--address {
-            @include body-small-mobile;
+            @include body-medium-mobile;
             color: $Instock-Black;
             margin-top: -1.5rem;
 
             @include tablet {
                 display: block;
                 width: 9rem;
-                @include body-small-desktop;
+                @include body-medium-desktop;
             }
         }
     }
@@ -132,29 +130,27 @@
         &--head {
             @include table-header-mobile;
             color: $Slate;
-            font-weight: bold;
 
             @include tablet {
                 @include table-header-desktop;
                 color: $Slate;
-                font-weight: bold;
             }
         }
         &--text {
-            @include body-small-mobile;
+            @include body-medium-mobile;
             color: $Instock-Black;
 
             @include tablet {
-                @include body-small-desktop;
+                @include body-medium-desktop;
             }
         }
         &--link {
-            @include body-small-mobile;
+            @include body-medium-mobile;
             color: $Instock-Black;
             text-decoration: none;
 
             @include tablet {
-                @include body-small-desktop;
+                @include body-medium-desktop;
                 color: $Instock-Black;
                 text-decoration: none;
             }
@@ -191,11 +187,6 @@
     &--heading {
         @include table-header-desktop;
         color: $Slate;
-        font-weight: bold;
-
-        @include desktop {
-            // margin-right: 5rem;
-        }
     }
     &--container {
         display: flex;

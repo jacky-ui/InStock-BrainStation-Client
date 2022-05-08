@@ -127,22 +127,20 @@
     &__header {
         @include table-header-mobile;
         color: $Slate;
-        font-weight: bold;
         padding-bottom: 0.3rem;
 
         @include tablet {
             @include table-header-desktop;
             color: $Slate;
-            font-weight: bold;
             display: none;
         }
     }
     &__details {
-        @include body-small-mobile;
+        @include body-medium-mobile;
         color: $Instock-Black;
 
         @include tablet {
-            @include body-small-desktop;
+            @include body-medium-desktop;
             color: $Instock-Black;
         }
         @include desktop {
@@ -150,10 +148,9 @@
         }
 
         &--color {
-            @include body-small-mobile;
+            @include label-buttons-mobile;
             color: $Instock-Indigo;
             padding-bottom: 1rem;
-            font-weight: bold;
 
             &:hover {
                 text-decoration: underline;
@@ -161,9 +158,8 @@
 
             @include tablet {
                 padding-bottom: unset;
-                @include body-small-desktop;
+                @include label-buttons-desktop;
                 color: $Instock-Indigo;
-                font-weight: bold;
                 white-space: nowrap;
             }
             // @include desktop {
@@ -171,7 +167,7 @@
             // }
         }
         &--instock {
-            @include body-small-mobile;
+            @include body-medium-mobile;
             color: $Green;
             padding: 0.1rem 0.5rem;
             font-weight: bold;
@@ -182,17 +178,18 @@
             margin-right: 4.2rem;
             text-transform: uppercase;
             text-align: center;
+            white-space: nowrap;
 
             @include tablet {
                 margin-bottom: unset;
                 margin-right: unset;
-                @include body-small-desktop;
+                @include body-medium-desktop;
                 font-weight: bold;
                 width: 5rem;
             }
         }
         &--outstock {
-            @include body-small-mobile;
+            @include body-medium-mobile;
             color: $Red;
             padding: 0.1rem 0.5rem;
             font-weight: bold;
@@ -203,11 +200,12 @@
             width: 6rem;
             text-transform: uppercase;
             text-align: center;
+            white-space: nowrap;
 
             @include tablet {
                 margin-bottom: unset;
                 margin-right: unset;
-                @include body-small-desktop;
+                @include body-medium-desktop;
                 font-weight: bold;
                 width: 6rem;
             }
@@ -225,15 +223,10 @@
     }
     &__icon--right {
         position: static;
-        height: 1rem;
+        height: 1.2rem;
 
         @include tablet {
-            left: 5rem;
-            bottom: 0.95rem;
-        }
-        @include desktop {
-            left: 5.8rem;
-            bottom: 1.6rem;
+            height: 1.35rem;
         }
     }
     &__icon--edit {
