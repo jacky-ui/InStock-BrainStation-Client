@@ -4,11 +4,7 @@
 
 .add-item {
   color: $Instock-Black;
-
-
-
   &__card-wrapper {
-    padding: 0 1rem;
     background-color: $Light-Grey;
 
     @include tablet {

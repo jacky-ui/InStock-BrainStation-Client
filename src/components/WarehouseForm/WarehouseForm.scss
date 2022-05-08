@@ -13,7 +13,7 @@
     &-left {
         display: flex;
         flex-direction: column;
-        padding: 0 1.5rem 1rem 1.5rem;
+        padding: 0 0.75rem 1rem 0.75rem;
         margin: 0;
         border-bottom: $border-divider;
         @include tablet {
@@ -29,7 +29,7 @@
     &-right {
         display: flex;
         flex-direction: column;
-        padding: 1rem 1.5rem;
+        padding: 1rem .75rem;
         margin: 0;
         @include tablet {
             padding: 0 2rem;
@@ -40,7 +40,7 @@
         }
     }
     &-btns {
-        padding: 1.5rem;
+        padding: 1.5rem 0.75rem;
         background: rgba(247, 248, 249, 0.7);
         border-radius: 0 0 3px 3px;
         display: flex;

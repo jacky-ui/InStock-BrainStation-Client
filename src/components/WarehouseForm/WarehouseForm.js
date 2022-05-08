@@ -228,7 +228,7 @@ class WarehouseForm extends Component {
                                 className={`form__input ${!this.isPhoneValid() ? '' : "form__input--invalid"}`}
                                 type="text"
                                 name="contactPhone"
-                                placeholder="Phone Number"
+                                placeholder="Phone Number Ex: +1 (614) 123-1234"
                                 value={this.state.contactPhone}
                                 onChange={this.handleChange}
                                 required
