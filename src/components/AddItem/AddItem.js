@@ -16,17 +16,7 @@ class EditItem extends Component {
     quantity: ''
   }
 
-  // componentDidMount(){
-  //   const item = this.props.itemDetails;
-  //   this.setState({
-  //     warehouse: item.warehouseName, 
-  //     name: item.itemName,
-  //     description: item.description,
-  //     category: item.category,
-  //     status: item.status,
-  //     quantity: item.quantity
-  //   })
-  // }
+  
 
   isOutofStock = () => {
     if(this.state.status === "Out of Stock") {
@@ -51,15 +41,14 @@ class EditItem extends Component {
         
   handleSubmit = (event) => {
     event.preventDefault();
-    const itemId = this.props.itemDetails.id;
     const { warehouse, name, description, category, status, quantity } = this.state;
-    axios.put(`${api_url}/inventories/${itemId}`, {
-        warehouse: warehouse,
-        name: name,
-        description: description,
-        category: category,
-        status: status,
-        quantity: quantity
+    axios.post(`${api_url}/inventories/`, {
+        warehouse,
+        name,
+        description,
+        category,
+        status,
+        quantity
     })
     .then(response => {
       this.setState({ update: response.status });

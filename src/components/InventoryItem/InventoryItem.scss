@@ -11,8 +11,7 @@
     background-color: $White;
 
     &:hover {
-        background-color: $Light-Grey;
-        cursor: pointer;
+        background: rgba($Instock-Indigo, 0.07);
     }
 
     @include tablet {
