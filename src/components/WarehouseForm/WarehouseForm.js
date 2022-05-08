@@ -36,13 +36,30 @@ class WarehouseForm extends Component {
         });
     }
 
-    // Phone Number Validation
-    isPhonevalid() {
-        const phoneValidation = /^\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}$/;
-        if (phoneValidation.test(this.state.contactName)) {
-            return true;
+    // Empty String Validation 
+    isNotEmpty(event) {
+        if (event.target.value === "" ) {
+            return false;
         }
-        return false;
+        return true;
+    }
+
+    // Phone Number Validation
+    isPhoneValid() {
+        const phoneValidation = /^\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}$/;
+        if (!phoneValidation.test(this.state.contactName)) {
+            return false;
+        }
+        return true;
+    }
+
+    // Email Validation 
+    isEmailValid() {
+        const emailValidation = /^\S+@\S+\.\S+$/;
+        if (!emailValidation.test(this.state.contactEmail)){
+            return false;
+        }
+        return true;
     }
 
     handleChange = (event) => {
@@ -177,7 +194,7 @@ class WarehouseForm extends Component {
                         <div className='form__group'>
                             <label className='form__label'>Phone Number</label>
                             <input
-                                className='form__input'
+                                className={`form__input ${this.isPhoneValid() ? '' : "form__input--invalid"}`}
                                 type="text"
                                 name="contactPhone"
                                 placeholder="Phone Number"
@@ -188,7 +205,7 @@ class WarehouseForm extends Component {
                         <div className='form__group'>
                             <label className='form__label'>Email</label>
                             <input
-                                className='form__input'
+                                className={`form__input ${this.isPhoneValid() ? '' : "form__input--invalid"}`}
                                 type="text"
                                 name="contactEmail"
                                 placeholder="Email"
