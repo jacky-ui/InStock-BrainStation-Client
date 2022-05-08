@@ -1,5 +1,6 @@
 import "./WarehouseForm.scss";
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import { api_url } from '../../utils/apiVariables';
 
@@ -224,9 +225,9 @@ class WarehouseForm extends Component {
                         </div>
                     </div>
                     <div className='form-btns'>
-                        <div className="form-btns__left">
+                        <Link  to="/" className="form-btns__left">
                             <button className='form__cancel'>Cancel</button>
-                        </div>
+                        </Link>
                         <div className="form-btns__right">
                             <button className='form__save' type="submit">{this.props.button}</button>
                         </div>
