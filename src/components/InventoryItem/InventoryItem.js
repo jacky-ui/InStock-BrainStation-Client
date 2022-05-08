@@ -12,7 +12,7 @@ function InventoryItem() {
                         <h4 className="inventory__item--header">INVENTORY ITEM</h4>
                         <Link to="" className="inventory__item--firstcolumn">
                             <p className="inventory__item--color">Television</p>
-                            <img 
+                            <img alt="right"
                                 src={arrowRight}
                                 className="icon icon__right"
                             />
@@ -37,13 +37,13 @@ function InventoryItem() {
                     <div className="icons inventory__item--tablet">
                         <div className="inventory__item--wrapper">
                             <Link to="" className="inventory__item--link"> 
-                                <img 
+                                <img alt="delete"
                                     src={deleteIcon}
                                     className="icon icon__delete"
                                 />
                             </Link>
                                 <Link to="" className="inventory__item--link">
-                                <img 
+                                <img alt="edit"
                                     src={editIcon}
                                     className="icon icon__edit"
                                 />
