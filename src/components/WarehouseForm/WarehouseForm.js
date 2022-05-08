@@ -63,6 +63,20 @@ class WarehouseForm extends Component {
         return true;
     }
 
+    // Form Valid for Disabled Button Submit
+    isFormValid() {
+        if (!this.state.name || !this.state.address || !this.state.city || !this.state.country || !this.state.contactName || !this.state.contactEmail || !this.state.contactPhone || !this.state.contactPosition) {
+            return false;
+        }
+        if (!this.isPhoneValid()) {
+            return false;
+        }
+        if (!this.isEmailValid()) {
+            return false;
+        }
+        return true;
+    }
+
     handleChange = (event) => {
         this.setState({
             [event.target.name]: event.target.value,
@@ -229,7 +243,7 @@ class WarehouseForm extends Component {
                             <button className='form__cancel'>Cancel</button>
                         </Link>
                         <div className="form-btns__right">
-                            <button className='form__save' type="submit">{this.props.button}</button>
+                            <button disabled={!this.isFormValid()} className='form__save' type="submit">{this.props.button}</button>
                         </div>
                     </div>
                 </form>

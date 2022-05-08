@@ -139,6 +139,12 @@
         padding: 0 .5rem;
         height: 2.25rem;
         width: 100%;
+        &:disabled {
+            background-color: $Cloud;
+            &:hover {
+                background-color: $Cloud;
+            }
+        }
         @include label-buttons-mobile;
         &:hover {
             background-color: $Instock-Black;
