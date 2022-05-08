@@ -1,6 +1,6 @@
 import "./WarehouseForm.scss";
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import axios from "axios";
 import { api_url } from '../../utils/apiVariables';
 import error from '../../assets/images/icons/error-24px.svg';
@@ -17,7 +17,8 @@ class WarehouseForm extends Component {
         contactPhone: "",
         contactEmail: "",
         put: null,
-        post: null
+        post: null, 
+        redirect: false
     };
 
     componentDidMount() {
@@ -134,6 +135,13 @@ class WarehouseForm extends Component {
     }
 
     render() {
+        if (this.state.redirect === true) {
+            return(
+                <>
+                    <Redirect to="/" />
+                </>
+            )
+        }
         return (
             <section className='form'>
                 <form className='form-field' onSubmit={this.handleSubmit}>
