@@ -47,7 +47,7 @@ class WarehouseForm extends Component {
     // Phone Number Validation
     isPhoneValid() {
         const phoneValidation = /^\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}$/;
-        if (!phoneValidation.test(this.state.contactName)) {
+        if (!phoneValidation.test(this.state.contactPhone)) {
             return false;
         }
         return true;
@@ -117,6 +117,7 @@ class WarehouseForm extends Component {
     }
 
     render() {
+        console.log(this.state.put);
         return (
             <section className='form'>
                 <form className='form-field' onSubmit={this.handleSubmit}>
@@ -125,46 +126,50 @@ class WarehouseForm extends Component {
                         <div className='form__group'>
                             <label className='form__label'>Warehouse Name</label>
                             <input
-                                className='form__input'
+                                className={`form__input ${this.isNotEmpty ? '' : "form__input--invalid"}`}
                                 type="text"
                                 name="name"
                                 placeholder="Warehouse Name"
                                 value={this.state.name}
                                 onChange={this.handleChange}
-                            ></input>
+                                required
+                            />
                         </div>
                         <div className='form__group'>
                             <label className='form__label'>Street Address</label>
                             <input
-                                className='form__input'
+                                className={`form__input ${this.isNotEmpty ? '' : "form__input--invalid"}`}
                                 type="text"
                                 name="address"
                                 placeholder="Street Address"
                                 value={this.state.address}
                                 onChange={this.handleChange}
-                            ></input>
+                                required
+                            />
                         </div>
                         <div className='form__group'>
                             <label className='form__label'>City</label>
                             <input
-                                className='form__input'
+                                className={`form__input ${this.isNotEmpty ? '' : "form__input--invalid"}`}
                                 type="text"
                                 name="city"
                                 placeholder="City"
                                 value={this.state.city}
                                 onChange={this.handleChange}
-                            ></input>
+                                required
+                            />
                         </div>
                         <div className='form__group'>
                             <label className='form__label'>Country</label>
                             <input
-                                className='form__input'
+                                className={`form__input ${this.isNotEmpty ? '' : "form__input--invalid"}`}
                                 type="text"
                                 name="country"
                                 placeholder="Country"
                                 value={this.state.country}
                                 onChange={this.handleChange}
-                            ></input>
+                                required
+                            />
                         </div>
                     </div>
                     <div className='form-right'>
@@ -172,24 +177,26 @@ class WarehouseForm extends Component {
                         <div className='form__group'>
                             <label className='form__label'>Contact Name</label>
                             <input
-                                className='form__input'
+                                className={`form__input ${this.isNotEmpty ? '' : "form__input--invalid"}`}
                                 type="text"
                                 name="contactName"
                                 placeholder="Contact Name"
                                 value={this.state.contactName}
                                 onChange={this.handleChange}
-                            ></input>
+                                required
+                            />
                         </div>
                         <div className='form__group'>
                             <label className='form__label'>Position</label>
                             <input
-                                className='form__input'
+                                className={`form__input ${this.isNotEmpty ? '' : "form__input--invalid"}`}
                                 type="text"
                                 name="contactPosition"
                                 placeholder="Position"
                                 value={this.state.contactPosition}
                                 onChange={this.handleChange}
-                            ></input>
+                                required
+                            />
                         </div>
                         <div className='form__group'>
                             <label className='form__label'>Phone Number</label>
@@ -200,18 +207,20 @@ class WarehouseForm extends Component {
                                 placeholder="Phone Number"
                                 value={this.state.contactPhone}
                                 onChange={this.handleChange}
-                            ></input>
+                                required
+                            />
                         </div>
                         <div className='form__group'>
                             <label className='form__label'>Email</label>
                             <input
-                                className={`form__input ${this.isPhoneValid() ? '' : "form__input--invalid"}`}
+                                className={`form__input ${this.isEmailValid() ? '' : "form__input--invalid"}`}
                                 type="text"
                                 name="contactEmail"
                                 placeholder="Email"
                                 value={this.state.contactEmail}
                                 onChange={this.handleChange}
-                            ></input>
+                                required
+                            />
                         </div>
                     </div>
                     <div className='form-btns'>
