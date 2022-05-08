@@ -16,13 +16,15 @@ function WarehouseInventory(props) {
             <div className="inventory__group inventory__group--inventory">
                 <h4 className="inventory__header">INVENTORY ITEM</h4>
                 <div className="inventory__group--arrow">
-                    <p className="inventory__details--color">{props.itemName}</p>
                     <Link to="/inventory/:itemId">
-                        <img 
-                            src={arrowRight}
-                            className="inventory__icon--right"
-                            alt=""
-                        />
+                        <div className="inventory__group--directory">
+                            <p className="inventory__details--color">{props.itemName}</p>
+                                <img 
+                                    src={arrowRight}
+                                    className="inventory__icon--right"
+                                    alt=""
+                                />
+                        </div>
                     </Link>
                 </div>
             </div>
@@ -44,11 +46,11 @@ function WarehouseInventory(props) {
                     id={props.id}
                     itemName={props.itemName}
                 />
-                <Link to="/inventory/:itemId/edit">
+                <Link to={`/inventory/${props.id}/edit`}>
                     <img 
                         src={editIcon}
                         className="inventory__icon--edit"
-                        alt="/inventory/:itemId/edit"
+                        alt=""
                     />
                 </Link>
             </div>

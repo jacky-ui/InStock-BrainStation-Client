@@ -58,7 +58,7 @@ class WarehouseIndividual extends Component {
                                 />
                         </Link>
                         <h1 className="container__head--title">{this.state.warehouseContact.name}</h1>
-                        <Link to="/warehouse/:warehouseId/edit">
+                        <Link to={`/warehouse/${this.state.warehouseContact.id}/edit`}>
                             <div className="container__head--circle">
                                 <img
                                     className="icon__edit--white" 

@@ -32,9 +32,10 @@
     flex-direction: column;
     background-color: white;
     padding: 1rem;
-
+    border-bottom: $border-divider;
     @include tablet {
-      padding: 1rem 2rem;
+      border-bottom: unset;
+      padding: 0rem 2rem 1rem 2rem;
       width: 100%;
     }
 
@@ -56,9 +57,8 @@
   }
 
   &__card-border{
-
     @include tablet{
-      border-right: 1px solid $Cloud;
+      border-right: $border-divider;
     }
   }
 
@@ -67,6 +67,7 @@
     margin-bottom: 1rem;
 
     @include tablet{
+      margin-bottom: 2rem;
       @include subheader-desktop;
     }
   }

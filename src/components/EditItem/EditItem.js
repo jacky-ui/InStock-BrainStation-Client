@@ -77,8 +77,6 @@ class EditItem extends Component {
     }
 
     return (
-      <div className="edit-item">
-        <main className="edit-item__main">           
           <form onSubmit={this.handleSubmit} type="submit" className="edit-item__card-wrapper">         
             <div className="edit-item__flex">
               <article className="edit-item__card edit-item__card-border">
@@ -203,8 +201,6 @@ class EditItem extends Component {
               </section>
             </div>
           </form>
-        </main>
-      </div>
     );
   }
 }

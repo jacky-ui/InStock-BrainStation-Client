@@ -34,7 +34,8 @@ class AddInventoryPage extends Component {
         //     )
         // }
         return (
-            <div>
+            <main className='editWarehouse'>
+                <div className='editWarehouse-wrapper'>
                 <PageSubHeader
                     pageTitle={this.state.title}
                     />
@@ -43,6 +44,7 @@ class AddInventoryPage extends Component {
                     // itemDetails={this.state.itemDetails}
                     />
             </div>
+            </main>
         );
     }
 }
