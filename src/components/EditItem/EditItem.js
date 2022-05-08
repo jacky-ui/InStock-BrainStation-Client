@@ -3,7 +3,7 @@ import "./EditItem.scss";
 import axios from "axios";
 import { api_url } from '../../utils/apiVariables';
 import { Link, Redirect } from "react-router-dom/cjs/react-router-dom.min";
-
+import error from "../../assets/images/icons/error-24px.svg";
 
 class EditItem extends Component {
   
@@ -28,6 +28,38 @@ class EditItem extends Component {
       status: item.status,
       quantity: item.quantity
     })
+  }
+
+  isEmpty = () => {
+    const { name, description, quantity } = this.state;
+    if ( name || description || quantity === "" ) {
+        return true;
+    }
+    return false;
+  }
+
+  isEmptyName = () => {
+    const { name } = this.state;
+    if ( name === "" ) {
+        return false;
+    }
+    return true;
+  }
+
+  isEmptyDescription = () => {
+    const { description } = this.state;
+    if ( description === "" ) {
+        return false;
+    }
+    return true;
+  }
+
+  isEmptyQuantity = () => {
+    const { quantity } = this.state;
+    if ( quantity === "" ) {
+        return false;
+    }
+    return true;
   }
 
   isOutofStock = () => {
@@ -84,16 +116,20 @@ class EditItem extends Component {
                 <div className="edit-item__form">
                   <label htmlFor="name" className="edit-item__form-title">
                     Item Name
-                  </label>
                   <input
                     type="text"
                     name="name"
                     placeholder="Item Name"
-                    className="edit-item__input"
+                    className={`edit-item__input ${this.isEmpty ? '' : "edit-item__input--invalid"}`}
                     value={this.state.name}
                     onChange={this.handleChange}
                     required
                   />
+                  <div className={`edit-item__group--hide ${this.isEmptyName() ? '' : "edit-item__group--error"}`}>
+                    <img className="edit-item__group--error__icon" src={error} alt=""/>
+                    <p className="edit-item__group--error__message">This field is required</p>
+                  </div>
+                  </label>
                   <label htmlFor="description" className="edit-item__form-title">
                     Description
                   </label>
@@ -101,11 +137,15 @@ class EditItem extends Component {
                     type="text"
                     name="description"
                     placeholder="Please enter a brief item description..."
-                    className="edit-item__input edit-item__comment"
+                    className={`edit-item__input ${this.isEmpty ? '' : "edit-item__input--invalid"} edit-item__comment`}
                     value={this.state.description}
                     onChange={this.handleChange}
                     required
                   />
+                  <div className={`edit-item__group--hide ${this.isEmptyDescription() ? '' : "edit-item__group--error"}`}>
+                    <img className="edit-item__group--error__icon" src={error} alt=""/>
+                    <p className="edit-item__group--error__message">This field is required</p>
+                  </div>
                   <label htmlFor="category" className="edit-item__form-title">
                     Category
                   </label>
@@ -136,6 +176,7 @@ class EditItem extends Component {
                         type="radio"
                         name="status"
                         value="In Stock"
+                        className="edit-item__on-click"
                         checked={this.state.status === "In Stock"}
                         onChange={this.handleChange}
                       />
@@ -148,6 +189,7 @@ class EditItem extends Component {
                         type="radio"
                         name="status"
                         value="Out of Stock"
+                        className="edit-item__on-click"
                         checked={this.state.status === "Out of Stock"}
                         onChange={this.handleChange}
                         onClick={this.isQuantityZ}
@@ -165,11 +207,15 @@ class EditItem extends Component {
                       type="text"
                       name="quantity"
                       placeholder="0"
-                      className="edit-item__input"
+                      className={`edit-item__input ${this.isEmpty ? '' : "edit-item__input--invalid"}`}
                       onChange={this.handleChange}
                       value={this.state.quantity}
                       required
                     />
+                    <div className={`edit-item__group--hide ${this.isEmptyQuantity() ? '' : "edit-item__group--error"}`}>
+                    <img className="edit-item__group--error__icon" src={error} alt=""/>
+                    <p className="edit-item__group--error__message">This field is required</p>
+                  </div>
                   </div>
                   <label htmlFor="warehouse" className="edit-item__form-title">
                     Warehouse
@@ -194,7 +240,7 @@ class EditItem extends Component {
             </div>
             <div className="edit-item__button-wrapper">
               <section className="edit-item__card edit-item__card--buttons">
-                <Link to='/inventory'>
+                <Link className="edit-item__link" to='/inventory'>
                   <button className="edit-item__button edit-item__button--cancel">Cancel</button>
                 </Link>
                 <button className="edit-item__button">{this.props.pageButtonInventory}</button>

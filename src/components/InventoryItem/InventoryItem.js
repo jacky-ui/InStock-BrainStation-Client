@@ -48,7 +48,7 @@ function InventoryItem(props) {
                                 key={props.id}
                                 itemName={props.itemName}
                             />
-                            <Link to={`/inventory/${props.id}`} className="inventory__item--link">
+                            <Link to={`/inventory/${props.id}/edit`} className="inventory__item--link">
                                 <img 
                                     src={editIcon}
                                     className="icon icon__edit"
