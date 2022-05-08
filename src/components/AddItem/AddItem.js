@@ -68,11 +68,9 @@ class EditItem extends Component {
 
 
   render() {
-    return (
-      <div className="add-item">
-        <main className="add-item__main">           
+    return (        
           <form onSubmit={this.handleSubmit} type="submit" className="add-item__card-wrapper">         
-            <article className="add-item__card">
+            <article className="add-item__card edit-item__card-border">
               <h2 className="add-item__section-title">Item Details</h2>
               <div className="add-item__form">
                 <label htmlFor="name" className="add-item__form-title">
@@ -190,8 +188,6 @@ class EditItem extends Component {
               </section>
           {/* </div> */}
           </form>
-        </main>
-      </div>
     );
   }
 }

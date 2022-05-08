@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./EditItem.scss";
 import axios from "axios";
 import { api_url } from '../../utils/apiVariables';
+import { Redirect } from "react-router-dom";
 
 
 class EditItem extends Component {
@@ -63,14 +64,12 @@ class EditItem extends Component {
     })
     .then(response => {
       this.setState({ update: response.status });
-  })
-}    
+    })
+  }    
 
 
   render() {
     return (
-      <div className="edit-item">
-        <main className="edit-item__main">           
           <form onSubmit={this.handleSubmit} type="submit" className="edit-item__card-wrapper">         
             <div className="edit-item__flex">
               <article className="edit-item__card edit-item__card-border">
@@ -192,8 +191,6 @@ class EditItem extends Component {
               </section>
             </div>
           </form>
-        </main>
-      </div>
     );
   }
 }
