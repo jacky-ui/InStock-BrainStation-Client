@@ -4,10 +4,11 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Header from "./components/Header/Header";
 import WarehousePage from "./pages/WarehousePage/WarehousePage";
 import AddWarehousePage from "./pages/AddWarehousePage/AddWarehousePage";
-import WarehouseIndividual from "./components/WarehouseIndividual/WarehouseIndividual";
+import WarehouseIndividual from "./pages/WarehouseIndividual/WarehouseIndividual";
 import EditWarehousePage from "./pages/EditWarehousePage/EditWarehousePage";
+
 import InventoryPage from "./pages/InventoryPage/InventoryPage";
-import AddItem from "./components/AddItem/AddItem";
+import AddInventoryPage from "./pages/AddInventoryPage/AddInventoryPage";
 import ItemDetailsPage from "./pages/ItemDetailsPage/ItemDetailsPage";
 import EditInventoryPage from "./pages/EditInventoryPage/EditInventoryPage";
 import Footer from "./components/Footer/Footer";
@@ -27,7 +28,7 @@ function App() {
           
           {/* Inventory Route Paths */}
           <Route path="/inventory" exact component={InventoryPage} />
-          <Route path="/inventory/add" exact component={AddItem} />
+          <Route path="/inventory/add" exact component={AddInventoryPage} />
           <Route path="/inventory/:itemId" exact component={ItemDetailsPage} />
           <Route path="/inventory/:itemId/edit" exact component={EditInventoryPage} />
         </Switch>

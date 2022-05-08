@@ -36,7 +36,7 @@ class AddInventoryPage extends Component {
         return (
             <div>
                 <PageSubHeader
-                    pageTitleInventory={this.state.title}
+                    pageTitle={this.state.title}
                     />
                 <AddItem 
                     pageButtonInventory={this.state.button}
