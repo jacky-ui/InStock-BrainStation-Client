@@ -48,10 +48,59 @@ class WarehouseForm extends Component {
         return false;
     }
 
+    isEmptyName = () => {
+        const { name } = this.state;
+        if ( name === "" ) {
+            return false;
+        }
+        return true;
+    }
+
+    isEmptyAddress = () => {
+        const { address } = this.state;
+        if ( address === "" ) {
+            return false;
+        }
+        return true;
+    }
+
+    isEmptyCity = () => {
+        const { city } = this.state;
+        if ( city === "" ) {
+            return false;
+        }
+        return true;
+    }
+
+    isEmptyCountry = () => {
+        const { country } = this.state;
+        if ( country === "" ) {
+            return false;
+        }
+        return true;
+    }
+
+    isEmptyContactName = () => {
+        const { contactName } = this.state;
+        if ( contactName === "" ) {
+            return false;
+        }
+        return true;
+    }
+
+    isEmptyContactPosition = () => {
+        const { contactPosition } = this.state;
+        if ( contactPosition === "" ) {
+            return false;
+        }
+        return true;
+    }
+
+
     // Phone Number Validation
     isPhoneValid = () => {
         const phoneValidation = /^\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}$/;
-        if (!phoneValidation.test(this.state.contactPhone)) {
+        if (phoneValidation.test(this.state.contactPhone)) {
             return false;
         }
         return true;
@@ -60,7 +109,7 @@ class WarehouseForm extends Component {
     // Email Validation 
     isEmailValid = () => {
         const emailValidation = /^\S+@\S+\.\S+$/;
-        if (!emailValidation.test(this.state.contactEmail)){
+        if (emailValidation.test(this.state.contactEmail)){
             return false;
         }
         return true;
@@ -158,6 +207,10 @@ class WarehouseForm extends Component {
                                 onChange={this.handleChange}
                                 required
                             />
+                            <div className={`form__group--hide ${this.isEmptyName() ? '' : "form__group--error"}`}>
+                                <img className="form__group--error__icon" src={error} alt=""/>
+                                <p className="form__group--error__message">This field is required</p>
+                            </div>
                         </div>
                         <div className='form__group'>
                             <label className='form__label'>Street Address</label>
@@ -170,6 +223,10 @@ class WarehouseForm extends Component {
                                 onChange={this.handleChange}
                                 required
                             />
+                            <div className={`form__group--hide ${this.isEmptyAddress() ? '' : "form__group--error"}`}>
+                                <img className="form__group--error__icon" src={error} alt=""/>
+                                <p className="form__group--error__message">This field is required</p>
+                            </div>
                         </div>
                         <div className='form__group'>
                             <label className='form__label'>City</label>
@@ -182,6 +239,10 @@ class WarehouseForm extends Component {
                                 onChange={this.handleChange}
                                 required
                             />
+                            <div className={`form__group--hide ${this.isEmptyCity() ? '' : "form__group--error"}`}>
+                                <img className="form__group--error__icon" src={error} alt=""/>
+                                <p className="form__group--error__message">This field is required</p>
+                            </div>
                         </div>
                         <div className='form__group'>
                             <label className='form__label'>Country</label>
@@ -194,7 +255,7 @@ class WarehouseForm extends Component {
                                 onChange={this.handleChange}
                                 required
                             />
-                            <div className={`form__group--hide ${this.isEmpty ? '' : "form__group--error"}`}>
+                            <div className={`form__group--hide ${this.isEmptyCountry() ? '' : "form__group--error"}`}>
                                 <img className="form__group--error__icon" src={error} alt=""/>
                                 <p className="form__group--error__message">This field is required</p>
                             </div>
@@ -213,7 +274,7 @@ class WarehouseForm extends Component {
                                 onChange={this.handleChange}
                                 required
                             />
-                            <div className={`form__group--hide form__input--invalid`}>
+                            <div className={`form__group--hide ${this.isEmptyContactName() ? '' : "form__group--error"}`}>
                                 <img className="form__group--error__icon" src={error} alt=""/>
                                 <p className="form__group--error__message">This field is required</p>
                             </div>
@@ -221,7 +282,7 @@ class WarehouseForm extends Component {
                         <div className='form__group'>
                             <label className='form__label'>Position</label>
                             <input
-                                className={`form__input ${this.isEmpty ? '' : "form__input--invalid"}`}
+                                className={`form__input ${this.isEmpty() ? '' : "form__input--invalid"}`}
                                 type="text"
                                 name="contactPosition"
                                 placeholder="Position"
@@ -229,6 +290,10 @@ class WarehouseForm extends Component {
                                 onChange={this.handleChange}
                                 required
                             />
+                            <div className={`form__group--hide ${this.isEmptyContactPosition() ? '' : "form__group--error"}`}>
+                                <img className="form__group--error__icon" src={error} alt=""/>
+                                <p className="form__group--error__message">This field is required</p>
+                            </div>
                         </div>
                         <div className='form__group'>
                             <label className='form__label'>Phone Number</label>
