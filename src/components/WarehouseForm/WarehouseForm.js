@@ -148,7 +148,7 @@ class WarehouseForm extends Component {
                                 placeholder="Warehouse Name"
                                 value={this.state.name}
                                 onChange={this.handleChange}
-                                // required
+                                required
                             />
                         </div>
                         <div className='form__group'>
@@ -160,7 +160,7 @@ class WarehouseForm extends Component {
                                 placeholder="Street Address"
                                 value={this.state.address}
                                 onChange={this.handleChange}
-                                // required
+                                required
                             />
                         </div>
                         <div className='form__group'>
@@ -172,7 +172,7 @@ class WarehouseForm extends Component {
                                 placeholder="City"
                                 value={this.state.city}
                                 onChange={this.handleChange}
-                                // required
+                                required
                             />
                         </div>
                         <div className='form__group'>
@@ -184,7 +184,7 @@ class WarehouseForm extends Component {
                                 placeholder="Country"
                                 value={this.state.country}
                                 onChange={this.handleChange}
-                                // required
+                                required
                             />
                             <div className={`form__group--hide ${this.isEmpty ? '' : "form__group--error"}`}>
                                 <img className="form__group--error__icon" src={error} alt=""/>
@@ -203,7 +203,7 @@ class WarehouseForm extends Component {
                                 placeholder="Contact Name"
                                 value={this.state.contactName}
                                 onChange={this.handleChange}
-                                // required
+                                required
                             />
                             <div className={`form__group--hide form__input--invalid`}>
                                 <img className="form__group--error__icon" src={error} alt=""/>
@@ -219,7 +219,7 @@ class WarehouseForm extends Component {
                                 placeholder="Position"
                                 value={this.state.contactPosition}
                                 onChange={this.handleChange}
-                                // required
+                                required
                             />
                         </div>
                         <div className='form__group'>
@@ -231,7 +231,7 @@ class WarehouseForm extends Component {
                                 placeholder="Phone Number"
                                 value={this.state.contactPhone}
                                 onChange={this.handleChange}
-                                // required
+                                required
                             />
                             <div className={`form__group--hide ${!this.isPhoneValid() ? '' : "form__group--error"}`}>
                                 <img className="form__group--error__icon" src={error} alt=""/>
@@ -247,7 +247,7 @@ class WarehouseForm extends Component {
                                 placeholder="Email"
                                 value={this.state.contactEmail}
                                 onChange={this.handleChange}
-                                // required
+                                required
                             />
                             <div className={`form__group--hide 
                             ${!this.isEmailValid() ? '' : "form__group--error"}`}>
@@ -261,7 +261,7 @@ class WarehouseForm extends Component {
                             <button className='form__cancel'>Cancel</button>
                         </Link>
                         <div className="form-btns__right">
-                            <button disabled={this.isFormValid()} className='form__save' type="submit">{this.props.button}</button>
+                            <button disabled={!this.isFormValid()} className='form__save' type="submit">{this.props.button}</button>
                         </div>
                     </div>
                 </form>
