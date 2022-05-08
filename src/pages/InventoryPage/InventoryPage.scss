@@ -4,6 +4,10 @@
 
 .main__container {
     background-color: $Light-Grey;
+
+    @include tablet {
+        margin-top: -5.5rem;
+    }
 }
 
 .inventories {
@@ -23,7 +27,7 @@
     }
     @include desktop {
         margin: 0rem 4rem;
-        margin-top: -6.4rem;
+        margin-top: -5.4rem;
     }
 
     &__head {
@@ -39,12 +43,8 @@
             flex-direction: row;
             justify-content: space-between;
             align-items: flex-end;
-            padding: 2rem;
+            padding: 2rem 2rem 1rem 2rem;
         }
-
-        // @include desktop {
-        //     padding: 2rem 5rem;
-        // }
 
         &--header {
             @include page-header-mobile;
@@ -86,14 +86,17 @@
             @include tablet {
                 margin: unset;
                 height: 2.375rem;
+                white-space: nowrap;
                 @include label-buttons-desktop;
+                width: 10rem;
             }
             @include desktop {
-                width: 20rem;
+                width: 10rem;
             }
             
             &:hover {
                 background-color: $Graphite;
+                cursor: pointer;
             }
         }
     }
@@ -119,10 +122,7 @@
         @include table-header-desktop;
         color: $Slate;
         font-weight: bold;
-
-        // @include tablet {
-        //     width: 100%;
-        // }
+        white-space: nowrap;
     }
     &--action {
         @include tablet {

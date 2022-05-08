@@ -2,16 +2,34 @@ import "./InventoryPage.scss";
 import React, { Component } from "react";
 import InventoryItem from "../../components/InventoryItem/InventoryItem";
 import sortIcon from "../../assets/images/icons/sort-24px.svg";
+import axios from "axios";
+import { api_url } from '../../utils/apiVariables';
+import { Link } from "react-router-dom";
 
 class InventoryPage extends Component {
     state = {
         inventoriesData: []
     };
-    // A function to fetch Inventories Data from Inventories API Route (/inventories)
-
-    // Below use Component Lifecycle Methods such as componentDidMount to grab data
+    
+    componentDidMount() {
+            axios
+                .get(`${api_url}/inventories`)
+                .then((response) => {
+                    const inventoryData = response.data
+                    this.setState({
+                        inventoriesData: inventoryData
+                    })
+                })
+    }
 
     render() {
+        if (!this.state.inventoriesData) {
+            return(
+                <div>
+                    <h1>Loading your content...</h1>
+                </div>
+            )
+        }
         return (
             <div className="main__container">
                 <article className="inventories">
@@ -24,9 +42,11 @@ class InventoryPage extends Component {
                                 className="inventories__inputs--search"
                                 placeholder="Search..."
                             />
-                            <button className="inventories__inputs--add">
-                                + Add New Item
-                            </button>
+                            <Link to="/inventory/addItem ">
+                                <button className="inventories__inputs--add">
+                                    + Add New Item
+                                </button>
+                            </Link>
                         </div>
                     </section>
                     {/* Inventory Items */}
@@ -68,7 +88,21 @@ class InventoryPage extends Component {
                         </div>
                         <h4 className="title__container--title title__container--action">ACTIONS</h4>
                     </div>
-                    <InventoryItem />
+                    {/*Inventory List */}
+                    {this.state.inventoriesData.map(inventory => {
+                        return (
+                        <InventoryItem 
+                            id={inventory.id}
+                            key={inventory.id}
+                            warehouseID={inventory.warehouseID}
+                            itemName={inventory.itemName}
+                            status={inventory.status}
+                            category={inventory.category}
+                            quantity={inventory.quantity}
+                            warehouseName={inventory.warehouseName}
+                        />
+                        )
+                    })}
                 </article>
             </div>
         )
