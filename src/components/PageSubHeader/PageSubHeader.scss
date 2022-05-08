@@ -5,7 +5,6 @@
     display: flex;
     justify-content: flex-start;
     padding: 2rem 0;
-    margin: 0 1rem;
     border-radius: 3px 3px 0 0 ;
     border-bottom: $border-divider;
     background-color: $White;
@@ -13,11 +12,9 @@
     z-index: 2;
     @include tablet {
         padding: 2rem 0 1rem 0;
-        margin: 0 2rem; 
     }
     @include desktop {
         padding: 2rem 0 1.25rem;
-        margin: 0 4rem;
     }
     &__title { 
         @include page-header-mobile;
