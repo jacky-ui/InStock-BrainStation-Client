@@ -2,16 +2,36 @@ import "./InventoryPage.scss";
 import React, { Component } from "react";
 import InventoryItem from "../../components/InventoryItem/InventoryItem";
 import sortIcon from "../../assets/images/icons/sort-24px.svg";
+import axios from "axios";
+import { api_url } from '../../utils/apiVariables';
 
 class InventoryPage extends Component {
     state = {
-        inventoriesData: []
+        inventoriesData: null
     };
     // A function to fetch Inventories Data from Inventories API Route (/inventories)
 
     // Below use Component Lifecycle Methods such as componentDidMount to grab data
 
+    componentDidMount() {
+        axios 
+            .get(`${api_url}/inventories`)
+            .then((response) => {
+                const inventoryData = response.data[0]
+                this.setState({
+                    inventoriesData: inventoryData
+                });
+            });
+    };
+
     render() {
+        {/*if (!this.state.inventoriesData) {
+            return(
+                <div>
+                    <h1>Loading your content...</h1>
+                </div>
+            )
+        }*/}
         return (
             <div className="main__container">
                 <article className="inventories">
@@ -68,7 +88,8 @@ class InventoryPage extends Component {
                         </div>
                         <h4 className="title__container--title title__container--action">ACTIONS</h4>
                     </div>
-                    <InventoryItem />
+                    {/*Inventory List */}
+                    <InventoryItem/>
                 </article>
             </div>
         )

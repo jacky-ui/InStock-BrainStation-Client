@@ -20,7 +20,7 @@
 
     &__item {
         display: flex;
-        flex-direction: column;
+        // flex-direction: column;
         flex-wrap: wrap;
 
         @include tablet {
@@ -41,7 +41,6 @@
             }
         }
         &--spacing {
-            margin-right: 4rem;
 
             @include tablet {
                 margin-right: unset;
@@ -86,6 +85,7 @@
             background-color: $Light-Grey;
             border-radius: 2.375rem;
             margin-bottom: 0.8rem;
+            width: 4rem;
 
             @include tablet {
                 @include body-small-desktop;
@@ -114,6 +114,74 @@
         &--container {
             @include tablet {
                 display: flex;
+            }
+        }
+        &--order1 {
+            width: 50%;
+            order: 1;
+            @include tablet {
+                width: 10%;
+                order: unset;
+            }
+            @include desktop {
+                width: 15%;
+            }
+        }
+        &--order2 {
+            width: 50%;
+            order: 3;
+            @include tablet {
+                width: 10%;
+                order: unset;
+            }
+            @include desktop {
+                width: 15%;
+            }
+        }
+        &--order3 {
+            width: 50%;
+            order: 2;
+            @include tablet {
+                width: 10%;
+                order: unset;
+            }
+            @include desktop {
+                width: 15%;
+            }
+        }
+        &--order4 {
+            width: 50%;
+            order: 4;
+            @include tablet {
+                width: 10%;
+                order: unset;
+            }
+            @include desktop {
+                width: 15%;
+            }
+        }
+        &--order5 {
+            width: 50%;
+            order: 5;
+            margin-left: auto;
+            @include tablet {
+                width: 10%;
+                order: unset;
+                margin-left: unset;
+            }
+            @include desktop {
+                width: 15%;
+            }
+        }
+        &--order6 {
+            width: 100%;
+            order: 6;
+            @include tablet {
+                width: 10%;
+                order: unset;
+            }
+            @include desktop {
+                width: 15%;
             }
         }
     }
