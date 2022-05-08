@@ -35,7 +35,7 @@
     border-bottom: $border-divider;
     @include tablet {
       border-bottom: unset;
-      padding: 1rem 2rem;
+      padding: 0rem 2rem 1rem 2rem;
       width: 100%;
     }
 
@@ -67,6 +67,7 @@
     margin-bottom: 1rem;
 
     @include tablet{
+      margin-bottom: 2rem;
       @include subheader-desktop;
     }
   }
