@@ -44,11 +44,9 @@ class EditItem extends Component {
   };
   
   isQuantityZ = () => {
-    if(this.state.status === "Out of Stock"){
       this.setState({
         quantity: 0
       })
-    }
   }
         
   handleSubmit = (event) => {
@@ -66,8 +64,7 @@ class EditItem extends Component {
     .then(response => {
       this.setState({ update: response.status , redirect:true});
     })
-    .then(response => {<Link to='/inventory'/>})
-}    
+  }    
 
 
   render() {
@@ -155,6 +152,7 @@ class EditItem extends Component {
                         value="Out of Stock"
                         checked={this.state.status === "Out of Stock"}
                         onChange={this.handleChange}
+                        onClick={this.isQuantityZ}
                       />
                       <label htmlFor="in-stock" className="edit-item__radio-text">
                         Out of Stock
