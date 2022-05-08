@@ -94,7 +94,7 @@
             margin-bottom: 0.8rem;
             width: 4rem;
             text-align: center;
-            text-transform: capitalize;
+            text-transform: uppercase;
 
             @include tablet {
                 @include body-small-desktop;
@@ -127,7 +127,7 @@
         }
         &--link {
             @include tablet {
-                width: 50%;
+                // width: 50%;
             }
         }
         &--firstcolumn {
@@ -136,7 +136,12 @@
             }
         }
         &--wrapper {
+            display: flex;
+            justify-content: space-between;
+            height: 1.4rem;
             @include tablet {
+                height: 1.5rem;
+                justify-content: end;
                 width: 100%;
             }
         }

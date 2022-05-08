@@ -54,6 +54,10 @@
             height: 2rem;
             border-radius: 50%;
 
+            &:hover {
+                background-color: $Graphite;
+            }
+
             @include tablet {
                 border-radius: 1.25rem;
                 height: 2.25rem;
