@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./EditItem.scss";
 import axios from "axios";
 import { api_url } from '../../utils/apiVariables';
+import { Link, Redirect } from "react-router-dom/cjs/react-router-dom.min";
 
 
 class EditItem extends Component {
@@ -13,7 +14,8 @@ class EditItem extends Component {
     description: '',
     category: '',
     status: '',
-    quantity: ''
+    quantity: '',
+    redirect: false
   }
 
   componentDidMount(){
@@ -62,12 +64,21 @@ class EditItem extends Component {
         quantity: quantity
     })
     .then(response => {
-      this.setState({ update: response.status });
-  })
+      this.setState({ update: response.status , redirect:true});
+    })
+    .then(response => {<Link to='/inventory'/>})
 }    
 
 
   render() {
+    if(this.state.redirect){
+      return (
+      <>
+        <Redirect to="/inventory"/>
+      </>
+      )
+    }
+
     return (
       <div className="edit-item">
         <main className="edit-item__main">           
@@ -187,8 +198,10 @@ class EditItem extends Component {
             </div>
             <div className="edit-item__button-wrapper">
               <section className="edit-item__card edit-item__card--buttons">
-              <button className="edit-item__button edit-item__button--cancel">Cancel</button>
-              <button className="edit-item__button">{this.props.pageButtonInventory}</button>
+                <Link to='/inventory'>
+                  <button className="edit-item__button edit-item__button--cancel">Cancel</button>
+                </Link>
+                <button className="edit-item__button">{this.props.pageButtonInventory}</button>
               </section>
             </div>
           </form>
