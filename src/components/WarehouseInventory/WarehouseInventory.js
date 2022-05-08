@@ -16,7 +16,7 @@ function WarehouseInventory(props) {
             <div className="inventory__group inventory__group--inventory">
                 <h4 className="inventory__header">INVENTORY ITEM</h4>
                 <div className="inventory__group--arrow">
-                    <Link to="/inventory/:itemId">
+                    <Link to={`/inventory/${props.id}`}>
                         <div className="inventory__group--directory">
                             <p className="inventory__details--color">{props.itemName}</p>
                                 <img 
