@@ -3,9 +3,20 @@ import './DeleteInventory.scss'
 import Popup from 'reactjs-popup';
 import TrashIcon from '../../assets/images/icons/delete_outline-24px.svg'
 import axios from 'axios';
-import { api_url } from '../../utils/apiVariables';
+{/*import { api_url } from '../../utils/apiVariables';*/}
 
 class DeleteInventory extends Component {
+    refreshPage = () => {
+        window.location.reload();
+    }
+
+    deleteInventory = () => {
+        axios
+          .delete(`http://localhost:8080/inventories/${this.props.id}` )
+          .then((response)=>{
+            this.refreshPage();
+          })
+    }
 
     // state = {
     //     inventory: [],
@@ -22,16 +33,16 @@ class DeleteInventory extends Component {
     //       })
     //   }
     
-    deleteInventory = (event) => {
-        const warehouseId = event.target.getAttribute('data')
-        axios
-          .delete(`${api_url}/inventories/${warehouseId}` )
-          .then((response)=>{
-            this.setState({
-                inventory: response.data
-            })
-          })
-    }
+    // {/*deleteInventory = (event) => {
+    //     const warehouseId = event.target.getAttribute('data')
+    //     axios
+    //       .delete(`${api_url}/inventories/${warehouseId}` )
+    //       .then((response)=>{
+    //         this.setState({
+    //             inventory: response.data
+    //         })
+    //       })
+    // }*/}
 
 
     // Will be used in the button to target an specify warehouse

@@ -2,8 +2,6 @@ import './AddWarehousePage.scss';
 import React, { Component } from 'react';
 import PageSubHeader from '../../components/PageSubHeader/PageSubHeader';
 import WarehouseForm from '../../components/WarehouseForm/WarehouseForm';
-import axios from 'axios';
-import { api_url } from '../../utils/apiVariables';
 
 class AddWarehousePage extends Component {
     state = {
@@ -20,7 +18,9 @@ class AddWarehousePage extends Component {
             position: '',
             phone: '',
             email: ''
-        }
+        }, 
+        put: false,
+        post: true
     };
 
     render() {
@@ -34,6 +34,8 @@ class AddWarehousePage extends Component {
                         warehouseDetails={this.state.warehouseDetails}
                         contactDetails={this.state.contactDetails}
                         button={this.state.button}
+                        put={this.state.put}
+                        post={this.state.post}
                         />
                 </div>
             </main>
