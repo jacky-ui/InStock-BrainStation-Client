@@ -34,6 +34,9 @@
         @include tablet {
             width: 16%;
         }
+        &--directory {
+            display: flex;
+        }
         &--icons {
             display: flex;
             justify-content: space-between;
@@ -48,6 +51,8 @@
                 margin-top: unset;
                 text-align: end;
                 justify-content: flex-end;
+                height: 1.2rem;
+                gap: 0.2rem;
             }
             @include desktop {
                 width: 10%;
@@ -55,9 +60,6 @@
         }
         &--arrow {
             display: flex;
-            @include tablet {
-                align-items: center;
-            }
             @include desktop {
                 width: 10%;
             }
@@ -144,11 +146,16 @@
             padding-bottom: 1rem;
             font-weight: bold;
 
+            &:hover {
+                text-decoration: underline;
+            }
+
             @include tablet {
                 padding-bottom: unset;
                 @include body-small-desktop;
                 color: $Instock-Indigo;
                 font-weight: bold;
+                white-space: nowrap;
             }
             // @include desktop {
             //     margin-right: 11.7rem;
@@ -164,7 +171,8 @@
             margin-bottom: 0.8rem;
             width: 4rem;
             margin-right: 4.2rem;
-            text-transform: capitalize;
+            text-transform: uppercase;
+            text-align: center;
 
             @include tablet {
                 margin-bottom: unset;
@@ -185,6 +193,7 @@
             margin-right: 2rem;
             width: 6rem;
             text-transform: uppercase;
+            text-align: center;
 
             @include tablet {
                 margin-bottom: unset;
@@ -207,6 +216,7 @@
     }
     &__icon--right {
         position: static;
+        height: 1rem;
 
         @include tablet {
             left: 5rem;
