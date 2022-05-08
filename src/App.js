@@ -1,4 +1,4 @@
-import "./App.scss";
+import "./styles/App.scss";
 import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Header from "./components/Header/Header";
@@ -19,12 +19,13 @@ function App() {
       <BrowserRouter>
         <Header />
          <Switch>
-          // Warehouses Route Paths
+          {/* Warehouses Route Paths */}
           <Route path="/" exact component={WarehousePage} />
           <Route path="/warehouse/add" exact component={AddWarehousePage} />
           <Route path="/warehouse/:warehouseId" exact component={WarehouseIndividual} />
           <Route path="/warehouse/:warehouseId/edit" exact component={EditWarehousePage} />
-          // Inventory Route Paths
+          
+          {/* Inventory Route Paths */}
           <Route path="/inventory" exact component={InventoryPage} />
           <Route path="/inventory/add" exact component={AddItem} />
           <Route path="/inventory/:itemId" exact component={ItemDetailsPage} />
