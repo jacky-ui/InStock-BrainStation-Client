@@ -10,6 +10,11 @@
     height: 12rem;
     background-color: $White;
 
+    &:hover {
+        background-color: $Light-Grey;
+        cursor: pointer;
+    }
+
     @include tablet {
         padding: 1rem 2rem;
         height: unset;
@@ -58,6 +63,10 @@
             padding-bottom: 1rem;
             font-weight: bold;
 
+            &:hover {
+                text-decoration: underline;
+            }
+
             @include tablet {
                 @include body-small-desktop;
                 color: $Instock-Indigo;
@@ -82,10 +91,12 @@
             color: $Green;
             padding: 0.1rem 0.2rem;
             font-weight: bold;
-            background-color: $Light-Grey;
+            background-color: rgba($color: $Green, $alpha: 0.07);
             border-radius: 2.375rem;
             margin-bottom: 0.8rem;
             width: 4rem;
+            text-align: center;
+            text-transform: capitalize;
 
             @include tablet {
                 @include body-small-desktop;
@@ -94,6 +105,26 @@
                 color: $Green;
                 margin-bottom: unset;
                 width: 4rem;
+            }
+        }
+        &--outstock {
+            @include body-small-mobile;
+            color: $Red;
+            padding: 0.1rem 0.2rem;
+            font-weight: bold;
+            background-color: rgba($color: $Red, $alpha: 0.07);
+            border-radius: 2.375rem;
+            margin-bottom: 0.8rem;
+            width: 5rem;
+            text-align: center;
+            text-transform: uppercase;
+            white-space: nowrap;
+
+            @include tablet {
+                @include body-small-desktop;
+                font-weight: bold;
+                margin-bottom: unset;
+                width: 6rem;
             }
         }
         &--link {
@@ -122,6 +153,7 @@
             @include tablet {
                 width: 10%;
                 order: unset;
+                white-space: nowrap;
             }
             @include desktop {
                 width: 15%;
@@ -133,6 +165,7 @@
             @include tablet {
                 width: 10%;
                 order: unset;
+                white-space: nowrap;
             }
             @include desktop {
                 width: 15%;
@@ -144,6 +177,7 @@
             @include tablet {
                 width: 10%;
                 order: unset;
+                white-space: nowrap;
             }
             @include desktop {
                 width: 15%;
@@ -155,6 +189,7 @@
             @include tablet {
                 width: 10%;
                 order: unset;
+                white-space: nowrap;
             }
             @include desktop {
                 width: 15%;
@@ -168,6 +203,7 @@
                 width: 10%;
                 order: unset;
                 margin-left: unset;
+                white-space: nowrap;
             }
             @include desktop {
                 width: 15%;
@@ -179,11 +215,15 @@
             @include tablet {
                 width: 10%;
                 order: unset;
+                white-space: nowrap;
             }
             @include desktop {
                 width: 15%;
             }
         }
+    }
+    &__directory {
+        display: flex;
     }
 }
 
@@ -199,31 +239,26 @@
 }
 
 .icon {
-    position: absolute;
 
     &__right {
-        bottom: 8.5rem;
-        left: 4.2rem;
+        position: unset;
+        width: 25%;
+        height: 1rem;
 
-        @include tablet {
-            bottom: 1.25rem;
-            left: 5.2rem;
-        }
-        // @include desktop {
-        //     bottom: 1.25rem;
-        //     left: 5.2rem;
-        // }
+    //     @include tablet {
+    //     }
+    //     // @include desktop {
+    //     //     bottom: 1.25rem;
+    //     //     left: 5.2rem;
+    //     // }
     }
     &__delete {
-        bottom: 1rem;
-        left: 1rem;
 
         @include tablet {
             position: static;
         }
     }
     &__edit {
-        bottom: 1rem;
 
         @include tablet {
             margin-left: 1rem;

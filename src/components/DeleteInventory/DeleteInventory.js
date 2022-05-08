@@ -44,8 +44,8 @@ class DeleteInventory extends Component {
             <div className="popup">
                 <button className="popup__close" onClick={close}>&times;</button>
                 <div className="popup__text">
-                    <h1 className="popup__title"> Delete Television inventory item? </h1>
-                    <p className="popup__content">Please confirm that you’d like to delete Television from the inventory list. You won’t be able to undo this action.</p>
+                    <h1 className="popup__title"> Delete {this.props.itemName} inventory item? </h1>
+                    <p className="popup__content">Please confirm that you’d like to delete {this.props.itemName} from the inventory list. You won’t be able to undo this action.</p>
                 </div>
                 <div className="popup__actions">
                 <button className="popup__button-cancel" onClick={() => {close()}}>Cancel</button>
