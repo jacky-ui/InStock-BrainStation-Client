@@ -57,7 +57,7 @@ class WarehouseIndividual extends Component {
                                     alt=""
                                 />
                         </Link>
-                        <h1 className="container__head--title">{this.state.warehouseContact.city}</h1>
+                        <h1 className="container__head--title">{this.state.warehouseContact.name}</h1>
                         <Link to="/warehouse/:warehouseId/edit">
                             <div className="container__head--circle">
                                 <img
@@ -139,6 +139,7 @@ class WarehouseIndividual extends Component {
                                 status={inventory.status}
                                 category={inventory.category}
                                 quantity={inventory.quantity}
+                                warehouseID={inventory.warehouseID}
                             />
                         )
                     })}

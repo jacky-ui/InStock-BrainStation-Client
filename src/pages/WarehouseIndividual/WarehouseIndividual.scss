@@ -73,7 +73,7 @@
 
         @include tablet {
             display: flex;
-            align-items: flex-end;
+            align-items: center;
             justify-content: space-between;
             padding: 2rem;
             padding-right: 6rem;
@@ -177,7 +177,7 @@
         height: 2.5rem;
     }
     &--grouping {
-        width: 15%;
+        width: 16%;
         display: flex;
 
         @include desktop {

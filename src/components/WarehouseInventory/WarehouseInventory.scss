@@ -4,14 +4,18 @@
 
 .inventory {
     display: flex;
-    flex-direction: column;
+    // flex-direction: column;
     flex-wrap: wrap;
-    align-content: space-between;
-    height: 10rem;
+    // align-content: space-between;
+    // height: 10rem;
     padding: 1rem;
     padding-bottom: 2rem;
     border-top: 1px solid $Cloud;
     position: relative;
+
+    &:hover {
+        background-color: $Cloud;
+    }
 
     @include tablet {
         display: flex;
@@ -28,20 +32,83 @@
 
     &__group {
         @include tablet {
-            width: 15%;
-        }
-        @include desktop {
-            width: 10%;
+            width: 16%;
         }
         &--icons {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            order: 5;
+            height: 1.5rem;
+            margin-top: 3rem;
+
             @include tablet {
+                order: unset;
+                width: 16%;
+                margin-top: unset;
                 text-align: end;
+                justify-content: flex-end;
+            }
+            @include desktop {
+                width: 10%;
             }
         }
         &--arrow {
             display: flex;
             @include tablet {
                 align-items: center;
+            }
+            @include desktop {
+                width: 10%;
+            }
+        }
+        &--inventory {
+            width: 50%;
+            order: 1;
+
+            @include tablet {
+                width: 16%;
+                order: unset;
+            }
+            @include desktop {
+                width: 10%;
+                white-space: nowrap;
+            }
+        }
+        &--category {
+            width: 50%;
+            order: 3;
+
+            @include tablet {
+                width: 16%;
+                order: unset;
+            }
+            @include desktop {
+                width: 10%;
+            }
+        }
+        &--status {
+            width: 50%;
+            order: 2;
+
+            @include tablet {
+                width: 16%;
+                order: unset;
+            }
+            @include desktop {
+                width: 10%;
+            }
+        }
+        &--quantity {
+            width: 50%;
+            order: 4;
+
+            @include tablet {
+                width: 16%;
+                order: unset;
+            }
+            @include desktop {
+                width: 10%;
             }
         }
     }
@@ -128,15 +195,10 @@
             }
         }
     }
-    &__icon--edit {
-        position: absolute;
-        right: 1.5rem;
-        bottom: 1rem;
-    }
     &__icon--delete {
-        position: absolute;
-        left: 1rem;
-        bottom: 1rem;
+        // position: absolute;
+        // left: 1rem;
+        // bottom: 1rem;
 
         @include tablet {
             left: unset;
@@ -145,8 +207,6 @@
     }
     &__icon--right {
         position: static;
-        // left: 5rem;
-        // bottom: 6.45rem;
 
         @include tablet {
             left: 5rem;
@@ -158,10 +218,10 @@
         }
     }
     &__icon--edit {
-        position: absolute;
-        right: 1.5rem;
-        bottom: 1rem;
-        padding-left: 0.5rem;
+        // position: absolute;
+        // right: 1.5rem;
+        // bottom: 1rem;
+        // padding-left: 0.5rem;
 
         @include tablet {
             position: static;

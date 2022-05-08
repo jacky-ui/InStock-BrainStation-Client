@@ -8,6 +8,7 @@ import WarehousePage from "./pages/WarehousePage/WarehousePage";
 import WarehouseIndividual from "./pages/WarehouseIndividual/WarehouseIndividual";
 import EditWarehousePage from "./pages/EditWarehousePage/EditWarehousePage";
 import InventoryPage from "./pages/InventoryPage/InventoryPage";
+import DeleteWarehouse from "./components/DeleteWarehouse/DeleteWarehouse";
 
 function App() {
   return (
