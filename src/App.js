@@ -6,7 +6,7 @@ import WarehousePage from "./pages/WarehousePage/WarehousePage";
 import AddWarehousePage from "./pages/AddWarehousePage/AddWarehousePage";
 import WarehouseIndividual from "./pages/WarehouseIndividual/WarehouseIndividual";
 import EditWarehousePage from "./pages/EditWarehousePage/EditWarehousePage";
-
+import AddItem from "./components/AddItem/AddItem";
 import InventoryPage from "./pages/InventoryPage/InventoryPage";
 import AddInventoryPage from "./pages/AddInventoryPage/AddInventoryPage";
 import ItemDetailsPage from "./pages/ItemDetailsPage/ItemDetailsPage";
@@ -30,7 +30,8 @@ function App() {
           <Route path="/inventory" exact component={InventoryPage} />
           <Route path="/inventory/add" exact component={AddInventoryPage} />
           <Route path="/inventory/:itemId" exact component={ItemDetailsPage} />
-          <Route path="/inventory/:itemId/edit" exact component={EditInventoryPage} />
+          <Route path="/inventory/:itemId/edit" component={EditInventoryPage} />
+          <Route path="/inventory/add" component={AddItem} />
         </Switch>
         <Footer />
       </BrowserRouter>
