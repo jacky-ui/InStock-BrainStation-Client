@@ -64,6 +64,15 @@
                 width: 10%;
             }
         }
+
+        &--arrow:hover .inventory__icon--right{
+            animation: move 0.5s ease-in-out forwards;
+        }
+    
+        @keyframes move {
+            0%   { transform: translateX(0); }
+            100%  { transform: translateX(4px); }
+        }
         &--inventory {
             width: 50%;
             order: 1;

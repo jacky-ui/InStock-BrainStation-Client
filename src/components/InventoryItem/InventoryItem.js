@@ -1,5 +1,4 @@
 import "./InventoryItem.scss";
-import deleteIcon from "../../assets/images/icons/delete_outline-24px.svg";
 import arrowRight from "../../assets/images/icons/chevron_right-24px.svg";
 import editIcon from "../../assets/images/icons/edit-24px.svg";
 import DeleteInventory from "../../components/DeleteInventory/DeleteInventory";
@@ -49,7 +48,7 @@ function InventoryItem(props) {
                                 key={props.id}
                                 itemName={props.itemName}
                             />
-                            <Link to={`/inventory/${props.id}`} className="inventory__item--link">
+                            <Link to={`/inventory/${props.id}/edit`} className="inventory__item--link">
                                 <img 
                                     src={editIcon}
                                     className="icon icon__edit"

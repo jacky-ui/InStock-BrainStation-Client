@@ -252,6 +252,11 @@
     display: flex;
     align-items: center;
   }
+
+  &__chevron-container:hover .warehouses__link-chevron{
+    animation: move 0.5s ease-in-out forwards;
+  }
+
   &__break {
     @include tablet {
       display: none;
@@ -265,6 +270,11 @@
     }
     &-chevron {
       height: 1.25rem;
+    }
+
+    @keyframes move {
+      0%   { transform: translateX(0); }
+      100%  { transform: translateX(4px); }
     }
     &:hover {
       text-decoration: underline;
