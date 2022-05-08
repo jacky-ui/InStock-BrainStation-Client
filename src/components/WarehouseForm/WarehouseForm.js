@@ -132,7 +132,6 @@ class WarehouseForm extends Component {
     }
 
     render() {
-        console.log(this.state.put);
         return (
             <section className='form'>
                 <form className='form-field' onSubmit={this.handleSubmit}>
