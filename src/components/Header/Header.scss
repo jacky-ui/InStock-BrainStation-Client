@@ -39,24 +39,6 @@
             justify-content: flex-start;
         }
     }
-    &__item-active{
-        @include label-buttons-mobile;
-        color: $Light-Grey;
-        background-color: $Instock-Black;
-        height: 2.25rem;
-        padding: 0.5rem 1rem;
-        width: 100%;
-        text-align: center;
-        border-radius: 20px;
-        cursor: pointer;
-        @include tablet{
-            @include label-buttons-desktop;
-            width: auto;
-        }
-    }
-    &__item-active:hover{
-        text-decoration: underline
-    }
     &__item-inactive{
         @include label-buttons-mobile;
         color: $Cloud;
@@ -73,6 +55,24 @@
     }
     &__item-inactive:hover{
         color: $Light-Grey;
+        text-decoration: underline
+    }
+    &__item-active{
+        @include label-buttons-mobile;
+        color: $Light-Grey;
+        background-color: $Instock-Black;
+        height: 2.25rem;
+        padding: 0.5rem 1rem;
+        width: 100%;
+        text-align: center;
+        border-radius: 20px;
+        cursor: pointer;
+        @include tablet{
+            @include label-buttons-desktop;
+            width: auto;
+        }
+    }
+    &__item-active:hover{
         text-decoration: underline
     }
 }

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Redirect } from "react-router-dom";
 import "./AddItem.scss";
 import axios from "axios";
 import { api_url } from '../../utils/apiVariables';
@@ -13,7 +14,8 @@ class EditItem extends Component {
     description: '',
     category: '',
     status: '',
-    quantity: ''
+    quantity: '',
+    redirect: false
   }
 
 
@@ -51,12 +53,19 @@ class EditItem extends Component {
         quantity
     })
     .then(response => {
-      this.setState({ update: response.status });
+      this.setState({ update: response.status, redirect: true });
   })
 }    
 
 
   render() {
+    if(this.state.redirect){
+      return (
+      <>
+        <Redirect to="/inventory"/>
+      </>
+      )
+    }
     return (        
           <form onSubmit={this.handleSubmit} type="submit" className="add-item__card-wrapper">         
             <article className="add-item__card edit-item__card-border">
@@ -173,7 +182,7 @@ class EditItem extends Component {
             {/* <div className="add-item__card-wrapper add-item__button-wrapper"> */}
               <section className="add-item__card add-item__card--buttons">
               <button className="add-item__button add-item__button--cancel">Cancel</button>
-              <button className="add-item__button">{this.props.pageButtonInventory}</button>
+              <button className="add-item__button save">{this.props.pageButtonInventory}</button>
               </section>
           {/* </div> */}
           </form>

@@ -109,6 +109,11 @@
     display: flex;
     margin-bottom: 1rem;
   }
+  &__button-wrapper {
+    box-shadow: 0px 2px 2px 0px $Cloud;
+    
+
+  }
 
   &__check-wrapper {
     width: 50%;
@@ -126,19 +131,29 @@
     border-radius: 1.25rem;
     color: white;
     cursor: pointer;
+    @include body-medium-mobile;
 
     @include tablet {
         margin-left: 1rem;
-        @include label-buttons-desktop;
+        @include body-medium-desktop;
         padding: 0.5rem 1rem;
         width: fit-content;
+    }
+    &--save {
+      &:hover {
+        background-color: $Instock-Black;
+      }
     }
 
     &--cancel {
       background-color: $White;
       border: 1px solid $Cloud;
-      color: $Instock-Black;
+      color: $Slate;
       width: 100%;
+      &:hover {
+        color: $Instock-Indigo;
+        border-color: $Instock-Indigo
+      }
 
       @include tablet{
         width: fit-content;

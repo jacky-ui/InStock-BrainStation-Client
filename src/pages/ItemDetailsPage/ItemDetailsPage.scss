@@ -138,13 +138,11 @@
 
     &__text{
         margin-top: 0.3rem;
-        @include body-small-mobile;
-        font-weight: bold;
+        @include body-medium-mobile;
         color: $Instock-Black;
 
         @include tablet{
             @include body-medium-desktop;
-            font-weight: bold;
         }
     }
 

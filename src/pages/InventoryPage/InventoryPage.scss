@@ -80,14 +80,15 @@
             padding: 0.5rem;
             color: white;
             border: none;
-            width: 100%;
-            @include label-buttons-mobile;
+            width: fit-content;
+            padding: 0.25rem 1rem;
+            @include body-medium-mobile;
 
             @include tablet {
                 margin: unset;
                 height: 2.375rem;
                 white-space: nowrap;
-                @include label-buttons-desktop;
+                @include body-medium-desktop;
                 width: 10rem;
             }
             @include desktop {
@@ -135,6 +136,9 @@
             width: 15%;
             display: flex;
             align-items: center;
+            &:nth-child(2) {
+                margin-left: 2rem;
+            }
         }
     }
 }

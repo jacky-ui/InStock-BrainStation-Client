@@ -243,7 +243,7 @@ class EditItem extends Component {
                 <Link className="edit-item__link" to='/inventory'>
                   <button className="edit-item__button edit-item__button--cancel">Cancel</button>
                 </Link>
-                <button className="edit-item__button">{this.props.pageButtonInventory}</button>
+                <button className="edit-item__button edit-item__button--save">{this.props.pageButtonInventory}</button>
               </section>
             </div>
           </form>

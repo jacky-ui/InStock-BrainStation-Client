@@ -12,11 +12,14 @@
 
     &:hover {
         background: rgba($Instock-Indigo, 0.07);
+        
     }
 
     @include tablet {
         padding: 1rem 2rem;
         height: unset;
+        border-top: unset;
+        border-bottom: $border-divider;
     }
     @include desktop {
         padding: 1rem 2rem;
@@ -151,7 +154,7 @@
             width: 50%;
             order: 1;
             @include tablet {
-                width: 10%;
+                width: 15%;
                 order: unset;
                 white-space: nowrap;
             }

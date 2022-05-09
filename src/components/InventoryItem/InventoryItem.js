@@ -22,6 +22,7 @@ function InventoryItem(props) {
                                 <img 
                                     src={arrowRight}
                                     className="icon icon__right"
+                                    alt=""
                                 />
                         </div>
                         </Link>
@@ -52,6 +53,7 @@ function InventoryItem(props) {
                                 <img 
                                     src={editIcon}
                                     className="icon icon__edit"
+                                    alt=""
                                 />
                             </Link>
                         </div>
