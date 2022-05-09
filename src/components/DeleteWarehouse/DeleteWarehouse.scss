@@ -19,6 +19,7 @@
     @include desktop {
         padding: 0 4rem 3rem 4rem;
         width: 90vh;
+        height: fit-content;
     }
     &__title {
         @include page-header-mobile;
@@ -57,6 +58,9 @@
         border: none;
         @include tablet {
             right: 4.75rem;
+        }
+        @include desktop {
+            right: 5rem;
         }
     }
     &__button-delete {
