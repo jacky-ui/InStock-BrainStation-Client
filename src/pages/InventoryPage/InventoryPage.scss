@@ -1,0 +1,144 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/variables" as *; 
+
+.main__container {
+    background-color: $Light-Grey;
+
+    @include tablet {
+        margin-top: -5.5rem;
+    }
+}
+
+.inventories {
+    margin: 0rem 1rem;
+    position: relative;
+    z-index: 2;
+    margin-top: -3rem;
+    border: 1px solid $Cloud;
+    display: flex;
+    flex-direction: column;
+    border-radius: 4px;
+    box-shadow: 0px 2px 2px 0px;
+
+    @include tablet {
+        margin-top: -6.4rem;
+        margin: 0rem 2rem;
+    }
+    @include desktop {
+        margin: 0rem 4rem;
+        margin-top: -5.4rem;
+    }
+
+    &__head {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        width: 100%;
+        padding: 1rem;
+        background-color: $White;
+
+        @include tablet {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-end;
+            padding: 2rem 2rem 1rem 2rem;
+        }
+
+        &--header {
+            @include page-header-mobile;
+        }
+    }
+    &__inputs {
+        @include tablet {
+            display: flex;
+            gap: 1rem;
+        }
+        &--search {
+            border-radius: 1.25rem;
+            background-image: url("../../assets/images/icons/search-24px.svg");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            border: 0.063rem solid $Cloud;
+            padding: 0.3rem;
+            padding-left: 1rem;
+            width: 100%;
+            @include body-medium-mobile;
+            margin: 1rem 2rem 0rem 0rem;
+
+            @include tablet {
+                margin: unset;
+                height: 2.375rem;
+                @include body-medium-desktop;
+            }
+        }
+        &--add {
+            margin: 1rem 2rem 0rem 0rem;
+            border-radius: 1.25rem;
+            background-color: $Instock-Indigo;
+            padding: 0.5rem;
+            color: white;
+            border: none;
+            width: fit-content;
+            padding: 0.25rem 1rem;
+            @include body-medium-mobile;
+
+            @include tablet {
+                margin: unset;
+                height: 2.375rem;
+                white-space: nowrap;
+                @include body-medium-desktop;
+                width: 10rem;
+            }
+            @include desktop {
+                width: 10rem;
+            }
+            
+            &:hover {
+                background-color: $Graphite;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+// Styling for title bar
+.title__container {
+    display: none;
+
+    @include tablet {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: $Light-Grey;
+        width: 100%;
+        height: 2rem;
+        padding: 0rem 2rem;
+    }
+    @include desktop {
+        padding: 1.3rem 2rem;
+    }
+    &--title {
+        @include table-header-desktop;
+        color: $Slate;
+        font-weight: bold;
+        white-space: nowrap;
+    }
+    &--action {
+        @include tablet {
+            text-align: end;
+            width: 15%;
+        }
+    }
+    &--group {
+        @include tablet {
+            width: 15%;
+            display: flex;
+            align-items: center;
+            &:nth-child(2) {
+                margin-left: 2rem;
+            }
+        }
+    }
+}

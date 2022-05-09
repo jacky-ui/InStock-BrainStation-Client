@@ -1,0 +1,47 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+
+.subheader {
+    display: flex;
+    justify-content: flex-start;
+    padding: 2rem 0;
+    border-radius: 3px 3px 0 0 ;
+    border-bottom: $border-divider;
+    background-color: $White;
+    position: relative;
+    z-index: 2;
+    @include tablet {
+        padding: 2rem 0 1rem 0;
+    }
+    @include desktop {
+        padding: 2rem 0 1.25rem;
+    }
+    &__title { 
+        @include page-header-mobile;
+        @include tablet {
+            @include page-header-desktop;
+        }
+    }
+    &__arrow {
+        width: 1.25rem;
+        height: 1.25rem;
+        align-self: center;
+        margin: 0 0.75rem;
+        @include tablet{
+            margin: 0 1rem 0 2rem;
+        }   
+        @include desktop {
+            margin: 0 .75rem 0 2.75rem;
+        }
+    }
+    &-style {
+        margin-top: -3.75rem;
+        background-color: $Light-Grey;
+        @include tablet {
+            margin-top: -5.5rem;
+        }
+        @include desktop {
+            margin-top: -5.8125rem;
+        }
+    }
+}

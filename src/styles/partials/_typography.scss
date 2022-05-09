@@ -1,0 +1,21 @@
+// ===typography===
+
+// regular weight
+
+@font-face {
+    font-family: 'Titillium';
+    src: url('../../assets/fonts/TitilliumWeb-Regular.woff') format('woff'),
+     url('../../assets/fonts/TitilliumWeb-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+// bold weight
+
+@font-face {
+    font-family: 'Titillium';
+    src: url('../../assets/fonts/TitilliumWeb-SemiBold.woff') format('woff'),
+     url('../../assets/fonts/TitilliumWeb-SemiBold.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+}

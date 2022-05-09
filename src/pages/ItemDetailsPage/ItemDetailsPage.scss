@@ -1,0 +1,187 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+
+.main-container{
+    background-color: $Light-Grey;
+}
+
+.item {
+    background-color: $White;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    border-radius: 4px;
+    margin-top: -4.8rem;
+    margin: -3.5rem 1rem 0rem 1rem;
+    box-shadow: 0px 2px 2px 0px $Cloud;
+    position: relative;
+    z-index: 2;
+
+
+    @include tablet {
+        margin: -5rem 2rem 0rem 2rem;
+    }
+
+    @include desktop {
+        margin-right: 5rem;
+        margin-left: 5rem;
+    }
+
+    // Styling for warehouse 
+    &__head {
+        display: flex;
+        justify-content: space-between;
+        padding: 1.5rem 1.5rem 1rem 2.5rem;
+        position: relative;
+        border-bottom: 1px solid $Cloud;
+
+        @include tablet {
+            padding: 1.5rem 2rem 1rem 4rem;
+        }
+
+        &--title {
+            @include page-header-mobile;
+            margin-right: auto;
+
+            @include tablet {
+                @include page-header-desktop;
+            }
+        }
+        &--circle {
+            background-color: $Instock-Indigo;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+
+            @include tablet {
+                border-radius: 1.25rem;
+                height: 2.25rem;
+                width: 5rem;
+            }
+            @include desktop {
+                height: 2.375rem;
+            }
+            &:hover {
+                background-color: $Graphite;
+            } 
+        }
+    }
+    &__edit {
+        position: absolute;
+        height: 1.3rem;
+        width: 1.3rem;
+        bottom: 1.6rem;
+        right: 1.8rem;
+        
+        @include tablet {
+            bottom: 1.8rem;
+            right: 4.6rem;
+            height: 1.1rem;
+            width: 1.1rem;
+        }
+        &--text {
+            display: none;
+    
+            @include tablet {
+                display: block;
+                @include body-small-desktop;
+                color: $White;
+                padding-left: 2.5rem;
+                padding-top: 0.6rem;
+            }
+        }
+    }
+    &__previous {
+        position: absolute;
+        left: 0.7rem;
+        bottom: 1.3rem;
+    
+        @include tablet {
+            left: 1.9rem;
+            bottom: 1.4rem;
+            }
+    }    
+
+    &__link{
+        text-decoration: none;
+    }
+}
+
+.details{
+    padding: 1rem 1.5rem;
+
+    @include tablet{
+        display: flex;
+    }
+
+    &__tab{
+        margin-bottom: 1rem;
+    }
+
+    &__tab--space{
+        margin-right: 4rem;
+
+        @include desktop{
+            margin-right: 10rem;
+        }
+    }
+
+    &__title{
+        @include body-small-mobile;
+        font-weight: bold;
+        color: $Slate;
+
+        @include tablet {
+            @include body-small-desktop;
+            font-weight: bold;
+        }
+    }
+
+    &__text{
+        margin-top: 0.3rem;
+        @include body-medium-mobile;
+        color: $Instock-Black;
+
+        @include tablet{
+            @include body-medium-desktop;
+        }
+    }
+
+    &__flex{
+        display: flex;
+    }
+
+    &__in{
+        background-color: rgba($color: $Green, $alpha: 0.07);
+        color: $Green;
+        @include body-small-mobile;
+        font-weight: bold;
+        border-radius: 20px;
+        padding: 0.2rem 0.5rem;
+        text-transform: uppercase;
+    }
+
+    &__out{
+        background-color: rgba($color: $Red, $alpha: 0.07);
+        color: $Red;
+        @include body-small-mobile;
+        font-weight: bold;
+        border-radius: 20px;
+        padding: 0.2rem 0.5rem;
+        text-transform: uppercase;
+    }
+
+    &__box-1{
+        @include tablet{
+            padding-right: 2.5rem;
+            border-right: 1px solid $Cloud;
+            width: 50%;
+        }
+    }
+
+    &__box-2{
+        @include tablet{
+            width: 50%;
+            padding-left: 2.5rem;
+        }        
+    }
+}

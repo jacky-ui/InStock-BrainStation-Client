@@ -1,0 +1,283 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/variables" as *; 
+
+.inventory {
+    border-top: 1px solid $Cloud;
+    padding: 1rem;
+    padding-bottom: 2.5rem;
+    position: relative;
+    height: 12rem;
+    background-color: $White;
+
+    &:hover {
+        background: rgba($Instock-Indigo, 0.07);
+        
+    }
+
+    @include tablet {
+        padding: 1rem 2rem;
+        height: unset;
+        border-top: unset;
+        border-bottom: $border-divider;
+    }
+    @include desktop {
+        padding: 1rem 2rem;
+    }
+
+    &__item {
+        display: flex;
+        flex-wrap: wrap;
+
+        @include tablet {
+            flex-direction: row;
+            flex-wrap: unset;
+            width: 100%;
+            justify-content: space-between;
+            align-items: center;
+        }
+        &--header {
+            @include table-header-mobile;
+            color: $Slate;
+            margin-bottom: 0.2rem;
+
+            @include tablet {
+                display: none;
+            }
+        }
+        &--spacing {
+
+            @include tablet {
+                margin-right: unset;
+                width: 15%;
+            }
+        }
+        &--tablet {
+            @include tablet {
+                width: 15%;
+            }
+        }
+        &--color {
+            @include body-medium-mobile;
+            color: $Instock-Indigo;
+            padding-bottom: 1rem;
+            font-weight: bold;
+
+            &:hover {
+                text-decoration: underline;
+            }
+
+            @include tablet {
+                @include body-medium-desktop;
+                color: $Instock-Indigo;
+                font-weight: bold;
+                padding-bottom: unset;
+            }
+        }
+        &--details {
+            @include body-medium-mobile;
+            color: $Instock-Black;
+            margin-bottom: 0.2rem;
+
+            @include tablet {
+                @include body-medium-desktop;
+                color: $Instock-Black;
+                margin-bottom: unset;
+            }
+        }
+        &--stock {
+            @include body-small-mobile;
+            color: $Green;
+            padding: 0.1rem 0.2rem;
+            background-color: rgba($color: $Green, $alpha: 0.07);
+            border-radius: 2.375rem;
+            margin-bottom: 0.8rem;
+            width: 4rem;
+            text-align: center;
+            text-transform: uppercase;
+
+            @include tablet {
+                @include body-small-desktop;
+                font-weight: bold;
+                background-color: $Light-Grey;
+                color: $Green;
+                margin-bottom: unset;
+                width: 4rem;
+            }
+        }
+        &--outstock {
+            @include body-small-mobile;
+            color: $Red;
+            padding: 0.1rem 0.2rem;
+            font-weight: bold;
+            background-color: rgba($color: $Red, $alpha: 0.07);
+            border-radius: 2.375rem;
+            margin-bottom: 0.8rem;
+            width: 6rem;
+            text-align: center;
+            text-transform: uppercase;
+            white-space: nowrap;
+
+            @include tablet {
+                @include body-small-desktop;
+                font-weight: bold;
+                margin-bottom: unset;
+                width: 6rem;
+            }
+        }
+        &--link {
+            @include tablet {
+                // width: 50%;
+            }
+        }
+        &--firstcolumn {
+            @include tablet {
+                width: 100%;
+            }
+        }
+        &--wrapper {
+            display: flex;
+            justify-content: space-between;
+            height: 1.4rem;
+            @include tablet {
+                height: 1.5rem;
+                justify-content: end;
+                width: 100%;
+            }
+        }
+        &--container {
+            @include tablet {
+                display: flex;
+            }
+        }
+        &--order1 {
+            width: 50%;
+            order: 1;
+            @include tablet {
+                width: 15%;
+                order: unset;
+                white-space: nowrap;
+            }
+            @include desktop {
+                width: 15%;
+            }
+        }
+        &--order2 {
+            width: 50%;
+            order: 3;
+            @include tablet {
+                width: 10%;
+                order: unset;
+                white-space: nowrap;
+            }
+            @include desktop {
+                width: 15%;
+            }
+        }
+        &--order3 {
+            width: 50%;
+            order: 2;
+            @include tablet {
+                width: 10%;
+                order: unset;
+                white-space: nowrap;
+            }
+            @include desktop {
+                width: 15%;
+            }
+        }
+        &--order4 {
+            width: 50%;
+            order: 4;
+            @include tablet {
+                width: 10%;
+                order: unset;
+                white-space: nowrap;
+            }
+            @include desktop {
+                width: 15%;
+            }
+        }
+        &--order5 {
+            width: 50%;
+            order: 5;
+            margin-left: auto;
+            @include tablet {
+                width: 10%;
+                order: unset;
+                margin-left: unset;
+                white-space: nowrap;
+            }
+            @include desktop {
+                width: 15%;
+            }
+        }
+        &--order6 {
+            width: 100%;
+            order: 6;
+            @include tablet {
+                width: 10%;
+                order: unset;
+                white-space: nowrap;
+            }
+            @include desktop {
+                width: 15%;
+            }
+        }
+    }
+
+    &__directory {
+        display: flex;
+    }
+
+    &__directory:hover .icon__right{
+        animation: move 0.5s ease-in-out forwards;
+    }
+
+    @keyframes move {
+        0%   { transform: translateX(0); }
+        100%  { transform: translateX(4px); }
+    }
+}
+
+
+// Styling for icons
+.icons {
+    @include tablet {
+        display: flex;
+        align-items: flex-end;
+        width: 15%;
+        text-align: end;
+    }
+}
+
+.icon {
+
+    &__right {
+        position: unset;
+        width: 25%;
+        height: 1.2rem;
+
+        @include tablet {
+            height: 1.5rem;
+        }
+    }
+    &__delete {
+
+        @include tablet {
+            position: static;
+        }
+    }
+    &__edit {
+
+        @include tablet {
+            margin-left: 1rem;
+            margin-bottom: 0.1rem;
+            position: static;
+        }
+    }
+}
+
+a {
+    text-decoration: none;
+}

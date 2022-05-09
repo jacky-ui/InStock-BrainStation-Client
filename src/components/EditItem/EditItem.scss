@@ -1,0 +1,246 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.edit-item {
+  color: $Instock-Black;
+
+  &__main{
+    padding: 0 1rem;
+    padding-bottom: 1rem;
+    background-color: $Light-Grey;
+
+
+    @include tablet {
+      padding: 0 2rem;
+      padding-bottom: 1rem;
+
+    }
+
+    @include desktop {
+      padding: 0 4rem;
+      padding-bottom: 1rem;
+
+    }
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 1rem;
+    border-bottom: $border-divider;
+    @include tablet {
+      border-bottom: unset;
+      padding: 0rem 2rem;
+      width: 100%;
+    }
+
+    @include desktop{
+      padding: 1rem 2.5rem;
+    }
+    
+    &--buttons {
+      background-color: $Light-Grey;
+      flex-direction: row;
+      justify-content: space-between;
+      
+
+      @include tablet {
+          width: 100%;
+          justify-content: flex-end;
+          padding: 1rem 2rem;
+      }
+
+      @include desktop {
+        padding: 1rem 2.5rem;
+      }
+    }
+  }
+
+  &__card-wrapper {
+    box-shadow: 0px 2px 2px 0px $Cloud;
+  }
+
+  &__card-border{
+    @include tablet{
+      border-right: $border-divider;
+    }
+  }
+
+  &__section-title {
+    @include subheader-mobile;
+    margin-bottom: 1rem;
+
+    @include tablet{
+      margin-bottom: 1.75rem;
+      @include subheader-desktop;
+    }
+  }
+
+  &__form-title {
+    display: flex;
+    flex-direction: column;
+    @include label-buttons-mobile;
+
+    @include tablet{
+      @include label-buttons-desktop;
+    }
+  }
+
+  &__comment {
+    height: 6rem;
+    font-family: "Titillium", "Arial", sans-serif;
+    resize: none;
+  }
+
+  &__select {
+    appearance: none;
+    background-image: url("../../assets/images/icons/arrow_drop_down-24px.svg");
+    background-repeat: no-repeat;
+    background-position: 95% 50%;
+  }
+
+  &__radio-text {
+    @include body-small-mobile;
+    margin-left: 0.25rem;
+  }
+
+  &__radio-wrapper {
+    display: flex;
+    margin-bottom: 1rem;
+  }
+  &__button-wrapper {
+    box-shadow: 0px 2px 2px 0px $Cloud;
+    
+
+  }
+
+  &__check-wrapper {
+    width: 50%;
+  }
+
+  &__on-click{
+    cursor: pointer;
+  }
+
+  &__button {
+    width: 45%;
+    background-color: $Instock-Indigo;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 1.25rem;
+    color: white;
+    cursor: pointer;
+    @include body-medium-mobile;
+
+    @include tablet {
+        margin-left: 1rem;
+        @include body-medium-desktop;
+        padding: 0.5rem 1rem;
+        width: fit-content;
+    }
+    &--save {
+      &:hover {
+        background-color: $Instock-Black;
+      }
+    }
+
+    &--cancel {
+      background-color: $White;
+      border: 1px solid $Cloud;
+      color: $Slate;
+      width: 100%;
+      &:hover {
+        color: $Instock-Indigo;
+        border-color: $Instock-Indigo
+      }
+
+      @include tablet{
+        width: fit-content;
+      }
+    }
+  }
+
+  &__hide{
+    display: none;
+  }
+
+  &__display{
+    display: contents;
+  }
+
+  &__flex{
+    @include tablet{
+      display: flex;
+      padding: 1.5rem 0;
+      background-color: $White;
+    }
+
+  }
+
+  &__group {
+    display: flex;
+    flex-direction: column;
+    &--hide {
+        display: none;
+    }
+    &--error {
+        display:contents;
+        height: 0.833rem;
+        display: flex;
+        justify-content: flex-start;
+        margin-top: -0.5rem;
+        margin-bottom: 0.5rem;
+        align-items: center;
+        &__icon {
+            scale: 0.55;
+            margin-left: -0.25rem;
+            @include tablet {
+                scale: 0.7;
+            }
+        }
+        &__message {
+            @include body-small-mobile;
+            color: $Red;
+            margin-left: 0.25rem;
+            @include tablet {
+                @include body-small-desktop;
+            }
+        }
+        
+    }
+  }
+
+  &__input {
+    width: 100%;
+    border-radius: 1.25rem;
+    border: 0.063rem solid $Cloud;
+    padding: 0.5rem 1rem;
+    @include body-medium-mobile;
+    margin-bottom: 1rem;
+
+    &:focus {
+        outline: none;
+        border: $border-focus;
+    }
+    &--invalid {
+        border: $border-error;
+    }
+    &::placeholder {
+        color: $Slate;
+        @include body-medium-mobile;
+        @include tablet {
+            @include body-medium-desktop;
+        }
+    }
+  }
+
+  &__link{
+    width: 50%;
+
+    @include tablet{
+      width: fit-content;
+      margin-right: 1rem;
+    }
+  }
+}

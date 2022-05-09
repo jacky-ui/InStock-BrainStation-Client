@@ -1,0 +1,148 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/variables" as *;
+
+.add-item {
+  color: $Instock-Black;
+  &__card-wrapper {
+    background-color: $Light-Grey;
+
+    @include tablet {
+      padding: 0 0;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    @include desktop {
+    }
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 1rem;
+    box-shadow: 0px 1px 2px 0px $Cloud;
+    border-bottom: $border-divider;
+    @include tablet {
+      border-bottom: unset;
+      padding: 0rem 2rem 1rem 2rem;
+      width: 50%;
+      
+    }
+    @include desktop{
+      padding: 1rem 2.5rem;
+    }
+
+    &--buttons {
+      background-color: $Light-Grey;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+
+      @include tablet {
+          width: 100%;
+          justify-content: flex-end;
+          padding-top: 2rem;
+      }
+      @include desktop {
+        padding-top: 2rem;
+      }
+    }
+  }
+
+  &__section-title {
+    @include subheader-mobile;
+    margin-bottom: 1rem;
+
+    @include tablet{
+      margin-bottom: 2rem;
+      padding-top: 1.5rem;
+      @include subheader-desktop;
+    }
+  }
+
+  &__form-title {
+    display: flex;
+    flex-direction: column;
+    @include label-buttons-mobile;
+
+    @include tablet{
+      @include label-buttons-desktop;
+    }
+  }
+
+  &__input {
+    width: 100%;
+    border-radius: 1.25rem;
+    border: 0.063rem solid $Cloud;
+    padding: 0.5rem 1rem;
+    @include body-medium-mobile;
+    margin-bottom: 1rem;
+  }
+
+  &__comment {
+    height: 6rem;
+    font-family: "Titillium", "Arial", sans-serif;
+    resize: none;
+  }
+
+  &__select {
+    appearance: none;
+    background-image: url("../../assets/images/icons/arrow_drop_down-24px.svg");
+    background-repeat: no-repeat;
+    background-position: 95% 50%;
+  }
+
+  &__radio-text {
+    @include body-small-mobile;
+    margin-left: 0.25rem;
+  }
+
+  &__radio-wrapper {
+    display: flex;
+    margin-bottom: 1rem;
+  }
+
+  &__check-wrapper {
+    width: 50%;
+  }
+
+  &__button {
+    width: 45%;
+    background-color: $Instock-Indigo;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 1.25rem;
+    color: white;
+    @include body-medium-mobile;
+
+    @include tablet {
+        margin-left: 1rem;
+        @include body-medium-desktop;
+        padding: 0.5rem 1rem;
+        width: fit-content;
+    }
+
+    &--cancel {
+      background-color: $White;
+      border: 1px solid $Cloud;
+      color: $Instock-Black;
+      &:hover {
+        color: $Instock-Indigo;
+        border-color: $Instock-Indigo;
+      }
+    }
+  }
+
+  &__hide{
+    display: none;
+  }
+
+  &__display{
+    display: contents;
+  }
+}
+.save:hover {
+  background-color: $Instock-Black;
+}
