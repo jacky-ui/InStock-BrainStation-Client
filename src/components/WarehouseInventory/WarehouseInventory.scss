@@ -167,7 +167,7 @@
             // }
         }
         &--instock {
-            @include body-medium-mobile;
+            @include body-small-mobile;
             color: $Green;
             padding: 0.1rem 0.5rem;
             font-weight: bold;
@@ -183,13 +183,13 @@
             @include tablet {
                 margin-bottom: unset;
                 margin-right: unset;
-                @include body-medium-desktop;
+                @include body-small-desktop;
                 font-weight: bold;
                 width: 5rem;
             }
         }
         &--outstock {
-            @include body-medium-mobile;
+            @include body-small-mobile;
             color: $Red;
             padding: 0.1rem 0.5rem;
             font-weight: bold;
@@ -205,7 +205,7 @@
             @include tablet {
                 margin-bottom: unset;
                 margin-right: unset;
-                @include body-medium-desktop;
+                @include body-small-desktop;
                 font-weight: bold;
                 width: 6rem;
             }

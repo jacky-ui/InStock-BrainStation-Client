@@ -117,13 +117,10 @@ class WarehouseForm extends Component {
 
     // Form Valid for Disabled Button Submit
     isFormValid = () => {
-        if (!this.state.name || !this.state.address || !this.state.city || !this.state.country || !this.state.contactName || !this.state.contactEmail || !this.state.contactPhone || !this.state.contactPosition) {
+        if (this.isPhoneValid()) {
             return false;
         }
-        if (!this.isPhoneValid()) {
-            return false;
-        }
-        if (!this.isEmailValid()) {
+        if (this.isEmailValid()) {
             return false;
         }
         return true;

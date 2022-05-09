@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import PageSubHeader from '../../components/PageSubHeader/PageSubHeader';
 import AddItem from '../../components/AddItem/AddItem';
 import './AddInventoryPage.scss'
-import axios from 'axios';
-import { api_url } from '../../utils/apiVariables';
+
 
 class AddInventoryPage extends Component {
 
