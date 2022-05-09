@@ -173,7 +173,7 @@ class EditItem extends Component {
             {/* <div className="add-item__card-wrapper add-item__button-wrapper"> */}
               <section className="add-item__card add-item__card--buttons">
               <button className="add-item__button add-item__button--cancel">Cancel</button>
-              <button className="add-item__button">{this.props.pageButtonInventory}</button>
+              <button className="add-item__button save">{this.props.pageButtonInventory}</button>
               </section>
           {/* </div> */}
           </form>

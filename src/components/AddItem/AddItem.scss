@@ -115,10 +115,11 @@
     padding: 0.5rem;
     border-radius: 1.25rem;
     color: white;
+    @include body-medium-mobile;
 
     @include tablet {
         margin-left: 1rem;
-        @include label-buttons-desktop;
+        @include body-medium-desktop;
         padding: 0.5rem 1rem;
         width: fit-content;
     }
@@ -127,6 +128,10 @@
       background-color: $White;
       border: 1px solid $Cloud;
       color: $Instock-Black;
+      &:hover {
+        color: $Instock-Indigo;
+        border-color: $Instock-Indigo;
+      }
     }
   }
 
@@ -137,4 +142,7 @@
   &__display{
     display: contents;
   }
+}
+.save:hover {
+  background-color: $Instock-Black;
 }

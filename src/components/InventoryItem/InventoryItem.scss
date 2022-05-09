@@ -18,6 +18,8 @@
     @include tablet {
         padding: 1rem 2rem;
         height: unset;
+        border-top: unset;
+        border-bottom: $border-divider;
     }
     @include desktop {
         padding: 1rem 2rem;
