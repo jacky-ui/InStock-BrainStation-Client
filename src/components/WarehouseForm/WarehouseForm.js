@@ -101,9 +101,9 @@ class WarehouseForm extends Component {
     isPhoneValid = () => {
         const phoneValidation = /^\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}$/;
         if (phoneValidation.test(this.state.contactPhone)) {
-            return false;
+            return true;
         }
-        return true;
+        return false;
     }
 
     // Email Validation 
@@ -117,7 +117,7 @@ class WarehouseForm extends Component {
 
     // Form Valid for Disabled Button Submit
     isFormValid = () => {
-        if (this.isPhoneValid()) {
+        if (!this.isPhoneValid()) {
             return false;
         }
         if (this.isEmailValid()) {
@@ -147,8 +147,7 @@ class WarehouseForm extends Component {
             contactEmail
         })
         .then((response) => {
-            console.log(response);
-            console.log("yay");
+            this.setState({ update: response.status, redirect: true });            console.log("yay");
         });
         // event.target.reset();
     };
@@ -169,8 +168,7 @@ class WarehouseForm extends Component {
             contactEmail
         })
         .then(response => {
-            console.log(response);
-            this.setState({ update: response.status });
+            this.setState({ update: response.status, redirect: true });
         })
     }
 
@@ -295,7 +293,7 @@ class WarehouseForm extends Component {
                         <div className='form__group'>
                             <label className='form__label'>Phone Number</label>
                             <input
-                                className={`form__input ${!this.isPhoneValid() ? '' : "form__input--invalid"}`}
+                                className={`form__input ${this.isPhoneValid() ? '' : "form__input--invalid"}`}
                                 type="text"
                                 name="contactPhone"
                                 placeholder="Phone Number Ex: +1 (614) 123-1234"
@@ -303,7 +301,7 @@ class WarehouseForm extends Component {
                                 onChange={this.handleChange}
                                 required
                             />
-                            <div className={`form__group--hide ${!this.isPhoneValid() ? '' : "form__group--error"}`}>
+                            <div className={`form__group--hide ${this.isPhoneValid() ? '' : "form__group--error"}`}>
                                 <img className="form__group--error__icon" src={error} alt=""/>
                                 <p className="form__group--error__message">This field is required</p>
                             </div>
