@@ -16,7 +16,7 @@ class EditItem extends Component {
     quantity: ''
   }
 
-  
+
 
   isOutofStock = () => {
     if(this.state.status === "Out of Stock") {
@@ -42,7 +42,7 @@ class EditItem extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
     const { warehouse, name, description, category, status, quantity } = this.state;
-    axios.post(`${api_url}/inventories/`, {
+    axios.post(`${api_url}/inventories`, {
         warehouse,
         name,
         description,
