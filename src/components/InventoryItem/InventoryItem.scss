@@ -11,8 +11,7 @@
     background-color: $White;
 
     &:hover {
-        background-color: $Light-Grey;
-        cursor: pointer;
+        background: rgba($Instock-Indigo, 0.07);
     }
 
     @include tablet {
@@ -84,10 +83,9 @@
             }
         }
         &--stock {
-            @include body-medium-mobile;
+            @include body-small-mobile;
             color: $Green;
             padding: 0.1rem 0.2rem;
-            font-weight: bold;
             background-color: rgba($color: $Green, $alpha: 0.07);
             border-radius: 2.375rem;
             margin-bottom: 0.8rem;
@@ -96,7 +94,7 @@
             text-transform: uppercase;
 
             @include tablet {
-                @include body-medium-desktop;
+                @include body-small-desktop;
                 font-weight: bold;
                 background-color: $Light-Grey;
                 color: $Green;
@@ -105,7 +103,7 @@
             }
         }
         &--outstock {
-            @include body-medium-mobile;
+            @include body-small-mobile;
             color: $Red;
             padding: 0.1rem 0.2rem;
             font-weight: bold;
@@ -118,7 +116,7 @@
             white-space: nowrap;
 
             @include tablet {
-                @include body-medium-desktop;
+                @include body-small-desktop;
                 font-weight: bold;
                 margin-bottom: unset;
                 width: 6rem;

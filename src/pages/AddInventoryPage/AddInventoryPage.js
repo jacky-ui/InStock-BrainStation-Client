@@ -43,7 +43,7 @@ class AddInventoryPage extends Component {
                     pageButtonInventory={this.state.button}
                     // itemDetails={this.state.itemDetails}
                     />
-            </div>
+                </div>
             </main>
         );
     }

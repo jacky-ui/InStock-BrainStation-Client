@@ -42,7 +42,7 @@ class InventoryPage extends Component {
                                 className="inventories__inputs--search"
                                 placeholder="Search..."
                             />
-                            <Link to="/inventory/addItem ">
+                            <Link to="/inventory/add">
                                 <button className="inventories__inputs--add">
                                     + Add New Item
                                 </button>

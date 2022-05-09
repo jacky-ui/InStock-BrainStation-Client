@@ -8,6 +8,7 @@
     display: flex;
     justify-content: center;
     padding: 0 1rem;
+    background-color: $Light-Grey;
     @include tablet {
       padding: 0 1.5rem;
       background: $Graphite;
